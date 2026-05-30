@@ -172,26 +172,103 @@ Character Studio (角色工作室) 是平台功能模块, 涉及:
 
 ### P0 — 立刻执行
 
-1. **合并审计报告分支, 形成统一资产总账** ← 本分支即为此目标
-2. **复核各仓库 `.gitignore`** 是否覆盖以下模式:
+1. **复核各仓库 `.gitignore`** 是否覆盖以下模式:
    - `.env`, `.env.*`, `*.env`
    - `*.db`, `*.sqlite`, `*.sqlite3`
    - `auth.json`, `auth.json.bak*`
    - `*token*`, `*key*`, `*secret*`, `*cred*` (非代码文件)
    - `logs/`, `backups/`, `node_modules/`
    - `*.tar.gz`, `*.zip`
+2. **将 independent-review 的冲突裁决补入总账**（本轮完成）
+3. **建立下一阶段资产价值审计任务包**
 
 ### P1 — 近期执行
 
-3. **maijian-wechat 250 个未提交文件单独审计** — 这是最大的未提交堆积, 需确认是新增内容、实验文件、还是应清理的临时文件
-4. **sub2api / biaoge-web worktree 清理前审计** — 8 + 2 个 worktree 中部分可能已过期 (qwen-fix, qwen-thinking), 需确认后再 prune
-5. **aoxue 生产数据库和备份保留策略** — `aoxue_edu_production.db` 存在于两个目录, 需决定归档或删除
+1. **maijian-wechat 250 个未提交文件资产价值审计**
+2. **biaoge-web 跨 WSL 冻结后只读对账**
+3. **aoxue-edu / aoxue-edu-clean 封盘与生产数据库策略**
+4. **hermes-core-audit-private 两 WSL 分叉只读比较**
+5. **sub2api / biaoge-web worktree 清理前审计**
 
 ### P2 — 中长期规划
 
-6. **Hermes skills / standards 脱敏提炼进入 playbook** — 86 skills + 17 standards 中高价值部分, 脱敏后入 ai-collaboration-playbook
-7. **DreamSoul / biaoge / Character Studio 资产归入 sub2api-maijian** — 平台化资产统一归口
-8. **教培相关资产归入 shanxi-edu-hot / aoxue-edu** — 教育业务资产独立仓库管理
+1. **Hermes skills / standards 脱敏提炼** — 86 skills + 17 standards 中高价值部分，脱敏后入 ai-collaboration-playbook
+2. **DreamSoul / Character Studio 平台线资产归口**
+3. **教培业务资产归仓**
+4. **SillyTavern 保留策略**
+
+---
+
+## 7. 独立复核补充裁决
+
+> 本节根据 `independent-review.md` 补充，总账后续必须以本节为准。
+> 参考分支：`audit/wsl-assets-independent-review-20260530`
+> 参考文件：`field-audits/wsl-assets/2026-05-30/independent-review.md`
+
+### 7.1 biaoge-web 跨 WSL 冻结裁决
+
+| WSL | 路径 | 分支 | 未提交 |
+|-----|------|------|--------|
+| wsl-hermes | `/home/hermes/projects/biaoge-web` | master | 2 |
+| wsl-codex | `/home/codex/projects/biaoge-web` | hotfix/v2-orchestrator-async-live | 14 文件 + 11M |
+| wsl-codex worktree | `/home/codex/projects/biaoge-web-context-injection` | sync/public-v2-context-injection-hotfix | 0 |
+| wsl-codex worktree | `/home/codex/projects/biaoge-web-runtime-role-v2` | feat/runtime-info-and-role-package-v2-public | 0 |
+
+同一 `biaoge-web` GitHub 仓库在两个 WSL 中处于不同分支，hermes 端是 `master`，codex 端是 `hotfix/v2-orchestrator-async-live`（有大量未提交变更），codex 端还有 2 个额外 worktree。**存在代码冲突风险**。
+
+**总控裁决：biaoge-web 先冻结，不合并、不清理、不推送、不删除。后续单独开 `biaoge-web-cross-wsl-reconciliation` 任务。**
+
+### 7.2 aoxue-edu 封盘状态裁决
+
+| WSL | 路径 | 分支 | 状态 |
+|-----|------|------|------|
+| wsl-hermes | `/home/hermes/projects/aoxue-edu` | master | 已封盘，3 个未推送 commit |
+| wsl-codex | `/home/codex/projects/aoxue-edu-clean` | codex/local-sync-20260512 | 5 个未提交文件，1 个未推送 commit |
+| wsl-codex 废弃 | `/home/codex/projects/aoxue-edu-clean.bad-*` | codex/local-sync-20260512 | 废弃副本，含生产数据库 |
+
+同一 `aoxue-edu` GitHub 仓库在两个 WSL 中有不同状态。hermes 端已封盘（`288039a`），codex 端 `aoxue-edu-clean` 是清理版但仍有未提交变更。
+
+**总控裁决：教培线先冻结，只做事实核验；生产数据库副本属于 P0 安全问题，但不得直接删除，必须先制定保留/备份/清理策略。**
+
+### 7.3 hermes-core-audit-private SSOT 裁决
+
+| WSL | 路径 | 分支 |
+|-----|------|------|
+| wsl-hermes | `/home/hermes/projects/hermes-core-audit-private` | inventory/multi-system-context-v1 |
+| wsl-codex | `/home/codex/projects/hermes-core-audit-private` | inventory/multi-system-context-v1 |
+
+同一分支，各自独立工作副本。hermes 最近 commit `63a9fed`，codex 最近 commit `432d6a1`。**分支相同但 commit 不同，存在分叉风险**。
+
+**总控裁决：以 GitHub 远程最新状态为临时事实源；后续单独做只读 commit 差异比较；禁止 force push。**
+
+### 7.4 DreamSoul 平台线裁决
+
+DreamSoul 系列项目包括：`dream-soul-control`、`dream-soul-adapter`、`dream-soul-bff`、`dream-soul-sub2api` 等，均属于 DreamSoul 平台线。
+
+**Character Studio / 形象馆归 sub2api-maijian / DreamSoul，不归公众号内容仓。**
+
+后续应单独做 **DreamSoul 平台架构资产审计**，决定哪些项目远程化、哪些只留本地。
+
+### 7.5 SillyTavern 去留裁决
+
+SillyTavern 多个副本（SillyTavern、sillytavern-lab、sillytavern-lab-source-test、sillytavern-runtime-patched 等）总计约 **1.9GB**，属于第三方源码 + 本地 patch。
+
+- 不入 `ai-collaboration-playbook`
+- 不入 `sub2api-maijian`
+- 暂留本地，只登记参考价值
+- 后续可清理到只保留一个最有价值的 patched/runtime 副本，但**本轮禁止删除**
+
+### 7.6 maijian-wechat 250 个未提交文件裁决
+
+maijian-wechat 有 **250 个未提交文件**，是最大内容资产堆积。
+
+- **不得直接提交**
+- 后续单独开 `maijian-wechat-content-asset-review`，区分：
+  - 文章资产
+  - 发布链路资产
+  - 临时预览
+  - 缓存
+  - 运行态文件
 
 ---
 
