@@ -2,7 +2,7 @@
 
 ## 1. 结论
 
-PARTIAL PASS
+PASS
 
 ## 2. 来源仓库
 
@@ -22,15 +22,19 @@ f542c0101f2a44396ee07b9f466a99607789eda5
 liuxiaoqianglongxia/ai-collaboration-playbook
 ```
 
-目标分支：
+## 5. 目标分支
 
 ```text
-main
+recovery/sub2api-misroute-20260530
 ```
 
-## 5. 实际归档文件列表
+## 6. 归档目录
 
-已 recovered：
+```text
+archive/recovered-from-sub2api-misroute/2026-05-30/
+```
+
+## 7. recovered 文件列表
 
 ```text
 archive/recovered-from-sub2api-misroute/2026-05-30/README.md
@@ -47,9 +51,14 @@ archive/recovered-from-sub2api-misroute/2026-05-30/lab/experiments/002-skill-sta
 archive/recovered-from-sub2api-misroute/2026-05-30/lab/experiments/003-subagent-readonly-scout.md
 archive/recovered-from-sub2api-misroute/2026-05-30/lab/experiments/004-memory-distillation.md
 archive/recovered-from-sub2api-misroute/2026-05-30/lab/experiments/005-mcp-docs-context.md
+archive/recovered-from-sub2api-misroute/2026-05-30/reports/latest.md
 ```
 
-## 6. missing_at_source_commit 文件列表
+```text
+recovered_count: 15
+```
+
+## 8. missing_at_source_commit 文件列表
 
 无。
 
@@ -57,30 +66,13 @@ archive/recovered-from-sub2api-misroute/2026-05-30/lab/experiments/005-mcp-docs-
 missing_at_source_commit_count: 0
 ```
 
-## 7. skipped_with_reason 文件列表
-
-```text
-archive/recovered-from-sub2api-misroute/2026-05-30/reports/latest.md
-```
-
-原因：本轮用户明确限定只允许处理以下 4 个收口文件：
-
-```text
-archive/recovered-from-sub2api-misroute/2026-05-30/MANIFEST.md
-reports/recovery/sub2api-misroute-20260530.md
-reports/latest.md
-whitepapers/README.md
-```
-
-因此本轮未补写 archive 下的 `reports/latest.md`。如需让 V0.2.5 Recovery Repair 达到完整 PASS，需要单独授权补写该归档文件，或明确确认该项不需要恢复。
-
-## 8. MANIFEST 路径
+## 9. MANIFEST 路径
 
 ```text
 archive/recovered-from-sub2api-misroute/2026-05-30/MANIFEST.md
 ```
 
-## 9. whitepapers/README.md 是否存在
+## 10. whitepapers/README.md 是否存在
 
 存在。
 
@@ -88,44 +80,44 @@ archive/recovered-from-sub2api-misroute/2026-05-30/MANIFEST.md
 whitepapers/README.md
 ```
 
-## 10. 是否允许进入 sub2api-maijian 清理
+## 11. 是否建议进入 Full Whitepaper Recovery
+
+建议进入。
+
+理由：误写素材已经完整归档到 recovery 分支，长版白皮书恢复可以基于 archive 内容继续推进。
+
+## 12. 是否建议现在清理 sub2api-maijian
 
 不建议现在清理。
 
-理由：archive 目标中仍有 1 项 `skipped_with_reason`。建议先补齐或明确确认该项不需要恢复，再由 `sub2api-maijian` 项目总控单独处理污染清理。
+`sub2api-maijian` 污染治理必须由该项目总控单独处理。本 PR 只处理 `ai-collaboration-playbook` 的 V0.2.5 Recovery，不删除、不恢复、不修改 `sub2api-maijian`。
 
-## 11. 是否允许进入 Full Whitepaper Recovery
+## 13. 本轮 commit hash
 
-暂不建议立即进入。
+本报告随 PR head commit 一起提交；准确 commit hash 见 PR head 与最终回报。
 
-建议先完成 archive 完整性收口，尤其是 `archive/recovered-from-sub2api-misroute/2026-05-30/reports/latest.md` 的处置决定。之后可进入 Full Whitepaper Recovery。
+## 14. 是否 push
 
-## 12. 本轮 commit hash
-
-本报告创建前最近一次收口提交：
+是。通过 GitHub connector 推送到分支：
 
 ```text
-3d954029a8faa9a13d1cb06d3261a6dafae68c7b
+recovery/sub2api-misroute-20260530
 ```
 
-最终 HEAD 以本轮最终只读复验结果为准。
-
-## 13. 是否 push
-
-是。通过 GitHub connector 直接写入 `main`。
-
-## 14. 禁止范围确认
+## 15. 禁止范围确认
 
 ```text
+未直接写 main。
 未进入 V0.3。
 未创建 examples/。
-未做 Claude Code 能力测试。
-未改 AI_COLLABORATION_MODE_V4.md 主链路。
-未改 templates/。
-未改 checklists/。
+未做 Claude Code 测试。
+未写 whitepaper 正文。
+未接入自动化。
+未改业务代码。
+未改敏感配置。
+未改数据库。
+未部署。
 未写 sub2api-maijian。
 未清理 sub2api-maijian。
 未处理微信公众号仓库。
-未接入自动化。
-未改业务代码。
 ```

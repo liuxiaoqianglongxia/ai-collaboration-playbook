@@ -1,35 +1,97 @@
-# latest report
+# Latest Report｜PLAYBOOK_V0_2_5_RECOVERY
+
+## 状态
+
+PLAYBOOK_V0_2_5_RECOVERY
 
 ## 结论
 
-INIT：`ai-collaboration-playbook` 已完成 A 线初始化。
+PASS
 
-## 范围
+## 摘要
 
-本次只初始化 AI 协作总规范库的基础文件结构，不做业务开发，不改任何业务项目代码，不做部署，不做 Claude Code 能力测试。
+V0.2.5 Recovery 已在独立分支完成一次性工程化收口。
 
-## 已创建内容
+本轮从错误写入仓库：
 
-- 总入口：`README.md`
-- Agent 入职手册：`AI_AGENT_ONBOARDING.md`
-- V4 稳定主规范：`AI_COLLABORATION_MODE_V4.md`
-- 新项目接入手册：`NEW_PROJECT_BOOTSTRAP.md`
-- 稳定模块目录：`modules/README.md`
-- 模板目录：`templates/README.md`
-- 检查清单目录：`checklists/README.md`
-- 实验室总纲：`lab/CODEX_AGENTIC_WORKBENCH_V0_1.md`
-- Hermes 到 Codex 翻译笔记：`lab/CODEX_HERMES_TRANSLATION_NOTES.md`
-- 五个只读实验：`lab/experiments/*.md`
+```text
+liuxiaoqianglongxia/sub2api-maijian
+```
 
-## 禁止范围确认
+的指定 commit：
 
-- 未做业务开发。
-- 未写生产自动化。
-- 未做自动部署。
-- 未把 lab 实验升级为稳定模块。
-- 未修改 `sub2api-maijian`。
-- 未修改微信公众号仓库。
+```text
+f542c0101f2a44396ee07b9f466a99607789eda5
+```
+
+批量恢复 AI 协作总规范库误写素材，并归档到正确仓库：
+
+```text
+liuxiaoqianglongxia/ai-collaboration-playbook
+```
+
+目标分支：
+
+```text
+recovery/sub2api-misroute-20260530
+```
+
+## archive 路径
+
+```text
+archive/recovered-from-sub2api-misroute/2026-05-30/
+```
+
+## MANIFEST 路径
+
+```text
+archive/recovered-from-sub2api-misroute/2026-05-30/MANIFEST.md
+```
+
+## recovery report 路径
+
+```text
+reports/recovery/sub2api-misroute-20260530.md
+```
+
+## whitepapers/README.md 路径
+
+```text
+whitepapers/README.md
+```
+
+## recovered 文件数量
+
+```text
+15
+```
+
+## missing_at_source_commit 文件数量
+
+```text
+0
+```
 
 ## 下一步建议
 
-下一步可做 B 线：清理 `sub2api-maijian` 中误写入的 AI 协作总规范库文件。但必须在单独任务中先做只读核验和误写文件清单确认，再执行删除或恢复。
+1. 进入 Full Whitepaper Recovery。
+2. `sub2api-maijian` 污染治理由该项目总控单独处理。
+3. 不进入 V0.3 examples，直到白皮书归档完成。
+
+## 禁止范围确认
+
+```text
+未直接写 main。
+未进入 V0.3。
+未创建 examples/。
+未做 Claude Code 测试。
+未写 whitepaper 正文。
+未接入自动化。
+未改业务代码。
+未改敏感配置。
+未改数据库。
+未部署。
+未写 sub2api-maijian。
+未清理 sub2api-maijian。
+未处理微信公众号仓库。
+```
