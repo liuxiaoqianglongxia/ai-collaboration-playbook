@@ -4,6 +4,8 @@
 > **Applies to**: Any project where multiple agents or humans make architectural choices.
 > **Place at**: Project root as `DECISIONS.md` or in `decisions/` directory.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize the ADR format if needed. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Every significant decision gets one ADR entry.

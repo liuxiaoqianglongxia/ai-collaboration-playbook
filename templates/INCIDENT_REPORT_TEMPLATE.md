@@ -4,6 +4,8 @@
 > **Applies to**: Any service disruption, data loss, security event, or deployment failure.
 > **Place at**: `reports/incident/` directory.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize severity levels and escalation paths. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - File one report per incident.

@@ -4,6 +4,8 @@
 > **Applies to**: Any deployed or locally running service.
 > **Place at**: Project root as `RUNBOOK.md` or in `runbooks/` directory.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and fill in service-specific details (ports, commands, health checks). The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Every service gets its own section.

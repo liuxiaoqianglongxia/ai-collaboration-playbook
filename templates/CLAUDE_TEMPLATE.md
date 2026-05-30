@@ -4,6 +4,10 @@
 > **Applies to**: Any project using Claude Code as an engineering agent.
 > **Place at**: Project root as `CLAUDE.md`.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize position, allowed/prohibited actions, and stop conditions. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
+> **CLAUDE.md Coexistence**: The `CLAUDE.md` at a business repository root is Claude Code's project-level execution instruction. This template is used to generate or update that file — it does not replace the business repository's own `CLAUDE.md`. After customization, the project's `CLAUDE.md` takes priority for Claude Code sessions in that repository.
+
 ## How to use
 
 - Claude Code automatically reads this file at session start.

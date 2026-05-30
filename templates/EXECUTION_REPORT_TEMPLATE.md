@@ -4,6 +4,8 @@
 > **Applies to**: Claude Code audits, Codex deliveries, ChatGPT acceptance checks.
 > **Place at**: `reports/` directory or project root.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and use the format as-is or adapt field names. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Fill all fields. If a field is not applicable, write "N/A" with reason.

@@ -4,6 +4,8 @@
 > **Applies to**: Any project using the four-piece AI collaboration pattern (ChatGPT + GitHub + Claude Code + Codex).
 > **Place at**: Project root as `CURRENT.md`.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize project-specific fields. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Update this file every time the project phase changes or a milestone is hit.

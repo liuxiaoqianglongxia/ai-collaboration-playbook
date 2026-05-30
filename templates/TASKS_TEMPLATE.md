@@ -4,6 +4,8 @@
 > **Applies to**: Any project using the four-piece collaboration pattern.
 > **Place at**: Project root as `TASKS.md`. Works with `CURRENT.md`.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and keep the priority structure. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Tasks are organized by priority: P0 (immediate), P1 (near-term), P2 (future).

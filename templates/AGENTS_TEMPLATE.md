@@ -4,6 +4,8 @@
 > **Applies to**: Any project using AI collaboration (2-role, 3-role, or 4-piece pattern).
 > **Place at**: Project root as `AGENTS.md`.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize role configurations, project boundaries, and prohibited actions. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Choose the role configuration that matches your team size (2-role or 3-role).

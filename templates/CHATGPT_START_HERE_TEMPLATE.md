@@ -4,6 +4,8 @@
 > **Applies to**: Any ChatGPT session (GPT-4o, o1, o3) entering this project.
 > **Place at**: Project root as `CHATGPT_START_HERE.md` or link to it from a pinned comment.
 
+> **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize the project card, read order, and task delegation examples. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
+
 ## How to use
 
 - Pin this file in the ChatGPT conversation or project instructions.
