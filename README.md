@@ -24,6 +24,22 @@
 
 项目侧应创建自己的适配层，例如 `CHATGPT_START_HERE.md`、`AGENTS.md`、`CLAUDE.md`、`CURRENT.md`、`TASKS.md`、`DECISIONS.md`、`reports/latest.md`。
 
+## templates / checklists
+
+`templates/` 和 `checklists/` 保存可复制到具体项目的任务模板、报告模板与验收清单。模板必须先适配具体项目，再写入业务仓库，不能替代项目事实源。
+
+## archive
+
+`archive/` 用于保存迁移、误写抢救、历史版本与原始材料。归档内容只作为证据和素材，不直接代表当前最新规范。
+
+当前归档入口：
+
+- `archive/recovered-from-sub2api-misroute/2026-05-30/`
+
+## whitepapers
+
+`whitepapers/` 用于保存长版研究成果、白皮书草稿和可公开文章候选稿。它不替代 README、onboarding、modules、templates、checklists。
+
 ## 实验室
 
 `lab/` 用于只读实验和方法验证。实验室内容默认不进入稳定主链路，必须先证明有效，再升级为 `modules/` 中的稳定模块。
