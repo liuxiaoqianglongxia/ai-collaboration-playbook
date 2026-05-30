@@ -166,7 +166,7 @@ V4 的核心流程是：
 
 ## 4. Codex 任务包模板
 
-```markdown
+````markdown
 # Codex Task Package｜<task-name>
 
 ## 1. 背景
@@ -228,13 +228,13 @@ secrets
 - 需要生产权限但未授权。
 - 发现密钥或数据库风险。
 - 需要跨项目写入。
-```
+````
 
 ---
 
 ## 5. Claude Code task-file 模板
 
-```markdown
+````markdown
 # Claude Code Readonly / Local Analysis Task｜<topic>
 
 ## 1. 角色
@@ -284,7 +284,7 @@ secrets
 风险
 需要 Codex 复核的点
 ```
-```
+````
 
 ---
 
@@ -372,7 +372,7 @@ BACKUP_RECORD
 
 ## 9. 部署任务包模板
 
-```markdown
+````markdown
 # Deployment Task Package｜<service>
 
 ## 1. 背景
@@ -436,7 +436,7 @@ config restore:
 - 关键接口可访问。
 - 日志无明显错误。
 - 回滚路径仍可用。
-```
+````
 
 ---
 
