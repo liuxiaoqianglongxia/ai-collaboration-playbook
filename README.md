@@ -24,6 +24,18 @@
 
 项目侧应创建自己的适配层，例如 `CHATGPT_START_HERE.md`、`AGENTS.md`、`CLAUDE.md`、`CURRENT.md`、`TASKS.md`、`DECISIONS.md`、`reports/latest.md`。
 
+## Collaboration Template Pack V1
+
+本次新增的可复用资产（详见 `feature/collaboration-template-pack-v1-20260530` 分支）：
+
+- `templates/` — 项目就绪文件模板：`CURRENT.md`、`AGENTS.md`、`CLAUDE.md`、`CHATGPT_START_HERE.md`、`DECISIONS.md`、`TASKS.md`、`RUNBOOK.md`、执行报告与事故报告模板
+- `standards/` — 共享术语表、项目状态标准、推荐仓库结构
+- `checklists/` — SSOT 漂移检查、Claude Code 安全加固清单
+- `protocols/` — GitHub 中心化 AI 协作协议、上下文注入协议、任务路由协议
+- `reports/codex/` — 模板包执行报告与合并前复核报告
+
+模板文件使用 `_TEMPLATE` 后缀。复制到业务项目后去掉后缀并填充项目特定字段。
+
 ## templates / checklists
 
 `templates/` 和 `checklists/` 保存可复制到具体项目的任务模板、报告模板与验收清单。模板必须先适配具体项目，再写入业务仓库，不能替代项目事实源。
