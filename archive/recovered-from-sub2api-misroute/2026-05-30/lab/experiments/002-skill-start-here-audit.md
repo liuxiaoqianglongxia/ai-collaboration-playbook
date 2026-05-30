@@ -1,43 +1,137 @@
-# 002-skill-start-here-audit
+# Experiment 002｜Skill Start Here Audit
 
-## 目标
+状态：实验设计  
+类型：Skill / workflow 复用实验  
+是否进入稳定主链路：否
 
-验证 Codex 是否可以对项目中的 start-here、AGENTS、CLAUDE、任务模板和技能说明做只读审计，判断它们是否足够清晰、可执行、可验收。
+---
 
-## 输入
+## 1. 目标
 
-- 项目协作入口文件。
-- 任务模板或技能说明文件。
-- 用户指定的审计问题，例如边界是否清楚、是否容易误写、是否缺少停止条件。
+验证是否能把“进入项目先读事实源”封装成可复用 skill / workflow。
 
-## 只读范围
+该实验目标不是写代码，而是让 Codex / Claude Code 在任何项目启动前，都能稳定完成：
 
-- 读取文档。
-- 检查文件之间是否矛盾。
-- 检查是否缺少目标、输入、输出、禁止事项、验收标准。
-- 输出审计报告。
+```text
+读取事实源
+识别当前状态
+识别任务边界
+识别禁止事项
+判断是否允许进入执行
+```
 
-## 禁止事项
+---
 
-- 不修改文档。
-- 不创建新模板。
-- 不运行代码。
-- 不测试 Claude Code 能力。
-- 不把审计建议直接落地。
-- 不改业务项目代码。
+## 2. 输入
 
-## 输出
+```text
+CHATGPT_START_HERE.md
+AGENTS.md
+CLAUDE.md
+CURRENT.md
+TASKS.md
+DECISIONS.md
+reports/latest.md
+reports/codex/latest.md
+reports/claude/latest.md
+```
 
-- 一份 skill / start-here 只读审计报告。
-- 报告包含：问题列表、风险等级、建议修复方向、是否建议进入执行任务包。
+---
 
-## 验收标准
+## 3. 预期 skill 名称
 
-- 能指出具体文件与具体问题。
-- 建议不越过只读边界。
-- 不把实验室建议当作已生效规则。
-- 能判断是否需要后续稳定化任务。
+```text
+start-here-audit
+```
 
-## 是否可升级为稳定模块
+描述建议：
 
-可候选升级。若多次审计都能有效降低新会话误判和任务歧义，可沉淀为稳定检查清单或模板。
+```text
+Use when an AI agent starts work in a repository and must read project facts before making changes. Do not use for direct coding without state review.
+```
+
+---
+
+## 4. 输出
+
+必须输出：
+
+```text
+当前项目
+当前分支
+当前阶段
+当前任务
+启用模块
+允许修改范围
+禁止修改范围
+风险 flags
+是否允许 coding
+建议下一步
+```
+
+---
+
+## 5. 禁止事项
+
+该 skill 默认只读。
+
+禁止：
+
+```text
+修改文件
+运行迁移
+访问 .env
+部署
+提交代码
+创建 PR
+自动更改任务状态
+```
+
+---
+
+## 6. Stop Conditions
+
+遇到以下情况必须停止：
+
+```text
+CURRENT.md 与 TASKS.md 冲突
+reports/latest.md 缺失
+任务边界不清
+涉及部署 / secrets / 数据库 / 生产配置
+当前仓库状态不明
+```
+
+---
+
+## 7. 验收标准
+
+PASS：
+
+```text
+能稳定读事实源
+能输出当前状态
+能发现缺失文件
+能判断是否允许执行
+没有修改文件
+```
+
+FAIL：
+
+```text
+未读事实源就给建议
+直接进入代码修改
+忽略禁止事项
+输出没有证据路径
+```
+
+---
+
+## 8. 升级条件
+
+如果实验稳定，未来可升级为：
+
+```text
+modules/START_HERE_AUDIT_V1.md
+```
+
+并成为新项目接入和 Codex 执行前的默认门禁。
