@@ -1,0 +1,251 @@
+path	status	extension	size_bytes	top_level_dir	initial_category	risk_flag	recommended_bucket	notes
+ARTICLE_REQUEST_TEMPLATE.md	added	md	1288	ARTICLE_REQUEST_TEMPLATE.md	doc	none	content-lab	root markdown
+ARTICLE_TYPE_ROUTER.md	added	md	10014	ARTICLE_TYPE_ROUTER.md	doc	none	content-lab	root markdown
+CONTENT_INDEX.md	added	md	2957	CONTENT_INDEX.md	doc	none	content-lab	root markdown
+COPY_PASTE_RENDER_TOOL_EVAL.md	added	md	6097	COPY_PASTE_RENDER_TOOL_EVAL.md	doc	none	content-lab	root markdown
+COVER_SINGLE_IMAGE_V2_PLAN.md	added	md	1995	COVER_SINGLE_IMAGE_V2_PLAN.md	doc	none	content-lab	root markdown
+DRACO_ORIGINAL_STYLE_RECOVERY.md	added	md	3138	DRACO_ORIGINAL_STYLE_RECOVERY.md	doc	none	content-lab	root markdown
+DRACO_STYLE_DEFAULT_V3.md	added	md	2954	DRACO_STYLE_DEFAULT_V3.md	doc	none	content-lab	root markdown
+FEISHU_REVIEW_LINK_V2_PLAN.md	added	md	2444	FEISHU_REVIEW_LINK_V2_PLAN.md	doc	none	content-lab	root markdown
+GITHUB_READER_MIRROR_V1.md	added	md	1255	GITHUB_READER_MIRROR_V1.md	doc	none	content-lab	root markdown
+HANDOFF_CONTRACT.md	added	md	5639	HANDOFF_CONTRACT.md	doc	none	content-lab	root markdown
+MAIJIAN_WECHAT_THEME_V1.md	added	md	8668	MAIJIAN_WECHAT_THEME_V1.md	doc	none	content-lab	root markdown
+MAIJIAN_WECHAT_THEME_V2_PROPOSAL.md	added	md	9327	MAIJIAN_WECHAT_THEME_V2_PROPOSAL.md	doc	none	content-lab	root markdown
+MANUAL_PUBLISH_V3_PLAN.md	added	md	3179	MANUAL_PUBLISH_V3_PLAN.md	doc	none	content-lab	root markdown
+PRODUCTION_CONSTITUTION.md	added	md	9233	PRODUCTION_CONSTITUTION.md	doc	none	content-lab	root markdown
+PUBLISHING_CALENDAR.md	added	md	1819	PUBLISHING_CALENDAR.md	doc	none	content-lab	root markdown
+PUBLISH_CONFIRMATION_CARD.md	added	md	3252	PUBLISH_CONFIRMATION_CARD.md	doc	none	content-lab	root markdown
+PUBLISH_MAP_V2_DESIGN.md	added	md	23138	PUBLISH_MAP_V2_DESIGN.md	doc	none	content-lab	root markdown
+PUBLISH_MAP_V2_VALIDATION_PLAN.md	added	md	18218	PUBLISH_MAP_V2_VALIDATION_PLAN.md	doc	none	content-lab	root markdown
+README.md	modified	md	527	README.md	doc	none	content-lab	root doc
+RELEASE_PIPELINE_V2_ROADMAP.md	added	md	3738	RELEASE_PIPELINE_V2_ROADMAP.md	doc	none	content-lab	root markdown
+SHORT_COMMAND_USAGE_V1.md	added	md	3959	SHORT_COMMAND_USAGE_V1.md	doc	none	content-lab	root markdown
+STATE.md	modified	md	601	STATE.md	doc	none	content-lab	root state doc
+VALIDATED_WORKFLOW_V1.md	added	md	4531	VALIDATED_WORKFLOW_V1.md	doc	none	content-lab	root markdown
+WECHAT_DRAFT_CANARY_V2_PLAN.md	added	md	3427	WECHAT_DRAFT_CANARY_V2_PLAN.md	doc	none	content-lab	draft article
+WECHAT_LAYOUT_STANDARD.md	added	md	5590	WECHAT_LAYOUT_STANDARD.md	doc	none	content-lab	root markdown
+WECHAT_STYLE_BENCHMARK_V1.md	added	md	7227	WECHAT_STYLE_BENCHMARK_V1.md	doc	none	content-lab	root markdown
+articles/2026-04-21-hermes-genesis-execution-roadmap.md	added	md	3838	articles	article	none	content-lab	
+articles/2026-04-21-hermes-genesis-long-series-master-plan.md	added	md	7769	articles	article	none	content-lab	
+articles/2026-04-21-hermes-genesis-season1-announcement.md	added	md	1681	articles	article	none	content-lab	season1 series
+articles/2026-04-23-mini-draft-team-test.md	added	md	3293	articles	article	none	content-lab	test script
+articles/2026-04-27-macos-word-print-without-office.md	added	md	6952	articles	article	none	content-lab	
+articles/2026-04-summer-ai-day-launch.md	added	md	4303	articles	article	none	content-lab	
+articles/2026-05-agent-truth-1.md	added	md	8984	articles	article	none	content-lab	
+articles/2026-05-agent-truth-1.md.new	added	new	9079	articles	article	temporary	content-lab	editor working copy
+articles/2026-05-agent-truth-2.md	added	md	6227	articles	article	none	content-lab	
+articles/2026-05-agent-truth-2.md.new	added	new	6297	articles	article	temporary	content-lab	editor working copy
+articles/2026-05-agent-truth-3.md	modified	md	10026	articles	article	none	content-lab	
+articles/2026-05-agent-truth-3.md.new	added	new	8790	articles	article	temporary	content-lab	editor working copy
+articles/2026-05-agent-truth-4.md	modified	md	12175	articles	article	none	content-lab	
+articles/2026-05-agent-truth-4.md.new	added	new	8305	articles	article	temporary	content-lab	editor working copy
+articles/2026-05-agent-truth-5-viral-benchmark.md	added	md	10739	articles	article	none	content-lab	
+articles/2026-05-agent-truth-5.md	modified	md	10739	articles	article	none	content-lab	
+articles/2026-05-agent-truth-5.md.bak	added	bak	10667	articles	article	temporary	content-lab	backup copy
+articles/2026-05-agent-truth-5.md.new	added	new	10667	articles	article	temporary	content-lab	editor working copy
+articles/2026-enrollment-media-plan.md	added	md	25208	articles	article	none	content-lab	
+articles/20260528-squeeze-gpt-sop.md	added	md	7309	articles	article	none	content-lab	
+articles/CodeDrop02.md	added	md	0	articles	article	none	content-lab	
+articles/EP011.md	added	md	0	articles	article	none	content-lab	
+articles/FinalBundle.md	added	md	0	articles	article	none	content-lab	
+articles/cod-drop-02.md	added	md	18400	articles	article	none	content-lab	
+articles/draft-2026-04-21-ep001-hermes-genesis-polished-short.md	added	md	6069	articles	article	none	content-lab	draft article
+articles/draft-2026-04-21-ep001-hermes-genesis-polished.md	added	md	9005	articles	article	none	content-lab	draft article
+articles/draft-2026-04-21-ep001-hermes-genesis.md	added	md	9262	articles	article	none	content-lab	draft article
+articles/draft-ai-collaboration-v4.md	added	md	5564	articles	article	none	content-lab	draft article
+articles/draft-ai-homework-cover-temp.png	added	png	4532	articles	article	none	content-lab	draft article
+articles/draft-ai-homework.before-chief-editor.md	added	md	5019	articles	article	none	content-lab	draft article
+articles/draft-ai-homework.md	added	md	5483	articles	article	none	content-lab	draft article
+articles/draft-code-drop-01-foundation.md	added	md	4115	articles	article	none	content-lab	draft article
+articles/draft-code-drop-02-workbench.md	added	md	4863	articles	article	none	content-lab	draft article
+articles/draft-code-drop-03-role-memory.md	added	md	4259	articles	article	none	content-lab	draft article
+articles/draft-ep001-hermes-genesis-v2.md	added	md	8463	articles	article	none	content-lab	draft article
+articles/draft-ep001-hermes-genesis-v3-gpt54.md	added	md	5415	articles	article	none	content-lab	draft article
+articles/draft-ep001-hermes-genesis-v4-gpt54.md	added	md	6327	articles	article	none	content-lab	draft article
+articles/draft-ep002-hermes-genesis-gpt54.md	added	md	6847	articles	article	none	content-lab	draft article
+articles/draft-ep003-hermes-genesis-gpt54.md	added	md	6463	articles	article	none	content-lab	draft article
+articles/draft-ep004-hermes-genesis-gpt54.md	added	md	6428	articles	article	none	content-lab	draft article
+articles/draft-ep005-hermes-genesis-gpt54.md	added	md	6836	articles	article	none	content-lab	draft article
+articles/draft-ep006-hermes-genesis-gpt54.md	added	md	6489	articles	article	none	content-lab	draft article
+articles/draft-ep007-hermes-genesis-gpt54.md	added	md	6157	articles	article	none	content-lab	draft article
+articles/draft-ep008-hermes-genesis-gpt54.md	added	md	6120	articles	article	none	content-lab	draft article
+articles/draft-ep009-hermes-genesis-gpt54.md	added	md	6699	articles	article	none	content-lab	draft article
+articles/draft-ep010-hermes-genesis-gpt54.md	added	md	5407	articles	article	none	content-lab	draft article
+articles/draft-ep011-hermes-genesis-gpt54.md	added	md	4832	articles	article	none	content-lab	draft article
+articles/draft-ep012-hermes-genesis-gpt54.md	added	md	8212	articles	article	none	content-lab	draft article
+articles/draft-final-bundle-season1.md	added	md	9039	articles	article	none	content-lab	draft article season1 series
+articles/draft-gpt-subscription-company.md	added	md	1276	articles	article	none	content-lab	draft article
+articles/draft-smoke-readme-not-database.md	added	md	1994	articles	article	none	content-lab	draft article
+articles/editor-plan-agent-truth-series.md	added	md	11139	articles	article	none	content-lab	
+articles/ep-011.md	added	md	5606	articles	article	none	content-lab	
+articles/feishu_agent-truth-series-broadcast.md	added	md	2439	articles	article	none	content-lab	
+articles/final-bundle.md	added	md	9205	articles	article	none	content-lab	
+articles/hermes-feishu-print-assistant.md	added	md	12034	articles	article	none	content-lab	
+articles/hermes-feishu-print-assistant.no-fm.md	added	md	11780	articles	article	none	content-lab	
+articles/hermes-genesis-ep012.md	added	md	8104	articles	article	none	content-lab	
+articles/hermes-genesis-season1/final-public-pack-article/assets/dashboard-lite-screenshot.jpg	added	jpg	265679	articles	article	large-image	content-lab	cover/asset image season1 series
+articles/hermes-genesis-season1/final-public-pack-article/final-public-pack-draft-v3-1.md	added	md	17700	articles	article	none	content-lab	draft article season1 series
+articles/hermes-series-vol5-communication.md	deleted	md	5915	articles	article	none	content-lab	
+articles/hermes-v7-collection-plan.md	modified	md	26421	articles	article	none	content-lab	
+articles/season1-announcement-final-v2.md	added	md	5160	articles	article	none	content-lab	season1 series
+articles/season1-announcement-final.md	added	md	2735	articles	article	none	content-lab	season1 series
+articles/season1-code-drop-01-foundation.md	added	md	4506	articles	article	none	content-lab	season1 series
+articles/season1-code-drop-02-workbench.md	added	md	5043	articles	article	none	content-lab	season1 series
+articles/season1-code-drop-02-workbench.png	added	png	16326	articles	article	none	content-lab	cover/asset image season1 series
+articles/season1-code-drop-03-role-memory.md	added	md	4481	articles	article	none	content-lab	season1 series
+articles/season1-ep001-v3-rewrite.md	added	md	8756	articles	article	none	content-lab	season1 series
+articles/season1-ep001.md	added	md	6584	articles	article	none	content-lab	season1 series
+articles/season1-ep002-v3-rewrite.md	added	md	8885	articles	article	none	content-lab	season1 series
+articles/season1-ep002.md	added	md	8791	articles	article	none	content-lab	season1 series
+articles/season1-ep003-v3-rewrite.md	added	md	9011	articles	article	none	content-lab	season1 series
+articles/season1-ep003.md	added	md	6406	articles	article	none	content-lab	season1 series
+articles/season1-ep004.md	added	md	6414	articles	article	none	content-lab	season1 series
+articles/season1-ep005.md	added	md	6685	articles	article	none	content-lab	season1 series
+articles/season1-ep006.md	added	md	5208	articles	article	none	content-lab	season1 series
+articles/season1-ep007.md	added	md	6010	articles	article	none	content-lab	season1 series
+articles/season1-ep008.md	added	md	5909	articles	article	none	content-lab	season1 series
+articles/season1-ep009.md	added	md	6673	articles	article	none	content-lab	season1 series
+articles/season1-ep010.md	added	md	5582	articles	article	none	content-lab	season1 series
+articles/season1-ep011.md	added	md	4618	articles	article	none	content-lab	season1 series
+articles/season1-ep011.png	added	png	10861	articles	article	none	content-lab	cover/asset image season1 series
+articles/season1-ep012-cover.png	added	png	10064	articles	article	none	content-lab	cover/asset image season1 series
+articles/season1-ep012.md	added	md	9066	articles	article	none	content-lab	season1 series
+articles/season1-ep012.md.bak_20260515_153618	added	bak_20260515_153618	7462	articles	article	temporary	content-lab	backup copy season1 series
+articles/season1-final-bundle.md	added	md	9205	articles	article	none	content-lab	season1 series
+articles/season1-final-bundle.md.bak_20260515_153618	added	bak_20260515_153618	8918	articles	article	temporary	content-lab	backup copy season1 series
+articles/season1-final-bundle.png	added	png	9917	articles	article	none	content-lab	cover/asset image season1 series
+articles/season1-rewrite-v2/	added	(directory)	72322	articles	article	none	content-lab	season1 series
+articles/season1-rewrite-v3/	added	(directory)	241522	articles	article	none	content-lab	season1 series
+articles/writer-injection-agent-truth.md	added	md	19724	articles	article	none	content-lab	
+articles/麦尖-vol1-群聊瞎忙到系统协作.md	added	md	9328	articles	article	none	content-lab	
+articles/麦尖-vol2-自动写作到SOP组合.md	added	md	13285	articles	article	none	content-lab	
+articles/麦尖-vol3-35角色在线只有一人换帽.md	added	md	11357	articles	article	none	content-lab	
+articles/麦尖-vol4-给AI装上海马体.md	added	md	13775	articles	article	none	content-lab	
+backups/	added	(directory)	809343	backups	backup	backup	local-only	snapshot backup
+canary-runs/	added	(directory)	1266251	canary-runs	canary	none	local-only	canary test artifact
+configs/	added	(directory)	443	configs	config	none	playbook	
+data/	added	(directory)	19648	data	data	none	content-lab	
+docs/2026-04-14-chief-summary.md	modified	md	3684	docs	doc	none	content-lab	
+docs/2026-04-14-plan-system-upgrade.md	modified	md	6107	docs	doc	none	content-lab	
+docs/2026-04-21-feishu-doc-index.md	added	md	6391	docs	doc	none	content-lab	
+docs/2026-04-21-historical-cutoff-serialization-plan.md	added	md	3497	docs	doc	none	content-lab	
+docs/2026-04-21-history-thickening-cron-plan.md	added	md	3640	docs	doc	none	content-lab	
+docs/2026-04-21-history-thickening-cron-prompts.md	added	md	512	docs	doc	none	content-lab	
+docs/2026-04-21-next-actions-after-archaeology.md	added	md	395	docs	doc	none	content-lab	
+docs/2026-04-21-season1-story-and-source-plan.md	added	md	16309	docs	doc	none	content-lab	season1 series
+docs/2026-04-21-self-media-operating-plan.md	added	md	2664	docs	doc	none	content-lab	
+docs/2026-04-21-source-release-channel-plan.md	added	md	2812	docs	doc	none	content-lab	
+docs/2026-04-22-layout-feishu-links.json	added	json	463	docs	doc	none	content-lab	
+docs/2026-04-22-layout-research-from-skills-and-feishu.md	added	md	5601	docs	doc	none	content-lab	
+docs/2026-04-22-season1-doc-map.json	added	json	1371	docs	doc	none	content-lab	season1 series
+docs/2026-04-22-season1-feishu-docs-generated.json	added	json	4345	docs	doc	none	content-lab	season1 series
+docs/2026-04-22-season1-release-index.md	added	md	3351	docs	doc	none	content-lab	season1 series
+docs/2026-04-22-stage-broadcast-smoke-test.md	added	md	903	docs	doc	none	content-lab	test script
+docs/2026-04-22-wechat-layout-preview-pack.md	added	md	2754	docs	doc	none	content-lab	
+docs/2026-04-22-wechat-layout-root-cause.md	added	md	3536	docs	doc	none	content-lab	
+docs/2026-04-22-wechat-layout-upgrade-plan.md	added	md	4838	docs	doc	none	content-lab	
+docs/2026-04-23-media-team-split-plan.md	added	md	8308	docs	doc	none	content-lab	
+docs/2026-04-23-role-expansion-plan.md	added	md	10328	docs	doc	none	content-lab	
+docs/2026-04-23-season1-rewrite-direction-plan.md	added	md	29969	docs	doc	none	content-lab	season1 series
+docs/2026-04-23-season1-v2-anchor-doc-links.json	added	json	1229	docs	doc	none	content-lab	season1 series
+docs/2026-04-23-season1-v2-anchor-index.md	added	md	5733	docs	doc	none	content-lab	season1 series
+docs/2026-04-23-season1-v2-doc-map.json	added	json	950	docs	doc	none	content-lab	season1 series
+docs/2026-05-18-round6-publish-chain-freeze-report.md	added	md	6371	docs	doc	none	content-lab	
+docs/progress.md	added	md	6721	docs	doc	none	content-lab	
+docs/progress.md.bak_20260511_maijian_wechat_progress_apply	added	bak_20260511_maijian_wechat_progress_apply	749	docs	doc	temporary	content-lab	backup copy
+docs/team-runtime-guide.md	added	md	1509	docs	doc	none	content-lab	
+drafts/	added	(directory)	162416	drafts	draft	none	content-lab	draft article
+feishu-doc-mapping.json	added	json	883	feishu-doc-mapping.json	unknown	none	unknown	
+inbox/	added	(directory)	11440	inbox	inbox	none	content-lab	
+knowledge/	added	(directory)	23651	knowledge	knowledge	none	content-lab	
+manual-publish-workbench/	added	(directory)	336919	manual-publish-workbench	workbench	none	local-only	
+materials-pipeline-design-v1.md	added	md	20039	materials-pipeline-design-v1.md	doc	none	content-lab	root markdown
+materials/	added	(directory)	408758	materials	material	none	content-lab	
+multi-instance-pilot/	added	(directory)	83820	multi-instance-pilot	pilot	none	local-only	
+previews/	added	(directory)	268072	previews	preview	none	local-only	
+prompts/	added	(directory)	55481	prompts	prompt	none	content-lab	
+reviews/2026-04-14-10min-file-gov-review.md	modified	md	4275	reviews	review	none	content-lab	
+reviews/2026-04-14-system-upgrade-review.md	modified	md	5639	reviews	review	none	content-lab	
+reviews/2026-04-17-draft-review.md	modified	md	4968	reviews	review	none	content-lab	draft article
+reviews/2026-04-17-norms-review-final.md	modified	md	6725	reviews	review	none	content-lab	
+reviews/2026-04-17-rewrite-review.md	modified	md	6647	reviews	review	none	content-lab	
+reviews/2026-04-17-series-review.md	modified	md	6384	reviews	review	none	content-lab	
+reviews/2026-04-21-team-readiness-audit.md	added	md	1867	reviews	review	none	content-lab	
+reviews/2026-04-22-chief-editor-dual-draft-review.md	added	md	13244	reviews	review	none	content-lab	draft article
+reviews/2026-04-22-chief-editor-final-check.md	added	md	4825	reviews	review	none	content-lab	
+reviews/2026-04-22-dual-draft-evidence-pack.md	added	md	16772	reviews	review	none	content-lab	draft article
+reviews/2026-04-22-style-greenlight-announcement-ep001.md	added	md	15632	reviews	review	none	content-lab	
+reviews/2026-04-22-wechat-layout-learning-mengjian-draco.md	added	md	11104	reviews	review	none	content-lab	
+reviews/batch-1-style-analysis.md	added	md	2719	reviews	review	none	content-lab	
+reviews/chief-editor-review-smoke-readme-not-database.md	added	md	3157	reviews	review	none	content-lab	
+reviews/daily-style-2026-04-21.md	added	md	4476	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-22.md	added	md	5718	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-23.md	added	md	5832	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-25.md	added	md	6455	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-27.md	added	md	4363	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-28.md	added	md	4685	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-29.md	added	md	5185	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-04-30.md	added	md	5366	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-01.md	added	md	6234	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-02.md	added	md	5535	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-03.md	added	md	4028	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-04.md	added	md	4815	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-05.md	added	md	5172	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-06.md	added	md	3886	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-08.md	added	md	5411	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-09.md	added	md	3539	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-10.md	added	md	4592	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-11.md	added	md	2683	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-12.md	added	md	4239	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-13.md	added	md	5807	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-15.md	added	md	1212	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-16.md	added	md	4158	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-19.md	added	md	3656	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-20.md	added	md	5467	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-23.md	added	md	5626	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-24.md	added	md	4886	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-25.md	added	md	6075	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-26.md	added	md	5156	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-27.md	added	md	5813	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-28.md	added	md	7261	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-29.md	added	md	5921	reviews	review	none	content-lab	daily style log
+reviews/daily-style-2026-05-30.md	added	md	4318	reviews	review	none	content-lab	daily style log
+reviews/layout-check-smoke-readme-not-database.md	added	md	652	reviews	review	none	content-lab	
+reviews/style-greenlight-smoke-readme-not-database.md	added	md	489	reviews	review	none	content-lab	
+reviews/system-fact-sheet.md	added	md	2073	reviews	review	none	content-lab	
+reviews/tech-materials-2026-05-16-one-person-one-team.md	added	md	14818	reviews	review	none	content-lab	
+reviews/tech-materials-ep001.md	added	md	12638	reviews	review	none	content-lab	
+reviews/tech-materials-ep002-ep005-batch.md	added	md	30824	reviews	review	none	content-lab	
+reviews/tech-materials-ep006-ep009-batch.md	added	md	35017	reviews	review	none	content-lab	
+reviews/tech-materials-ep010-ep012-batch.md	added	md	35829	reviews	review	none	content-lab	
+reviews/tech-materials-smoke-readme-not-database.md	added	md	1752	reviews	review	none	content-lab	
+scripts/build_wechat_copy_workbench.py	modified	py	36232	scripts	script	none	playbook	
+scripts/preflight_article_publish.py	added	py	13994	scripts	script	none	playbook	test script
+scripts/preflight_canary_fast.py	added	py	9855	scripts	script	none	playbook	test script
+scripts/preflight_cover_single.py	added	py	7621	scripts	script	none	playbook	test script
+scripts/preflight_publish_bundle.py	added	py	4844	scripts	script	none	playbook	test script
+scripts/preflight_release_v2_offline.py	added	py	8143	scripts	script	none	playbook	test script
+scripts/run_canary_fast_preflight_tests.sh	added	sh	512	scripts	script	none	playbook	test script
+scripts/run_cover_single_tests.sh	added	sh	708	scripts	script	none	playbook	test script
+scripts/run_manual_publish_tool_eval.sh	added	sh	1478	scripts	script	none	playbook	
+scripts/run_publish_bundle_tests.sh	added	sh	567	scripts	script	none	playbook	test script
+scripts/run_publish_map_validation_tests.sh	added	sh	391	scripts	script	none	playbook	test script
+scripts/run_publish_preflight_tests.sh	added	sh	684	scripts	script	none	playbook	test script
+scripts/run_release_v2_offline_tests.sh	added	sh	366	scripts	script	none	playbook	test script
+scripts/run_wechat_copy_workbench.sh	added	sh	1392	scripts	script	none	playbook	
+scripts/test_preflight_article_publish.py	added	py	5156	scripts	script	none	playbook	test script
+scripts/test_preflight_canary_fast.py	added	py	5233	scripts	script	none	playbook	test script
+scripts/test_preflight_cover_single.py	added	py	4190	scripts	script	none	playbook	test script
+scripts/test_preflight_publish_bundle.py	added	py	4349	scripts	script	none	playbook	test script
+scripts/test_preflight_release_v2_offline.py	added	py	1550	scripts	script	none	playbook	test script
+scripts/test_validate_publish_map.py	added	py	6516	scripts	script	none	playbook	test script
+scripts/validate_publish_map.py	added	py	15469	scripts	script	none	playbook	
+visuals/2026-04-22-season1-cover-prompts-batch-a.md	added	md	16858	visuals	visual	none	content-lab	season1 series
+visuals/2026-04-22-season1-cover-prompts-batch-b.md	added	md	14023	visuals	visual	none	content-lab	season1 series
+visuals/2026-04-22-season1-cover-prompts-batch-c.md	added	md	13273	visuals	visual	none	content-lab	season1 series
+visuals/2026-04-22-season1-cover-prompts-index.md	added	md	623	visuals	visual	none	content-lab	season1 series
+visuals/2026-04-launch-images.md	added	md	2884	visuals	visual	none	content-lab	
+visuals/2026-05-agent-series-prompts.md	added	md	7389	visuals	visual	none	content-lab	
+visuals/generated-covers/	added	(directory)	203293	visuals	visual	none	content-lab	
+wechat-drafts-rich/	added	(directory)	652429	wechat-drafts-rich	draft	none	private-repo	
+wechat-drafts/	added	(directory)	590475	wechat-drafts	draft	none	private-repo	
