@@ -12,8 +12,8 @@ The V1.1 task-package registry candidate files were added on an independent bran
 - Branch: `docs/task-package-registry-v1-1`
 - Base branch: `origin/main`
 - Base HEAD: `9a4c9c3398b9379ef16b522b92c25f4ce249212c`
-- Final HEAD: pending final push
-- PR: pending creation
+- Final HEAD: see final branch head after PR link backfill
+- PR: https://github.com/liuxiaoqianglongxia/ai-collaboration-playbook/pull/6
 
 ## 3. Files Read
 
