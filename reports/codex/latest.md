@@ -1,4 +1,4 @@
-# Latest Codex Report｜PLAYBOOK-V1.1-MERGE-CLOSEOUT-V1
+# Latest Codex Report｜PLAYBOOK-V1.1-LOCAL-VALIDATION-V1
 
 状态：PASS
 
@@ -9,12 +9,12 @@ PASS
 ## 最新报告
 
 ```text
-reports/codex/playbook-v1-1-merge-closeout-v1.md
+reports/codex/playbook-v1-1-local-validation-v1.md
 ```
 
 ## 摘要
 
-PR #6 已在 ChatGPT 独立验收 PASS 后通过普通 merge commit 合并到 `main`。`reports/latest.md` 已从 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1_CANDIDATE / PARTIAL PASS` 收口为 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS`。
+已执行 `tasks/codex/latest.md` 指向的 `PLAYBOOK-V1.1-LOCAL-VALIDATION-V1`。本地验证确认 V1.1 operational cleanup 状态一致，`reports/latest.md` 仍为 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS`，Claude latest 已清空，Codex latest 已在本轮完成后清空为 `none / NO_ACTIVE_CODEX_TASK`。
 
 ## 禁止范围确认
 
@@ -22,7 +22,7 @@ PR #6 已在 ChatGPT 独立验收 PASS 后通过普通 merge commit 合并到 `m
 未改业务项目。
 未处理 sub2api-maijian。
 未修改 AI_COLLABORATION_MODE_V4.md。
-未修改 lab/、archive/、whitepapers/。
+未修改 lab/、archive/、whitepapers/、modules/。
 未接入自动化。
 未部署。
 未改数据库。
