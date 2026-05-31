@@ -20,6 +20,7 @@ V0.2.6 Full Whitepaper Recovery: PASS
 Collaboration Template Pack V1: PASS
 Execution Environment Ownership: PASS
 TASK-PACKAGE-REGISTRY-V1.1: CANDIDATE / READY_FOR_REVIEW
+PLAYBOOK-V1.1-DOGFOOD-AND-ROLLOUT-PREFLIGHT-V1: READY_FOR_REVIEW
 ```
 
 ## V1.1 候选内容
@@ -32,6 +33,10 @@ templates/reports/chatgpt/task-packages/
 checklists/TASK_PACKAGE_REGISTRY_REVIEW.md
 reports/chatgpt/task-packages/TASK-PACKAGE-REGISTRY-V1-1.md
 reports/codex/task-package-registry-v1-1.md
+tasks/
+reports/claude/
+rollouts/TASK_PACKAGE_REGISTRY_ROLLOUT_WAVE1.md
+reports/codex/playbook-v1-1-dogfood-and-rollout-preflight-v1.md
 ```
 
 ## 结论说明

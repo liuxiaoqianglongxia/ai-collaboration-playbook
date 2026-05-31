@@ -56,6 +56,8 @@ Claude Code 是本地工程增强工具，适合承担深度代码分析、调�
 
 Codex 和 Claude Code 不得从聊天历史推断当前任务。存在 registry 时，任务包必须以 GitHub 文件为准；如果 registry 指针与 `CURRENT.md`、`TASKS.md` 或 `reports/latest.md` 冲突，应停止并报告 `BLOCKED`。
 
+有 `tasks/` 的项目中，Codex 必须从 `tasks/codex/latest.md` 读取任务，Claude Code 必须从 `tasks/claude/latest.md` 读取任务。
+
 如果这些文件不存在，第一轮任务应先建立协作底座，而不是直接开始业务开发。
 
 ## 四、报告要求

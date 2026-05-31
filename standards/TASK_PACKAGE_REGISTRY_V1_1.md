@@ -43,6 +43,20 @@ Task packages must be GitHub files before execution.
 
 ChatGPT writes and updates task packages. Codex and Claude Code read the assigned task package from the relevant registry pointer. No agent should infer execution scope from chat history when a project registry exists.
 
+## Dogfooding Requirement
+
+The playbook repository should use its own `tasks/` registry for V1.1 follow-up tasks.
+
+A stable registry standard should not only provide copyable templates. It should be supported by:
+
+- at least one real project canary;
+- one playbook self-dogfood task;
+- a Codex latest pointer for closeout work;
+- a Claude Code latest pointer for read-only review work;
+- reports that show the registry can be executed without replacing V4.
+
+Claude Code must receive read-only review tasks through `tasks/claude/latest.md`, not through ad hoc chat instructions.
+
 ## Required Project Structure
 
 Projects that adopt V1.1 should add this copyable structure:

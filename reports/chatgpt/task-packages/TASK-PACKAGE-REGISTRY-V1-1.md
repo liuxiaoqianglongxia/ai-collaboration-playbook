@@ -75,3 +75,19 @@ Unseparable local changes.
 ## Next Plan
 
 ChatGPT should perform independent read-only PR review. If accepted, a separate merge and closeout task can promote the candidate to stable V1.1.
+
+## Dogfood Supplement
+
+`PLAYBOOK-V1.1-DOGFOOD-AND-ROLLOUT-PREFLIGHT-V1` extends PR #6 so the playbook repository uses the registry it defines:
+
+```text
+tasks/README.md
+tasks/codex/latest.md
+tasks/codex/PLAYBOOK-V1.1-MERGE-CLOSEOUT-V1.md
+tasks/claude/latest.md
+tasks/claude/PLAYBOOK-PR6-READONLY-REVIEW-V1.md
+reports/claude/latest.md
+rollouts/TASK_PACKAGE_REGISTRY_ROLLOUT_WAVE1.md
+```
+
+This supplement does not merge PR #6. It prepares the review path: Claude Code read-only review first, then ChatGPT independent acceptance, then a separate Codex merge closeout only after explicit PASS.

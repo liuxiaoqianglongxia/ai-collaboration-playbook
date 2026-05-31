@@ -48,6 +48,8 @@ V1.1 候选层只补充项目级任务包注册表，让持续协作项目可以
 
 它不接入自动化，不改变 V4，不新增默认协作成员，也不替代 `CURRENT.md`、`TASKS.md`、`reports/latest.md` 等项目事实源。
 
+PR #6 已开始在本仓库自身 dogfood `tasks/` 注册表，用于后续 Claude Code 只读复审和 Codex merge closeout 入口。
+
 ## templates / checklists
 
 `templates/` 和 `checklists/` 保存可复制到具体项目的任务模板、报告模板与验收清单。模板必须先适配具体项目，再写入业务仓库，不能替代项目事实源。
