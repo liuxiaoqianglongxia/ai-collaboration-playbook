@@ -50,13 +50,53 @@ The user believes Claude Code is still underused.
 
 Current V1.1 correctly keeps Claude Code out of the default final-integrator role, but the Pro review should check whether the playbook is too conservative in practice.
 
-The target is not to make Claude Code a fifth default member. The target is to make Claude Code genuinely useful inside the active Codex task when it can improve depth, while still keeping:
+The important correction is:
+
+```text
+Claude Code is not only a reviewer.
+Claude Code can also perform bounded coding work, local edits, draft fixes, debugging, refactors, and implementation subtasks.
+Codex should not waste quota doing every task if Claude Code can safely do the first-pass work.
+Codex should be reserved for final integration, hard failures, full validation, PR ownership, and tasks Claude Code cannot safely complete.
+```
+
+The target is not to make Claude Code a fifth default member. The target is to make Claude Code a real execution-support worker inside the active execution lane, while still keeping:
 
 ```text
 ChatGPT: controller and acceptance
-Codex: final integrator and report owner
-Claude Code: deep engineering assistant / reviewer / local draft generator
+Codex: final integrator, verifier, PR/report owner, hard-problem executor
+Claude Code: deep engineering assistant, bounded implementation worker, local draft generator, reviewer
 GitHub: fact source
+```
+
+## Claude Code Value-Maximization Question
+
+Pro should not only ask whether Claude Code is safe. Pro should ask how to maximize Claude Code value without losing control.
+
+Core question:
+
+```text
+How should the system route work so Claude Code handles as much safe engineering work as possible, while Codex only handles final integration, validation, PR/report ownership, and tasks Claude Code cannot do well?
+```
+
+Potential routing idea to evaluate:
+
+```text
+Claude Code first-pass worker:
+- bounded local code edits;
+- small bugfix drafts;
+- isolated file changes;
+- test failure analysis and patch proposal;
+- refactor draft inside an explicit file list;
+- implementation alternatives for Codex to choose from.
+
+Codex final integrator:
+- verify repository state;
+- review Claude-generated diff;
+- reject or normalize unsafe changes;
+- run tests;
+- commit / push / PR;
+- write reports/codex/latest.md;
+- escalate to ChatGPT when blocked.
 ```
 
 ## Specific Claude Code Review Questions
@@ -65,15 +105,17 @@ Pro should answer these directly:
 
 ```text
 1. Is Claude Code coordination in V1.1 too passive?
-2. Should every medium-risk Codex task include an optional Claude Code review gate?
-3. Should complex bugfixes, multi-file refactors, failed tests, or architecture-risk tasks default to Codex-coordinated Claude Code review?
-4. What exact task package fields should trigger Claude Code?
-5. Should tasks/claude/latest.md be used more often, or should Codex invoke Claude Code directly and only summarize evidence?
-6. What is the safest stable pattern for non-interactive Claude Code invocation from Codex?
-7. What remains experimental because it needs TTY, human confirmation, auth setup, or unsafe permissions?
-8. How should Claude Code output be recorded so ChatGPT can verify it without reading huge local logs?
-9. How can the system use Claude Code more without making the user copy long Claude prompts?
-10. What minimum examples should be added to templates so future projects actually use Claude Code?
+2. Should medium-risk tasks default to a Claude Code first-pass implementation or analysis before Codex spends heavy effort?
+3. Which work should be Claude-first, Codex-final?
+4. Should complex bugfixes, multi-file refactors, failed tests, or architecture-risk tasks default to Codex-coordinated Claude Code work?
+5. What exact task package fields should trigger Claude Code as reviewer vs implementer?
+6. Should tasks/claude/latest.md be used more often, or should Codex invoke Claude Code directly and only summarize evidence?
+7. What is the safest stable pattern for non-interactive Claude Code invocation from Codex?
+8. When is Claude Code allowed to write files, and how must Codex verify those writes?
+9. What remains experimental because it needs TTY, human confirmation, auth setup, broad permissions, or unsafe tools?
+10. How should Claude Code output be recorded so ChatGPT can verify it without reading huge local logs?
+11. How can the system use Claude Code more without making the user copy long Claude prompts?
+12. What minimum examples should be added to templates so future projects actually use Claude Code as a worker, not only a reviewer?
 ```
 
 ## Sources Pro Should Research
@@ -138,6 +180,7 @@ read-only review
 architecture review
 complex bug analysis
 high-risk diff review
+bounded implementation drafts when a durable task/report is required
 ```
 
 Weakness:
@@ -172,7 +215,7 @@ Requires Claude Code installed/authenticated locally.
 Must avoid broad tools, unsafe permissions, or hidden writes.
 ```
 
-### Pattern C: Codex invokes Claude Code with restricted tools
+### Pattern C: Codex invokes Claude Code with restricted read tools
 
 ```text
 claude -p --tools "Read,Grep,Glob" --max-turns <small-number> <bounded-review-prompt>
@@ -193,7 +236,65 @@ Needs reliable permission/tool syntax across environments.
 Should be validated before stabilizing.
 ```
 
-### Pattern D: Interactive Claude Code session
+### Pattern D: Claude Code bounded implementation worker
+
+```text
+Codex verifies active task and allowed scope.
+Codex creates a bounded Claude Code implementation prompt with explicit file list, forbidden paths, stop conditions, and expected diff/report.
+Claude Code performs a first-pass implementation or patch draft.
+Codex reviews the working tree diff.
+Codex runs tests and validation.
+Codex either accepts, modifies, rejects, or escalates the Claude Code work.
+Codex owns the final commit, PR, and reports/codex/latest.md.
+```
+
+Best for:
+
+```text
+small bug fixes
+localized frontend/backend changes
+copy/paste mechanical edits
+low-risk refactor drafts
+writing tests suggested by Codex
+fixing obvious lint/type/test failures
+preparing alternate implementations for Codex to choose from
+```
+
+Required boundaries:
+
+```text
+Claude Code must receive explicit allowed files or directories.
+Claude Code must not modify secrets, deployment, production, database, or unrelated files.
+Claude Code should not push, merge, or own PR status.
+Codex must inspect the diff before commit.
+Codex must run validation appropriate to the task.
+ChatGPT accepts only from GitHub facts and Codex report.
+```
+
+### Pattern E: Claude Code patch-file worker
+
+```text
+Claude Code writes a patch file or implementation notes instead of editing the repository directly.
+Codex applies, edits, or rejects the patch.
+```
+
+Best for:
+
+```text
+when write permissions are risky
+when Claude Code is useful but should not touch the working tree
+when comparing multiple approaches
+when preserving a clear review boundary
+```
+
+Weakness:
+
+```text
+More manual integration for Codex.
+Less efficient than direct local edits for simple tasks.
+```
+
+### Pattern F: Interactive Claude Code session
 
 ```text
 Codex starts or coordinates an interactive Claude Code session.
@@ -212,9 +313,25 @@ Weakness:
 
 ```text
 TTY/human-permission dependence.
-Harder to standardize as default.
-Not suitable as hidden automation unless separately proven.
+Harder to standardize as hidden automation.
+Not suitable as default unless separately proven.
 ```
+
+## Draft Routing Matrix For Pro To Evaluate
+
+```text
+Task type                              Preferred first worker            Final owner
+Safe doc/task/report update             ChatGPT if GitHub write exists     ChatGPT
+Small localized code change              Claude Code or Codex               Codex
+Mechanical multi-file edit               Claude Code first-pass              Codex
+Test failure investigation               Claude Code analysis                Codex
+Complex bugfix                           Claude Code analysis + draft         Codex
+Architecture-risk refactor               Claude Code review/draft             Codex
+Full integration / PR                    Codex                               Codex
+Production / deployment / DB / secrets   Separate high-risk task              Codex + ChatGPT acceptance
+```
+
+Pro should decide whether this routing is correct, too aggressive, or still too conservative.
 
 ## OpenClaw / Hermes Comparison Questions
 
@@ -227,6 +344,8 @@ Pro should specifically investigate whether OpenClaw / Hermes skill design sugge
 4. Local script wrappers that make tool calls repeatable.
 5. Capability manifests that prevent every prompt from restating the same boundary.
 6. Security checks for third-party or community skills.
+7. Skill-level allowed write paths for Claude Code implementation subtasks.
+8. Standard skill templates for implementation, review, debugging, and report writing.
 ```
 
 Important boundary:
@@ -236,6 +355,7 @@ Do not copy OpenClaw / Hermes architecture wholesale.
 Extract only stable patterns that improve V1.1.
 Keep V4 four-piece model unchanged.
 Do not turn Hermes / OpenClaw / skills into default members.
+Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Codex final integration.
 ```
 
 ## Questions For Pro Reasoning
@@ -248,13 +368,16 @@ Do not turn Hermes / OpenClaw / skills into default members.
 6. Are there contradictions between `reports/latest.md`, latest pointers, and the standards?
 7. What should be removed before freezing Personal Details and Custom Instructions?
 8. Is Claude Code underused in the current stable workflow?
-9. What exact, safe default triggers should route medium-risk tasks into Claude Code support?
-10. Should the playbook add a stable `CLAUDE_CODE_INVOCATION_PATTERNS_V1` doc, or keep invocation examples in templates only?
+9. What exact, safe default triggers should route suitable tasks into Claude Code support?
+10. Should Claude Code be allowed to perform bounded implementation work by default for low/medium-risk tasks?
+11. How should Codex verify Claude Code edits before owning the final commit/PR?
+12. Should the playbook add a stable `CLAUDE_CODE_INVOCATION_PATTERNS_V1` doc, or keep invocation examples in templates only?
 
 ## Known Uncertainties
 
 - Future project rollout may reveal project-specific exceptions.
 - Claude Code interactive coordination can require TTY and human permission handling; only non-interactive no-tools smoke was verified in the last task.
+- Claude Code write-capable workflows need stronger validation than read-only review workflows.
 - Claude Code CLI and settings features can change, so Pro should verify current official docs before recommending a stable invocation pattern.
 - Qwen, Hermes, MCP, heartbeat, automation, and subagents remain optional or experimental unless a project fact source authorizes them.
 - Pro should check whether the candidate personalization is too project-management-heavy for everyday ChatGPT use.
@@ -282,7 +405,9 @@ The playbook is stable enough to freeze Personal Details and Custom Instructions
 5. optional tools remain project-specific, not default.
 6. user daily workflow remains short: goal -> GitHub-backed task -> Codex report -> ChatGPT acceptance.
 7. Claude Code has a practical route to be used often enough on suitable tasks without burdening the user.
-8. OpenClaw / Hermes / skill-style patterns are considered for routing and repeatability, but only stable, safe patterns are promoted.
+8. Claude Code can perform bounded implementation work where safe, not just review.
+9. Codex remains final integrator and verifier for Claude Code work.
+10. OpenClaw / Hermes / skill-style patterns are considered for routing and repeatability, but only stable, safe patterns are promoted.
 ```
 
 ## Expected Output From Pro
@@ -293,7 +418,9 @@ The playbook is stable enough to freeze Personal Details and Custom Instructions
 3. Claude Code utilization verdict: sufficient / underused / overcomplicated / unsafe.
 4. Recommended stable Claude Code triggers.
 5. Recommended Codex -> Claude Code invocation patterns.
-6. Which OpenClaw / Hermes / skill-style ideas should be adopted, deferred, or rejected.
-7. Minimal required edits before freeze, if any.
-8. Final copyable Personal Details and Custom Instructions.
+6. Recommended Claude Code implementation-worker boundaries.
+7. Which tasks should be Claude-first and which must remain Codex-first.
+8. Which OpenClaw / Hermes / skill-style ideas should be adopted, deferred, or rejected.
+9. Minimal required edits before freeze, if any.
+10. Final copyable Personal Details and Custom Instructions.
 ```
