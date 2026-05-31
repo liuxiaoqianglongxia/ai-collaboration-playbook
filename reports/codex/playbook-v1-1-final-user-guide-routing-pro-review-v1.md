@@ -9,7 +9,7 @@ PASS
 - Repo: `liuxiaoqianglongxia/ai-collaboration-playbook`
 - Branch: `docs/playbook-v1-1-final-user-guide-routing-pro-review-v1`
 - HEAD: `a7988512b89e1472042f003b4931f161036d015a` before this task branch commit
-- PR: pending branch push / controller review
+- PR: `#8 docs: add final V1.1 user guide and routing review prep`
 
 ## 3. User-Facing Result
 
@@ -209,4 +209,4 @@ The personalization file remains a candidate and should be accepted or revised b
 
 ## 14. Next Step
 
-Open a PR from `docs/playbook-v1-1-final-user-guide-routing-pro-review-v1` to `main` for ChatGPT/controller review. Do not merge without explicit authorization.
+PR #8 is open for ChatGPT/controller review. Do not merge without explicit authorization.
