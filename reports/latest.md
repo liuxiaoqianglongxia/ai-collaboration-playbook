@@ -25,6 +25,9 @@ Claude Code Read-only Review: PARTIAL PASS accepted as candidate-gate evidence
 ChatGPT Independent Acceptance: PASS
 PR #6 Merge Closeout: PASS
 V1.1 Operational Cleanup: PASS
+Execution Lane Management: PASS
+Claude Code Coordination: PASS
+User-Facing Task Announcement: PASS
 ```
 
 ## 当前稳定入口
@@ -35,7 +38,10 @@ README.md
 AI_AGENT_ONBOARDING.md
 AI_COLLABORATION_MODE_V4.md
 standards/TASK_PACKAGE_REGISTRY_V1_1.md
+standards/EXECUTION_LANE_MANAGEMENT_V1.md
+standards/CLAUDE_CODE_COORDINATION_V1.md
 protocols/GITHUB_AI_COLLABORATION.md
+templates/USER_FACING_TASK_ANNOUNCEMENT.md
 ```
 
 ## 当前任务指针
@@ -62,6 +68,15 @@ tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
 ChatGPT 可直接安全完成：事实源读取、文档修正、任务包落库、latest 指针、验收、轻量报告。
 Codex 负责：本地命令、代码修改、测试、集成、PR、执行报告。
 Claude Code 负责：深度代码分析、局部修复草案、复审，由 Codex 或任务指针编排。
+```
+
+执行通道规则：
+
+```text
+One stage has one active execution lane.
+Default: one active Codex task at a time.
+If Claude Code is needed, Codex coordinates it inside the active Codex task.
+New findings become candidate next steps until the current task closes.
 ```
 
 如果 ChatGPT 当前没有 GitHub 写权限，必须明确说明，不能声称已写入 GitHub。

@@ -1,5 +1,16 @@
 # Claude Code Task Package Template
 
+## 0. Execution Lane Summary
+
+```text
+parent_codex_task: <path-or-none>
+claude_lane_status: ACTIVE_CLAUDE_TASK / NO_ACTIVE_CLAUDE_TASK
+coordination_mode: bounded support inside the active Codex task
+final_integrator: Codex
+```
+
+Claude Code does not replace Codex as final integrator.
+
 ## 1. Task Name
 
 ```text
@@ -37,6 +48,7 @@ List files, directories, commands, environments, and actions Claude Code must no
 3. Perform only the requested review or analysis.
 4. Validate findings against the fact source.
 5. Write a report or return findings in the requested format.
+6. Leave final integration, commits, PRs, deployment, and final project status to Codex and ChatGPT.
 
 ## 8. Validation
 
@@ -57,7 +69,7 @@ Next step:
 
 ## 10. Stop Conditions
 
-Stop and report `BLOCKED` when repository identity, branch, fact source, allowed scope, or safety boundary cannot be verified.
+Stop and report `BLOCKED` when repository identity, branch, fact source, parent Codex task, allowed scope, or safety boundary cannot be verified.
 
 ## 11. Next Step
 

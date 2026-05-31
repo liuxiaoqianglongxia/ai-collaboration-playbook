@@ -1,4 +1,4 @@
-# Latest Codex Report｜PLAYBOOK-V1.1-LOCAL-VALIDATION-V1
+# Latest Codex Report｜PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1
 
 状态：PASS
 
@@ -9,12 +9,12 @@ PASS
 ## 最新报告
 
 ```text
-reports/codex/playbook-v1-1-local-validation-v1.md
+reports/codex/playbook-v1-1-execution-lane-and-claude-stabilization-v1.md
 ```
 
 ## 摘要
 
-已执行 `tasks/codex/latest.md` 指向的 `PLAYBOOK-V1.1-LOCAL-VALIDATION-V1`。本地验证确认 V1.1 operational cleanup 状态一致，`reports/latest.md` 仍为 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS`，Claude latest 已清空，Codex latest 已在本轮完成后清空为 `none / NO_ACTIVE_CODEX_TASK`。
+已执行 `tasks/codex/latest.md` 指向的 `PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1`。本轮新增执行通道管理、Claude Code 协同边界和用户短任务公告模板；更新任务模板与检查清单；`reports/latest.md` 仍为 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS`；Codex latest 已清空为 `none / NO_ACTIVE_CODEX_TASK`，Claude latest 保持 `none / NO_ACTIVE_CLAUDE_TASK`。
 
 ## 禁止范围确认
 

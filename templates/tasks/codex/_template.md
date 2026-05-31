@@ -1,5 +1,18 @@
 # Codex Task Package Template
 
+## 0. User-Facing Summary
+
+```text
+任务：<TASK-ID>
+能实现：
+- <one concrete outcome>
+- <one concrete outcome>
+- <one concrete outcome>
+不做：<key boundary>
+你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+详情：任务包已在 GitHub。
+```
+
 ## 1. Task Name
 
 ```text
@@ -22,15 +35,38 @@ base_commit: <sha-or-unknown>
 
 List the GitHub fact-source files that define the current state.
 
-## 5. Allowed Scope
+## 5. Execution Lane Status
+
+```text
+current_codex_lane: ACTIVE_CODEX_TASK / NO_ACTIVE_CODEX_TASK
+current_claude_lane: ACTIVE_CLAUDE_TASK / NO_ACTIVE_CLAUDE_TASK
+one_active_execution_lane: required
+new_findings_policy: record as candidate next steps unless this task explicitly authorizes scope update
+```
+
+Stop if another active Codex task already exists for the same stage and is not this task.
+
+## 6. Claude Code Coordination
+
+```text
+claude_code_allowed: yes / no
+claude_code_required: yes / no
+claude_code_forbidden: yes / no
+coordination_mode: Codex coordinates inside this active Codex task
+final_integrator: Codex
+```
+
+Claude Code does not replace Codex as final integrator. Claude Code output is evidence, not direct merge, deploy, or final-status authority.
+
+## 7. Allowed Scope
 
 List files, directories, commands, or environments Codex may use.
 
-## 6. Forbidden Scope
+## 8. Forbidden Scope
 
 List files, directories, commands, environments, and actions Codex must not touch.
 
-## 7. Required Work
+## 9. Required Work
 
 1. Verify repository identity and branch.
 2. Read required fact-source files.
@@ -39,11 +75,11 @@ List files, directories, commands, environments, and actions Codex must not touc
 5. Write a report.
 6. Prepare a PR if requested.
 
-## 8. Validation
+## 10. Validation
 
 List required checks, tests, inspections, or read-only verifications.
 
-## 9. Report Format
+## 11. Report Format
 
 ```text
 Conclusion: PASS / PARTIAL PASS / FAIL / BLOCKED
@@ -55,10 +91,10 @@ Forbidden scope confirmation:
 Next step:
 ```
 
-## 10. Stop Conditions
+## 12. Stop Conditions
 
-Stop and report `BLOCKED` when repository identity, branch, fact source, allowed scope, or safety boundary cannot be verified.
+Stop and report `BLOCKED` when repository identity, branch, fact source, allowed scope, execution lane state, or safety boundary cannot be verified.
 
-## 11. Next Step
+## 13. Next Step
 
 State what should happen after PASS, PARTIAL PASS, FAIL, or BLOCKED.

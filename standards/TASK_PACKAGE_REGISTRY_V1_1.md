@@ -32,6 +32,14 @@ Historical candidate reports remain as evidence, but active sessions must treat 
 
 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1` adds a task-package registry layer on top of V1. It does not invalidate the existing onboarding, template, report, checklist, or execution-environment ownership standards.
 
+The registry is now paired with:
+
+```text
+standards/EXECUTION_LANE_MANAGEMENT_V1.md
+standards/CLAUDE_CODE_COORDINATION_V1.md
+templates/USER_FACING_TASK_ANNOUNCEMENT.md
+```
+
 ## Relationship to AI_COLLABORATION_MODE_V4
 
 This standard does not replace `AI_COLLABORATION_MODE_V4.md`.
@@ -78,6 +86,39 @@ Codex executes the current task entry.
 Claude Code is coordinated only when useful.
 ChatGPT validates from GitHub.
 ```
+
+## One Active Execution Lane
+
+One project stage should have one active execution lane.
+
+Default rule:
+
+```text
+one active Codex task at a time
+```
+
+If `tasks/codex/latest.md` is `ACTIVE_CODEX_TASK`, ChatGPT must not create another active Codex task for the same stage. New findings become candidate next steps until the current task reports `PASS`, `PARTIAL PASS`, `FAIL`, or `BLOCKED`.
+
+Claude Code may be coordinated inside the active Codex task, but it is not a separate default execution lane and does not replace Codex as final integrator.
+
+While waiting for an active task, ChatGPT may read status, explain scope, or prepare an acceptance checklist. It must not activate new execution work for the same stage.
+
+## User-Facing Task Announcement
+
+When a GitHub-backed Codex task exists, ChatGPT should give the user a short announcement instead of pasting the full task package by default:
+
+```text
+任务：<TASK-ID>
+能实现：
+- <one concrete outcome>
+- <one concrete outcome>
+- <one concrete outcome>
+不做：<key boundary>
+你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+详情：任务包已在 GitHub。
+```
+
+Do not claim the task package is in GitHub unless it actually exists in the repository.
 
 ## GitHub Write Capability Boundary
 
@@ -162,6 +203,7 @@ Rules:
 - Codex must read the pointed task file before modifying project files.
 - Codex remains responsible for the final diff, validation, report, branch, and PR.
 - Codex must not treat chat text as a replacement for a GitHub task file.
+- A stage must not have a second active Codex task while the current latest pointer is `ACTIVE_CODEX_TASK`.
 
 ## Claude Code Task Registry
 
@@ -174,6 +216,7 @@ Rules:
 - Claude Code must stay within the task's allowed read/write boundary.
 - Claude Code does not replace Codex as final integrator.
 - Users should not be asked to manually relay long Claude Code task packages when Codex can coordinate the local toolchain.
+- Claude Code outputs are evidence for Codex and ChatGPT to review, not direct authority to merge, deploy, or change final status.
 
 ## ChatGPT Task Package Snapshot Archive
 

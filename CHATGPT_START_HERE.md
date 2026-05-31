@@ -19,7 +19,10 @@ README.md
 AI_AGENT_ONBOARDING.md
 AI_COLLABORATION_MODE_V4.md
 standards/TASK_PACKAGE_REGISTRY_V1_1.md
+standards/EXECUTION_LANE_MANAGEMENT_V1.md
+standards/CLAUDE_CODE_COORDINATION_V1.md
 protocols/GITHUB_AI_COLLABORATION.md
+templates/USER_FACING_TASK_ANNOUNCEMENT.md
 tasks/codex/latest.md
 tasks/claude/latest.md
 reports/codex/latest.md
@@ -42,6 +45,14 @@ The target is:
 ```
 
 Do not simplify by weakening capability. Simplify the user layer. Keep the execution and traceability layers strong behind the scenes.
+
+Execution lane rule:
+
+```text
+One stage has one active execution lane.
+Default: one active Codex task at a time.
+If Claude Code is needed, Codex coordinates it inside the active Codex task.
+```
 
 ## Role Model
 
