@@ -3,13 +3,13 @@
 Current task package:
 
 ```text
-none
+tasks/codex/PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1.md
 ```
 
 Current execution status:
 
 ```text
-NO_ACTIVE_CODEX_TASK
+ACTIVE_CODEX_TASK
 ```
 
 Rules:
