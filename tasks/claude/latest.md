@@ -3,13 +3,13 @@
 Current task package:
 
 ```text
-tasks/claude/PLAYBOOK-PR6-READONLY-REVIEW-V1.md
+tasks/claude/PLAYBOOK-V1.1-OPERATIONAL-CLEANUP-V1.md
 ```
 
 Current execution status:
 
 ```text
-ACTIVE_CLAUDE_TASK
+NO_ACTIVE_CLAUDE_TASK
 ```
 
 Rules:
@@ -19,3 +19,15 @@ Rules:
 - Claude Code must not infer tasks from chat history.
 - Claude Code remains read-only unless a task explicitly allows a narrow report write.
 - Claude Code does not replace Codex as final integrator.
+
+Previous completed task:
+
+```text
+tasks/claude/PLAYBOOK-PR6-READONLY-REVIEW-V1.md
+```
+
+Previous report:
+
+```text
+reports/claude/playbook-pr6-readonly-review-v1.md
+```
