@@ -24,6 +24,9 @@ templates/CODEX_TASK_PACKAGE.md
 templates/CODEX_EXECUTION_REPORT.md
 templates/CHATGPT_ACCEPTANCE_REPORT.md
 templates/CLAUDE_CODE_READONLY_ANALYSIS_TASK.md
+templates/TASK_PACKAGE_REGISTRY_BOOTSTRAP_TASK.md
+templates/tasks/
+templates/reports/chatgpt/task-packages/
 ```
 
 ## 使用建议
@@ -31,5 +34,7 @@ templates/CLAUDE_CODE_READONLY_ANALYSIS_TASK.md
 新项目第一轮优先使用 `PROJECT_BOOTSTRAP_TASK.md` 建协作底座。
 
 进入工程执行时，ChatGPT 先用 `CODEX_TASK_PACKAGE.md` 生成任务包；Codex 执行后用 `CODEX_EXECUTION_REPORT.md` 写回报告；ChatGPT 再用 `CHATGPT_ACCEPTANCE_REPORT.md` 验收。
+
+如果项目需要持续多轮 Codex / Claude Code 协作，可以使用 `TASK_PACKAGE_REGISTRY_BOOTSTRAP_TASK.md` 和 `templates/tasks/` 建立项目级任务包注册表。模板必须先适配具体项目，再写入业务仓库。
 
 涉及 Claude Code 时，只能把 `CLAUDE_CODE_READONLY_ANALYSIS_TASK.md` 作为只读分析任务模板，不把它当成能力测试或自动执行入口。
