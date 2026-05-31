@@ -36,6 +36,20 @@
 
 模板文件使用 `_TEMPLATE` 后缀。复制到业务项目后去掉后缀并填充项目特定字段。
 
+## PLAYBOOK_OPERATIONAL_BASELINE_V1.1 Candidate
+
+V1 仍是当前稳定主链路，四件套分工不变。
+
+V1.1 候选层只补充项目级任务包注册表，让持续协作项目可以在 GitHub 中维护当前 Codex / Claude Code 任务入口：
+
+- `tasks/codex/latest.md`
+- `tasks/claude/latest.md`
+- `reports/chatgpt/task-packages/`
+
+它不接入自动化，不改变 V4，不新增默认协作成员，也不替代 `CURRENT.md`、`TASKS.md`、`reports/latest.md` 等项目事实源。
+
+PR #6 已开始在本仓库自身 dogfood `tasks/` 注册表，用于后续 Claude Code 只读复审和 Codex merge closeout 入口。
+
 ## templates / checklists
 
 `templates/` 和 `checklists/` 保存可复制到具体项目的任务模板、报告模板与验收清单。模板必须先适配具体项目，再写入业务仓库，不能替代项目事实源。

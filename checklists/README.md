@@ -23,6 +23,7 @@ checklists/CODEX_BEFORE_EXECUTION_CHECK.md
 checklists/CODEX_BEFORE_COMMIT_CHECK.md
 checklists/CHATGPT_ACCEPTANCE_CHECK.md
 checklists/PRODUCTION_SAFETY_CHECK.md
+checklists/TASK_PACKAGE_REGISTRY_REVIEW.md
 ```
 
 ## 使用建议
@@ -34,3 +35,5 @@ Codex 执行前使用 `CODEX_BEFORE_EXECUTION_CHECK.md`，提交前使用 `CODEX
 ChatGPT 验收时使用 `CHATGPT_ACCEPTANCE_CHECK.md`。
 
 涉及生产、部署、数据库、密钥、端口、服务重启时，必须额外使用 `PRODUCTION_SAFETY_CHECK.md`。
+
+验收项目级任务包注册表和 latest 指针时，使用 `TASK_PACKAGE_REGISTRY_REVIEW.md`。

@@ -31,9 +31,12 @@ GitHub holds the authoritative state through these files:
 |------|---------|---------------|
 | `CURRENT.md` | Project state card | Phase change, milestone hit, risk identified |
 | `TASKS.md` | Task list | Task created, completed, blocked |
+| `tasks/codex/latest.md` | Current Codex task pointer | ChatGPT assigns or clears Codex task package |
+| `tasks/claude/latest.md` | Current Claude Code task pointer | ChatGPT assigns or clears Claude Code task package |
 | `DECISIONS.md` | Decision log | Architecture choice made, alternative rejected |
 | `AGENTS.md` | Role rules | Team composition changes |
 | `reports/` | Execution reports | Agent completes a task |
+| `reports/chatgpt/task-packages/` | ChatGPT task package and acceptance snapshots | Task package issued or accepted |
 | Source code | Application logic | Code changes committed and reviewed |
 
 ## How Claude Code Generates Local Reports
@@ -51,12 +54,16 @@ Report format follows the Execution Report Template.
 
 Codex is the delivery lead that turns plans into shipped code:
 
-1. **Receive** task packages from ChatGPT via `TASKS.md`.
+1. **Receive** task packages from ChatGPT via `TASKS.md` and, when present, `tasks/codex/latest.md`.
 2. **Execute** the task: apply fixes, run tests, verify.
 3. **Commit** with clear messages following project conventions.
 4. **Push** to a feature branch.
 5. **Create PR** with description linking to relevant reports.
 6. **Report** delivery results to `reports/codex/latest.md`.
+
+`TASKS.md` records task status and queue. `tasks/codex/latest.md` is the current Codex task entry point. `tasks/claude/latest.md` is the current Claude Code task entry point. `reports/chatgpt/task-packages/` stores ChatGPT task package snapshots and acceptance records.
+
+If these files conflict, stop execution and resolve against `CURRENT.md`, `reports/latest.md`, and ChatGPT acceptance evidence before continuing.
 
 ## How to Use Branches for Tasks
 

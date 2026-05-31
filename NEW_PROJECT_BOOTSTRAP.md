@@ -40,6 +40,25 @@ reports/claude/latest.md
 orchestration/
 ```
 
+V1.1 任务包注册表增强结构：
+
+```text
+tasks/README.md
+tasks/codex/_template.md
+tasks/codex/latest.md
+tasks/claude/_template.md
+tasks/claude/latest.md
+reports/chatgpt/task-packages/README.md
+```
+
+第一轮仍只建协作底座，不做业务开发。如果项目准备进入持续 Codex / Claude Code 协作，可以在第一轮作为增强项补齐 registry，也可以在 bootstrap PASS 后单独补齐。
+
+bootstrap PASS 后，可追加独立接入任务：
+
+```text
+PROJECT-TASK-PACKAGE-REGISTRY-ADOPTION-V1
+```
+
 ## 三、各文件职责
 
 ### CHATGPT_START_HERE.md
