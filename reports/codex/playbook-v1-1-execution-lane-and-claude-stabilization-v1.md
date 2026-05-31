@@ -9,7 +9,7 @@ PASS
 - Repo: `liuxiaoqianglongxia/ai-collaboration-playbook`
 - Branch: `docs/playbook-v1-1-execution-lane-claude-stabilization-v1`
 - HEAD: `8f30b87992befb68e9f8801d26d5d8861fa50eda` before this task branch commit
-- PR: pending branch push / controller review
+- PR: `#7 docs: stabilize execution lane and Claude coordination`
 
 ## 3. User-Facing Result
 
@@ -156,4 +156,4 @@ None for this stabilization task.
 
 ## 12. Next Step
 
-Open a PR from `docs/playbook-v1-1-execution-lane-claude-stabilization-v1` to `main` for ChatGPT/controller review. Do not merge the PR without explicit authorization.
+PR #7 is open for ChatGPT/controller review. Do not merge the PR without explicit authorization.
