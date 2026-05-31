@@ -1,0 +1,251 @@
+source_path	source_bucket	asset_type	score	routing_decision	target_repo	target_path_proposed	requires_redaction	requires_human_review	prohibited_to_ingest	notes
+ARTICLE_REQUEST_TEMPLATE.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+ARTICLE_TYPE_ROUTER.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+CONTENT_INDEX.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+COPY_PASTE_RENDER_TOOL_EVAL.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+COVER_SINGLE_IMAGE_V2_PLAN.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+DRACO_ORIGINAL_STYLE_RECOVERY.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+DRACO_STYLE_DEFAULT_V3.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+FEISHU_REVIEW_LINK_V2_PLAN.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+GITHUB_READER_MIRROR_V1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+HANDOFF_CONTRACT.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+MAIJIAN_WECHAT_THEME_V1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+MAIJIAN_WECHAT_THEME_V2_PROPOSAL.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+MANUAL_PUBLISH_V3_PLAN.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+PRODUCTION_CONSTITUTION.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+PUBLISHING_CALENDAR.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+PUBLISH_CONFIRMATION_CARD.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+PUBLISH_MAP_V2_DESIGN.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+PUBLISH_MAP_V2_VALIDATION_PLAN.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+README.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	yes	no	root doc
+RELEASE_PIPELINE_V2_ROADMAP.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+SHORT_COMMAND_USAGE_V1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+STATE.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	yes	no	root state doc
+VALIDATED_WORKFLOW_V1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+WECHAT_DRAFT_CANARY_V2_PLAN.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	draft article
+WECHAT_LAYOUT_STANDARD.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+WECHAT_STYLE_BENCHMARK_V1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+articles/2026-04-21-hermes-genesis-execution-roadmap.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-04-21-hermes-genesis-long-series-master-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-04-21-hermes-genesis-season1-announcement.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/2026-04-23-mini-draft-team-test.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	test script
+articles/2026-04-27-macos-word-print-without-office.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-04-summer-ai-day-launch.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-05-agent-truth-1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-05-agent-truth-1.md.new	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	editor working copy
+articles/2026-05-agent-truth-2.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-05-agent-truth-2.md.new	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	editor working copy
+articles/2026-05-agent-truth-3.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	yes	no	
+articles/2026-05-agent-truth-3.md.new	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	editor working copy
+articles/2026-05-agent-truth-4.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	yes	no	
+articles/2026-05-agent-truth-4.md.new	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	editor working copy
+articles/2026-05-agent-truth-5-viral-benchmark.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/2026-05-agent-truth-5.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	yes	no	
+articles/2026-05-agent-truth-5.md.bak	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	backup copy
+articles/2026-05-agent-truth-5.md.new	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	editor working copy
+articles/2026-enrollment-media-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/20260528-squeeze-gpt-sop.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/CodeDrop02.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/EP011.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/FinalBundle.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/cod-drop-02.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/draft-2026-04-21-ep001-hermes-genesis-polished-short.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-2026-04-21-ep001-hermes-genesis-polished.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-2026-04-21-ep001-hermes-genesis.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ai-collaboration-v4.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ai-homework-cover-temp.png	content-lab	image	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ai-homework.before-chief-editor.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ai-homework.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-code-drop-01-foundation.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-code-drop-02-workbench.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-code-drop-03-role-memory.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep001-hermes-genesis-v2.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep001-hermes-genesis-v3-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep001-hermes-genesis-v4-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep002-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep003-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep004-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep005-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep006-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep007-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep008-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep009-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep010-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep011-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-ep012-hermes-genesis-gpt54.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-final-bundle-season1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article season1 series
+articles/draft-gpt-subscription-company.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/draft-smoke-readme-not-database.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article
+articles/editor-plan-agent-truth-series.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/ep-011.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/feishu_agent-truth-series-broadcast.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/final-bundle.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/hermes-feishu-print-assistant.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/hermes-feishu-print-assistant.no-fm.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/hermes-genesis-ep012.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/hermes-genesis-season1/final-public-pack-article/assets/dashboard-lite-screenshot.jpg	content-lab	image	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	yes	no	cover/asset image season1 series
+articles/hermes-genesis-season1/final-public-pack-article/final-public-pack-draft-v3-1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	draft article season1 series
+articles/hermes-series-vol5-communication.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/hermes-v7-collection-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	yes	no	
+articles/season1-announcement-final-v2.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-announcement-final.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-code-drop-01-foundation.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-code-drop-02-workbench.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-code-drop-02-workbench.png	content-lab	image	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	cover/asset image season1 series
+articles/season1-code-drop-03-role-memory.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep001-v3-rewrite.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep001.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep002-v3-rewrite.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep002.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep003-v3-rewrite.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep003.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep004.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep005.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep006.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep007.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep008.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep009.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep010.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep011.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep011.png	content-lab	image	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	cover/asset image season1 series
+articles/season1-ep012-cover.png	content-lab	image	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	cover/asset image season1 series
+articles/season1-ep012.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-ep012.md.bak_20260515_153618	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	backup copy season1 series
+articles/season1-final-bundle.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-final-bundle.md.bak_20260515_153618	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	backup copy season1 series
+articles/season1-final-bundle.png	content-lab	image	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	cover/asset image season1 series
+articles/season1-rewrite-v2/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/season1-rewrite-v3/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	season1 series
+articles/writer-injection-agent-truth.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/麦尖-vol1-群聊瞎忙到系统协作.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/麦尖-vol2-自动写作到SOP组合.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/麦尖-vol3-35角色在线只有一人换帽.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+articles/麦尖-vol4-给AI装上海马体.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/article/	no	no	no	
+backups/	local-only	other	10-14	local-only	local-only	local-only/backup/	no	yes	yes	snapshot backup
+canary-runs/	local-only	other	10-14	local-only	local-only	local-only/canary/	no	no	no	canary test artifact
+configs/	playbook	other	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/config/	no	no	no	
+data/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/data/	no	no	no	
+docs/2026-04-14-chief-summary.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	yes	no	
+docs/2026-04-14-plan-system-upgrade.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	yes	no	
+docs/2026-04-21-feishu-doc-index.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-21-historical-cutoff-serialization-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-21-history-thickening-cron-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-21-history-thickening-cron-prompts.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-21-next-actions-after-archaeology.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-21-season1-story-and-source-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-21-self-media-operating-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-21-source-release-channel-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-22-layout-feishu-links.json	content-lab	payload	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-22-layout-research-from-skills-and-feishu.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-22-season1-doc-map.json	content-lab	payload	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-22-season1-feishu-docs-generated.json	content-lab	payload	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-22-season1-release-index.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-22-stage-broadcast-smoke-test.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	test script
+docs/2026-04-22-wechat-layout-preview-pack.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-22-wechat-layout-root-cause.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-22-wechat-layout-upgrade-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-23-media-team-split-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-23-role-expansion-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/2026-04-23-season1-rewrite-direction-plan.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-23-season1-v2-anchor-doc-links.json	content-lab	payload	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-23-season1-v2-anchor-index.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-04-23-season1-v2-doc-map.json	content-lab	payload	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	season1 series
+docs/2026-05-18-round6-publish-chain-freeze-report.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/progress.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+docs/progress.md.bak_20260511_maijian_wechat_progress_apply	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	backup copy
+docs/team-runtime-guide.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	
+drafts/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/draft/	no	no	no	draft article
+feishu-doc-mapping.json	unknown	payload	unknown	needs-review	needs-review	needs-review/unknown/	no	no	no	
+inbox/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/inbox/	no	no	no	
+knowledge/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/knowledge/	no	no	no	
+manual-publish-workbench/	local-only	other	10-14	local-only	local-only	local-only/workbench/	no	no	no	
+materials-pipeline-design-v1.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/doc/	no	no	no	root markdown
+materials/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/material/	no	no	no	
+multi-instance-pilot/	local-only	other	10-14	local-only	local-only	local-only/pilot/	no	no	no	
+previews/	local-only	other	10-14	local-only	local-only	local-only/preview/	no	no	no	
+prompts/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/prompt/	no	no	no	
+reviews/2026-04-14-10min-file-gov-review.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	yes	no	
+reviews/2026-04-14-system-upgrade-review.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	yes	no	
+reviews/2026-04-17-draft-review.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	yes	no	draft article
+reviews/2026-04-17-norms-review-final.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	yes	no	
+reviews/2026-04-17-rewrite-review.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	yes	no	
+reviews/2026-04-17-series-review.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	yes	no	
+reviews/2026-04-21-team-readiness-audit.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/2026-04-22-chief-editor-dual-draft-review.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	draft article
+reviews/2026-04-22-chief-editor-final-check.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/2026-04-22-dual-draft-evidence-pack.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	draft article
+reviews/2026-04-22-style-greenlight-announcement-ep001.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/2026-04-22-wechat-layout-learning-mengjian-draco.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/batch-1-style-analysis.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/chief-editor-review-smoke-readme-not-database.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/daily-style-2026-04-21.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-22.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-23.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-25.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-27.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-28.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-29.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-04-30.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-01.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-02.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-03.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-04.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-05.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-06.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-08.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-09.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-10.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-11.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-12.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-13.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-15.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-16.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-19.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-20.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-23.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-24.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-25.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-26.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-27.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-28.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-29.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/daily-style-2026-05-30.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	daily style log
+reviews/layout-check-smoke-readme-not-database.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/style-greenlight-smoke-readme-not-database.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/system-fact-sheet.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/tech-materials-2026-05-16-one-person-one-team.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/tech-materials-ep001.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/tech-materials-ep002-ep005-batch.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/tech-materials-ep006-ep009-batch.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/tech-materials-ep010-ep012-batch.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+reviews/tech-materials-smoke-readme-not-database.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/review/	no	no	no	
+scripts/build_wechat_copy_workbench.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	yes	no	
+scripts/preflight_article_publish.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/preflight_canary_fast.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/preflight_cover_single.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/preflight_publish_bundle.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/preflight_release_v2_offline.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_canary_fast_preflight_tests.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_cover_single_tests.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_manual_publish_tool_eval.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	
+scripts/run_publish_bundle_tests.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_publish_map_validation_tests.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_publish_preflight_tests.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_release_v2_offline_tests.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/run_wechat_copy_workbench.sh	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	
+scripts/test_preflight_article_publish.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/test_preflight_canary_fast.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/test_preflight_cover_single.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/test_preflight_publish_bundle.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/test_preflight_release_v2_offline.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/test_validate_publish_map.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	test script
+scripts/validate_publish_map.py	playbook	script	unknown	extract-methodology	ai-collaboration-playbook	ai-collaboration-playbook/script/	no	no	no	
+visuals/2026-04-22-season1-cover-prompts-batch-a.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	season1 series
+visuals/2026-04-22-season1-cover-prompts-batch-b.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	season1 series
+visuals/2026-04-22-season1-cover-prompts-batch-c.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	season1 series
+visuals/2026-04-22-season1-cover-prompts-index.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	season1 series
+visuals/2026-04-launch-images.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	
+visuals/2026-05-agent-series-prompts.md	content-lab	article	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	
+visuals/generated-covers/	content-lab	other	20-25	enter-content-lab	maijian-wechat-content-lab	maijian-wechat-content-lab/visual/	no	no	no	
+wechat-drafts-rich/	private-repo	other	15-19	stay-private-repo	maijian-wechat-private-repo	maijian-wechat-private-repo/draft/	no	no	no	
+wechat-drafts/	private-repo	other	15-19	stay-private-repo	maijian-wechat-private-repo	maijian-wechat-private-repo/draft/	no	no	no	
