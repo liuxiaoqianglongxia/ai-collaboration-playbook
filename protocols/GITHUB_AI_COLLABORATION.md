@@ -1,95 +1,194 @@
 # GitHub AI Collaboration Protocol
 
-> **Purpose**: Define how ChatGPT, GitHub, Claude Code, and Codex collaborate using GitHub as the central hub.
-> **Version**: 1.0
+> **Purpose**: Define how ChatGPT, GitHub, Codex, and Claude Code collaborate using GitHub as the central hub without making GitHub maintenance the user's daily burden.
+> **Version**: 1.1
 > **Maintained in**: `ai-collaboration-playbook/protocols/GITHUB_AI_COLLABORATION.md`
 
 ---
 
-## The Four-Piece Model
+## 1. Four-Piece Model
 
 | Role | Agent | Metaphor | Core Responsibility |
-|------|-------|----------|-------------------|
-| Total Control | ChatGPT | Brain | Communication, judgment, task packages, acceptance |
-| Memory | GitHub | Memory | Save facts, tasks, reports, decisions, code |
-| Delivery Lead | Codex | Hands | Task scheduling, integration, PR, delivery reports |
-| Engineering Muscle | Claude Code | Muscle | Code exploration, draft, failure analysis, review |
+|------|-------|----------|---------------------|
+| Total Control | ChatGPT | Brain | Communication, judgment, task packages, acceptance, lightweight GitHub writes when available |
+| Fact Source | GitHub | Memory | Save facts, tasks, reports, decisions, code, acceptance evidence |
+| Delivery Lead | Codex | Hands | Local execution, integration, tests, PR, delivery reports |
+| Engineering Muscle | Claude Code | Muscle | Code exploration, draft fixes, failure analysis, review |
 
-## How ChatGPT Reads GitHub
+V1.1 does not add a fifth default member. Hermes, Qwen, MCP, automation, heartbeat, and subagents are optional project-specific tools only.
 
-1. **Read `CURRENT.md` first** — understand project state before any judgment.
-2. **Read `TASKS.md`** — know what work is open and who owns it.
-3. **Read `DECISIONS.md`** — understand past decisions and their reasoning.
-4. **Read relevant source files** — only the files needed for the current task.
-5. **Never act on chat history alone** — if it's not in GitHub, it doesn't exist.
+## 2. Design Goal
 
-## How GitHub Serves as Fact Source
+The user-facing layer must stay simple:
+
+```text
+使用层极简
+执行层清楚
+留痕层完整
+风险层兜底
+```
+
+The user should be able to say a short goal. The system behind it may be complex, but the complexity belongs to ChatGPT, GitHub, Codex, Claude Code, and project files.
+
+## 3. How ChatGPT Uses GitHub
+
+ChatGPT should read GitHub before judging current project status:
+
+1. Read `CHATGPT_START_HERE.md` when present.
+2. Read `CURRENT.md` when present.
+3. Read `TASKS.md` when present.
+4. Read `DECISIONS.md` when present.
+5. Read `reports/latest.md`.
+6. If V1.1 registry exists, read `tasks/codex/latest.md`, `tasks/claude/latest.md`, `reports/codex/latest.md`, and `reports/claude/latest.md`.
+7. Read only the source files relevant to the task.
+
+Never act on chat history alone when repository facts are needed.
+
+## 4. How GitHub Serves as Fact Source
 
 GitHub holds the authoritative state through these files:
 
 | File | Purpose | Update Trigger |
-|------|---------|---------------|
-| `CURRENT.md` | Project state card | Phase change, milestone hit, risk identified |
-| `TASKS.md` | Task list | Task created, completed, blocked |
+|------|---------|----------------|
+| `CHATGPT_START_HERE.md` | New-session entry | Project onboarding or major status shift |
+| `CURRENT.md` | Project state card | Phase change, milestone, risk identified |
+| `TASKS.md` | Task list and lifecycle | Task created, completed, blocked |
 | `tasks/codex/latest.md` | Current Codex task pointer | ChatGPT assigns or clears Codex task package |
 | `tasks/claude/latest.md` | Current Claude Code task pointer | ChatGPT assigns or clears Claude Code task package |
 | `DECISIONS.md` | Decision log | Architecture choice made, alternative rejected |
-| `AGENTS.md` | Role rules | Team composition changes |
-| `reports/` | Execution reports | Agent completes a task |
-| `reports/chatgpt/task-packages/` | ChatGPT task package and acceptance snapshots | Task package issued or accepted |
+| `AGENTS.md` | Execution rules | Team composition, repo commands, safety boundary |
+| `CLAUDE.md` | Claude Code boundary | Local review or analysis mode changes |
+| `reports/latest.md` | Latest project-level result | Execution or acceptance closes out |
+| `reports/codex/latest.md` | Latest Codex result | Codex completes work |
+| `reports/claude/latest.md` | Latest Claude Code result | Claude Code completes review or analysis |
+| `reports/chatgpt/task-packages/` | ChatGPT task and acceptance snapshots | Task package or acceptance issued |
 | Source code | Application logic | Code changes committed and reviewed |
 
-## How Claude Code Generates Local Reports
+GitHub is the source of truth, but the user should not be forced to operate every detail manually.
 
-Claude Code operates locally and produces reports that feed back to GitHub:
+## 5. ChatGPT Direct-Work Rule
 
-1. **Explore**: Read files, understand code, identify issues.
-2. **Analyze**: Compare actual state against expected behavior.
-3. **Report**: Write findings to `reports/claude/latest.md` or a dated report.
-4. **Recommend**: Suggest fixes but do not apply them without authorization.
+ChatGPT is not merely a dispatcher.
 
-Report format follows the Execution Report Template.
+If the current ChatGPT session has GitHub write access and the work is safe, ChatGPT may directly:
 
-## How Codex Integrates
+```text
+update documentation
+write task packages
+update latest pointers
+write acceptance snapshots
+update lightweight reports
+revise PR descriptions
+perform read-only acceptance
+```
 
-Codex is the delivery lead that turns plans into shipped code:
+ChatGPT should not hand these tasks to Codex merely to prove that Codex exists.
 
-1. **Receive** task packages from ChatGPT via `TASKS.md` and, when present, `tasks/codex/latest.md`.
-2. **Execute** the task: apply fixes, run tests, verify.
-3. **Commit** with clear messages following project conventions.
-4. **Push** to a feature branch.
-5. **Create PR** with description linking to relevant reports.
-6. **Report** delivery results to `reports/codex/latest.md`.
+If the current ChatGPT session does not have GitHub write access, ChatGPT must say so clearly and must not claim that a task package or report has been written to GitHub.
 
-`TASKS.md` records task status and queue. `tasks/codex/latest.md` is the current Codex task entry point. `tasks/claude/latest.md` is the current Claude Code task entry point. `reports/chatgpt/task-packages/` stores ChatGPT task package snapshots and acceptance records.
+## 6. Codex Execution Rule
 
-If these files conflict, stop execution and resolve against `CURRENT.md`, `reports/latest.md`, and ChatGPT acceptance evidence before continuing.
+Codex is the delivery lead that turns assigned tasks into integrated results:
 
-## How to Use Branches for Tasks
+1. Receive task packages from `tasks/codex/latest.md` when the registry exists.
+2. Verify repository identity, branch, and allowed scope.
+3. Execute the task: apply fixes, run tests, verify.
+4. Use Claude Code or other local tools only within task boundaries.
+5. Commit with clear messages following project conventions.
+6. Push to a feature branch or prepare the requested diff.
+7. Create PR when required.
+8. Report delivery results to `reports/codex/latest.md`.
+
+Codex should not infer scope from chat when a GitHub task package exists.
+
+## 7. Claude Code Coordination Rule
+
+Claude Code is a local engineering enhancement tool. It should be used when it adds real value:
+
+```text
+deep code reading
+call-chain analysis
+complex bug localization
+local fix drafts
+review or second opinion
+```
+
+Claude Code does not replace Codex as final integrator.
+
+Users should not be asked to manually relay long Claude Code tasks when Codex can coordinate Claude Code through `tasks/claude/latest.md`.
+
+## 8. Risk-Based Routing
+
+Light task:
+
+```text
+ChatGPT may directly update docs, task packages, pointers, reports, or acceptance notes.
+```
+
+Normal engineering task:
+
+```text
+ChatGPT writes the task package.
+Codex executes and reports.
+ChatGPT accepts.
+```
+
+Medium-risk task:
+
+```text
+Codex may coordinate Claude Code for review, failure analysis, or local fix drafts.
+```
+
+High-risk task:
+
+```text
+Production, deployment, database, secrets, data deletion, force push, service restart, automation publish chain.
+Must use a separate safety task package and explicit user authorization.
+```
+
+## 9. Branches and PRs
 
 | Scenario | Branch Pattern | Notes |
-|----------|---------------|-------|
-| Small fix | `fix/short-description` | Direct PR to main |
+|----------|----------------|-------|
+| Small doc fix by ChatGPT | direct or `docs/...` | Direct write is acceptable only when low risk and allowed by user/context |
+| Small code fix | `fix/short-description` | PR preferred |
 | Feature | `feature/feature-name` | May require multiple PRs |
 | Audit | `audit/audit-type-date` | Read-only, no code changes |
 | Experiment | `experiment/experiment-name` | High risk, clear labeling |
 | Emergency | `hotfix/issue-description` | Fast track, minimal scope |
 
-## How to Use PRs and Reports for Traceability
+Do not force push unless explicitly authorized.
+
+## 10. PR and Report Traceability
 
 Every significant change should be traceable:
 
-1. **Task** in `TASKS.md` → **Branch** created → **PR** opened → **Report** written.
-2. PR description should reference the task ID and link to relevant Claude Code reports.
-3. Acceptance criteria from the task must be verifiable from the PR.
-4. If a task is blocked, the reason should be in `TASKS.md` AND in the PR comments.
+1. Task in `TASKS.md` or `tasks/*/latest.md`.
+2. Branch or direct commit according to risk.
+3. PR when appropriate.
+4. Report written.
+5. ChatGPT acceptance from GitHub facts.
 
-## How to Prevent Copy-Paste Chaos
+If a task is blocked, the reason should appear in the relevant task/report files, not only in chat.
 
-The #1 failure mode in AI collaboration is relying on chat history instead of GitHub:
+## 11. Preventing Copy-Paste Chaos
 
-1. **No state in chat**: If project state changes, update GitHub files — don't just tell the agent in chat.
-2. **No code in chat**: If code changes, commit to a branch — don't paste diffs in chat.
-3. **No decisions in chat**: If a decision is made, record in `DECISIONS.md` — don't just agree in chat.
-4. **New session = fresh read**: Every new ChatGPT session must re-read GitHub files from scratch.
-5. **Chat is for direction, not facts**: Use chat to say "do X" — not to describe what X should do in detail when `TASKS.md` already exists.
+The main failure mode is relying on chat history instead of GitHub:
+
+1. No state in chat only: if project state changes, update GitHub files.
+2. No code in chat only: if code changes, commit or create a PR.
+3. No decisions in chat only: record key decisions in `DECISIONS.md`.
+4. New session means fresh read from GitHub.
+5. Chat is for direction and judgment; GitHub is for durable facts.
+
+But the reverse failure also matters: do not turn GitHub into busywork for the user.
+
+The correct balance is:
+
+```text
+User: short goal / short approval / short review.
+ChatGPT: reads, judges, writes lightweight facts, validates.
+Codex: executes heavy local work and reports.
+Claude Code: supports deep local engineering when useful.
+GitHub: keeps the durable state.
+```
