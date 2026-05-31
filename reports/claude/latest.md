@@ -9,7 +9,9 @@ reports/claude/playbook-pr6-readonly-review-v1.md
 Current status:
 
 ```text
-PENDING_CLAUDE_REVIEW
+PARTIAL PASS
 ```
 
-Claude Code should write its review report here or update this pointer after generating the named report.
+## Summary
+
+Claude Code completed the PR #6 read-only review. Structural checks passed; the conclusion is `PARTIAL PASS` only because PR #6 remains a candidate pending independent ChatGPT acceptance.
