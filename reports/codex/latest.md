@@ -1,4 +1,4 @@
-# Latest Codex Report｜PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1
+# Latest Codex Report｜PLAYBOOK-V1.1-FINAL-USER-GUIDE-ROUTING-PRO-REVIEW-V1
 
 状态：PASS
 
@@ -9,12 +9,12 @@ PASS
 ## 最新报告
 
 ```text
-reports/codex/playbook-v1-1-execution-lane-and-claude-stabilization-v1.md
+reports/codex/playbook-v1-1-final-user-guide-routing-pro-review-v1.md
 ```
 
 ## 摘要
 
-已执行 `tasks/codex/latest.md` 指向的 `PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1`。本轮新增执行通道管理、Claude Code 协同边界和用户短任务公告模板；更新任务模板与检查清单；`reports/latest.md` 仍为 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS`；Codex latest 已清空为 `none / NO_ACTIVE_CODEX_TASK`，Claude latest 保持 `none / NO_ACTIVE_CLAUDE_TASK`。
+已执行 `tasks/codex/latest.md` 指向的 `PLAYBOOK-V1.1-FINAL-USER-GUIDE-ROUTING-PRO-REVIEW-V1`。本轮新增用户使用说明、路由与扩展标准、项目路由模板、Pro review 入口和 Personalization 候选内容；完成 Codex / Claude Code 协同方式研究；`reports/latest.md` 仍为 `PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS`；Codex latest 已清空为 `none / NO_ACTIVE_CODEX_TASK`，Claude latest 保持 `none / NO_ACTIVE_CLAUDE_TASK`。
 
 ## 禁止范围确认
 

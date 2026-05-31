@@ -13,6 +13,12 @@ reports/latest.md: PASS
 
 V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。当前入口以 `reports/latest.md` 为准。
 
+日常使用先读：
+
+- `guides/USER_OPERATING_GUIDE_V1.md`
+- `CHATGPT_START_HERE.md`
+- `reports/latest.md`
+
 ## 稳定主链路
 
 当前稳定主链路是 `AI_COLLABORATION_MODE_V4.md`，四件套分工不变：
@@ -104,6 +110,10 @@ V1.1 追加两条稳定执行规则：
 ```text
 执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
 ```
+
+跨项目路由和扩展规则见 `standards/ROUTING_AND_EXTENSIBILITY_V1.md`。项目接入时可从 `templates/PROJECT_ROUTING_PROFILE.md` 生成项目自己的路由配置。
+
+ChatGPT Pro 深度复核入口见 `reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md`。个性化候选内容见 `reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md`，该文件是候选，不是最终个人设置。
 
 ## 新项目接入
 

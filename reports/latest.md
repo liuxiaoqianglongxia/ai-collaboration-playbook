@@ -28,20 +28,26 @@ V1.1 Operational Cleanup: PASS
 Execution Lane Management: PASS
 Claude Code Coordination: PASS
 User-Facing Task Announcement: PASS
+Final User Guide / Routing / Pro Review Prep: PASS
 ```
 
 ## 当前稳定入口
 
 ```text
 CHATGPT_START_HERE.md
+guides/USER_OPERATING_GUIDE_V1.md
 README.md
 AI_AGENT_ONBOARDING.md
 AI_COLLABORATION_MODE_V4.md
 standards/TASK_PACKAGE_REGISTRY_V1_1.md
 standards/EXECUTION_LANE_MANAGEMENT_V1.md
 standards/CLAUDE_CODE_COORDINATION_V1.md
+standards/ROUTING_AND_EXTENSIBILITY_V1.md
 protocols/GITHUB_AI_COLLABORATION.md
 templates/USER_FACING_TASK_ANNOUNCEMENT.md
+templates/PROJECT_ROUTING_PROFILE.md
+reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
+reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md
 ```
 
 ## 当前任务指针
@@ -103,4 +109,6 @@ Hermes 不是默认四件套成员。
 2. 业务项目采用 TASK-PACKAGE-REGISTRY-V1.1 时，必须逐仓库读取事实源、逐 PR、逐验收。
 3. 对用户保持短指令、短确认、短验收；复杂度留在 GitHub 事实源、任务包、执行报告和验收清单中。
 4. 下一个实际验证项目可选择 maijian-wechat-content-lab，但必须先读该项目自己的事实源。
+5. ChatGPT Pro 深度复核可从 reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md 开始。
+6. Personal Details / Custom Instructions 只使用 reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md 作为候选，需 ChatGPT 验收后再冻结。
 ```
