@@ -3,31 +3,27 @@
 Current task package:
 
 ```text
-tasks/codex/PLAYBOOK-V1.1-OPERATIONAL-CLEANUP-V1.md
+none
 ```
 
 Current execution status:
 
 ```text
-ACTIVE_CODEX_TASK
+NO_ACTIVE_CODEX_TASK
 ```
 
 Rules:
 
 - This file is the stable GitHub entry point for Codex task packages in this playbook repository.
-- ChatGPT updates this file when assigning the next Codex task.
+- ChatGPT updates this file when assigning or clearing the next Codex task.
 - Codex must not infer tasks from chat history.
-- Codex must execute the named task package only within its allowed scope.
+- Codex must read the named task package before modifying project files.
+- After a task is completed and accepted, this pointer should be cleared back to `none / NO_ACTIVE_CODEX_TASK` unless another task is immediately assigned.
 - If this pointer conflicts with `TASKS.md` or `reports/latest.md`, stop and report `BLOCKED`.
 
-Previous completed task:
-
-```text
-tasks/codex/PLAYBOOK-V1.1-MERGE-CLOSEOUT-V1.md
-```
-
-Previous report:
+Previous completed task evidence:
 
 ```text
 reports/codex/playbook-v1-1-merge-closeout-v1.md
+reports/chatgpt/task-packages/PLAYBOOK-V1.1-OPERATIONAL-CLEANUP-V1.md
 ```
