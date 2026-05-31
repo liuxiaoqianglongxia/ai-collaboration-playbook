@@ -1,28 +1,36 @@
 # Task Package Registry Standard V1.1
 
 > **Standard ID**: `TASK_PACKAGE_REGISTRY_V1_1`
-> **Status**: Candidate for `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Status**: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
 > **Maintained in**: `ai-collaboration-playbook/standards/TASK_PACKAGE_REGISTRY_V1_1.md`
 
 ---
 
 ## Purpose
 
-Define a project-level registry for executable AI task packages so ChatGPT, Codex, Claude Code, and GitHub can coordinate through files instead of relying on long chat transcripts.
+Define a project-level registry for executable AI task packages so ChatGPT, GitHub, Codex, and Claude Code coordinate through files instead of long chat transcripts.
 
 The registry gives each project stable entry points for current Codex and Claude Code tasks, plus a durable archive of ChatGPT task-package and acceptance snapshots.
 
 ## Status
 
-`TASK_PACKAGE_REGISTRY_V1_1` is a candidate layer for `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`.
+`TASK_PACKAGE_REGISTRY_V1_1` is stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`.
 
-It is not final until a pull request containing this standard passes independent read-only ChatGPT acceptance and is merged through a separate closeout task.
+Promotion history:
+
+```text
+PR #6: docs: add task package registry standard v1.1
+merge commit: 6cbadf2702286dce3b7c888a2b4f5e0e1d481c56
+closeout commit: 5fe21aec9eccb87df0e318fc376cf1852129b2d7
+current status source: reports/latest.md
+status: PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS
+```
+
+Historical candidate reports remain as evidence, but active sessions must treat `reports/latest.md` as the current status source.
 
 ## Relationship to PLAYBOOK_OPERATIONAL_BASELINE_V1
 
-`PLAYBOOK_OPERATIONAL_BASELINE_V1` remains stable.
-
-V1.1 adds a task-package registry layer on top of V1. It does not invalidate the existing onboarding, template, report, checklist, or execution-environment ownership standards.
+`PLAYBOOK_OPERATIONAL_BASELINE_V1.1` adds a task-package registry layer on top of V1. It does not invalidate the existing onboarding, template, report, checklist, or execution-environment ownership standards.
 
 ## Relationship to AI_COLLABORATION_MODE_V4
 
@@ -31,35 +39,103 @@ This standard does not replace `AI_COLLABORATION_MODE_V4.md`.
 The four-piece model remains unchanged:
 
 ```text
-ChatGPT: total control, task package design, acceptance
-GitHub: single source of truth
-Codex: delivery lead and final integrator
-Claude Code: local engineering analysis and review support
+ChatGPT: total control, architecture judgment, task-package design, acceptance
+GitHub: single source of truth, project state machine, trace log
+Codex: delivery lead, final integrator, report submitter
+Claude Code: local engineering enhancement, deep code analysis, local draft, review
 ```
 
-## Core Principle
+Hermes, Qwen, MCP, heartbeat, automation, and subagents are not default members. They may enter only when a specific project fact source or explicit user authorization requires them.
 
-Task packages must be GitHub files before execution.
+## Operating Principle
 
-ChatGPT writes and updates task packages. Codex and Claude Code read the assigned task package from the relevant registry pointer. No agent should infer execution scope from chat history when a project registry exists.
+V1.1 exists to make the user layer simple while keeping the execution layer strong.
 
-## Dogfooding Requirement
+```text
+使用层极简
+执行层清楚
+留痕层完整
+风险层兜底
+```
 
-The playbook repository should use its own `tasks/` registry for V1.1 follow-up tasks.
+The user should normally give a short goal. The controller and repository should carry the complexity.
 
-A stable registry standard should not only provide copyable templates. It should be supported by:
+Bad pattern:
 
-- at least one real project canary;
-- one playbook self-dogfood task;
-- a Codex latest pointer for closeout work;
-- a Claude Code latest pointer for read-only review work;
-- reports that show the registry can be executed without replacing V4.
+```text
+User repeatedly copies long task packages across chats.
+Every small task becomes a ceremony.
+GitHub maintenance becomes the main workload.
+```
 
-Claude Code must receive read-only review tasks through `tasks/claude/latest.md`, not through ad hoc chat instructions.
+Good pattern:
+
+```text
+User states the goal.
+ChatGPT reads GitHub facts and chooses the route.
+Task package and pointer live in GitHub.
+Codex executes the current task entry.
+Claude Code is coordinated only when useful.
+ChatGPT validates from GitHub.
+```
+
+## GitHub Write Capability Boundary
+
+ChatGPT must be honest about its current capability.
+
+If ChatGPT has GitHub write access in the current session:
+
+```text
+ChatGPT may write or update task packages, latest pointers, documentation, acceptance snapshots, and lightweight reports within the allowed scope.
+ChatGPT should use that ability instead of forcing the user to copy long text.
+```
+
+If ChatGPT does not have GitHub write access:
+
+```text
+ChatGPT must say it cannot directly write GitHub in this session.
+ChatGPT must not claim a task package has been written to GitHub.
+ChatGPT may provide a compact Codex landing instruction or a complete task package for Codex to commit.
+```
+
+## Capability Split
+
+ChatGPT should not outsource everything to Codex. Use the available capability correctly.
+
+ChatGPT should usually do directly:
+
+```text
+read GitHub facts
+write documentation and task packages when write access exists
+update latest pointers when safe
+perform read-only acceptance
+summarize next action for the user
+```
+
+Codex should usually do:
+
+```text
+local repository operations
+code changes
+tests and validation commands
+multi-file integration
+branch / PR delivery
+reports/codex/latest.md updates
+```
+
+Claude Code should usually do, through Codex or `tasks/claude/latest.md`:
+
+```text
+deep code reading
+call-chain analysis
+test failure localization
+local fix drafts
+review / second opinion
+```
 
 ## Required Project Structure
 
-Projects that adopt V1.1 should add this copyable structure:
+Projects that adopt V1.1 should add this structure:
 
 ```text
 tasks/README.md
@@ -81,7 +157,7 @@ This is a project-level structure. The playbook repository provides reusable tem
 
 Rules:
 
-- ChatGPT updates `tasks/codex/latest.md` when assigning a Codex task.
+- ChatGPT updates `tasks/codex/latest.md` when assigning or clearing a Codex task.
 - The pointer must name a durable task file such as `tasks/codex/<TASK-ID>.md`, or explicitly say there is no active Codex task.
 - Codex must read the pointed task file before modifying project files.
 - Codex remains responsible for the final diff, validation, report, branch, and PR.
@@ -93,10 +169,11 @@ Rules:
 
 Rules:
 
-- ChatGPT updates `tasks/claude/latest.md` when assigning a Claude Code task.
+- ChatGPT updates `tasks/claude/latest.md` when assigning or clearing a Claude Code task.
 - The pointer must name a durable task file such as `tasks/claude/<TASK-ID>.md`, or explicitly say there is no active Claude Code task.
 - Claude Code must stay within the task's allowed read/write boundary.
 - Claude Code does not replace Codex as final integrator.
+- Users should not be asked to manually relay long Claude Code task packages when Codex can coordinate the local toolchain.
 
 ## ChatGPT Task Package Snapshot Archive
 
@@ -110,22 +187,26 @@ These files are evidence for a specific project. They are not global playbook st
 
 Rules:
 
-- `tasks/codex/latest.md` points to the active Codex task package.
-- `tasks/claude/latest.md` points to the active Claude Code task package.
+- `tasks/codex/latest.md` points to one active Codex task package or says `NO_ACTIVE_CODEX_TASK`.
+- `tasks/claude/latest.md` points to one active Claude Code task package or says `NO_ACTIVE_CLAUDE_TASK`.
 - Historical task packages must be saved as named files.
 - Do not overwrite a named task file to repurpose it for a different task.
 - If a latest pointer conflicts with `CURRENT.md`, `TASKS.md`, or `reports/latest.md`, the executor must stop and report `BLOCKED`.
+- After a task is completed and accepted, latest pointers must not continue to present it as active, waiting, or pending.
+- Completed tasks may be listed briefly as previous task evidence, but current task should be `none` when no task is active.
 
 ## Task Package Lifecycle
 
 1. ChatGPT reads the project fact source.
-2. ChatGPT writes a named task package.
-3. ChatGPT updates the relevant latest pointer.
-4. Codex or Claude Code reads the pointer and named task package.
-5. The executor performs only the allowed work.
-6. The executor writes a report.
-7. ChatGPT performs read-only acceptance from GitHub facts.
-8. The task status is reflected in `TASKS.md`, `reports/latest.md`, and the relevant agent report.
+2. ChatGPT decides whether it can safely do the work directly or should assign Codex.
+3. ChatGPT writes a named task package when a task needs execution.
+4. ChatGPT updates the relevant latest pointer.
+5. Codex or Claude Code reads the pointer and named task package.
+6. The executor performs only the allowed work.
+7. The executor writes a report.
+8. ChatGPT performs read-only acceptance from GitHub facts.
+9. The task status is reflected in `TASKS.md`, `reports/latest.md`, and the relevant agent report.
+10. Completed latest pointers are cleared or marked no-active.
 
 ## Status Vocabulary
 
@@ -146,13 +227,17 @@ ACTIVE_CODEX_TASK
 NO_ACTIVE_CLAUDE_TASK
 ACTIVE_CLAUDE_TASK
 READY_FOR_REVIEW
+READY_FOR_CODEX
+READY_FOR_CHATGPT_ACCEPTANCE
 ```
+
+Do not use stale waiting labels after the gate has passed.
 
 ## Acceptance Rules
 
 ChatGPT acceptance must verify:
 
-- the task package existed before execution;
+- the task package existed before execution when execution was required;
 - the latest pointer referenced the correct task;
 - the executor stayed within allowed scope;
 - required reports were written;
@@ -166,6 +251,7 @@ ChatGPT acceptance must verify:
 - `reports/latest.md` records the latest project-level result.
 - `reports/chatgpt/task-packages/` preserves ChatGPT task and acceptance evidence.
 - If these files diverge, execution must stop until the controller resolves the conflict.
+- Candidate-era wording must not override a later stable closeout recorded in `reports/latest.md`.
 
 ## Forbidden Uses
 
@@ -176,11 +262,12 @@ The registry must not be used to:
 - turn chat-only instructions into execution authority;
 - copy project-specific business facts into generic templates;
 - promote experimental lab material into a stable module without a separate promotion gate;
-- change the V4 four-piece responsibility model.
+- change the V4 four-piece responsibility model;
+- make GitHub itself the user-facing workload.
 
-## Canary-to-Stable Promotion Gate
+## Promotion Gate for Future Registry Changes
 
-A registry pattern may be promoted from project canary to playbook standard only when all conditions are met:
+A future registry pattern may be promoted from project canary to playbook standard only when all conditions are met:
 
 - at least one real project has completed the flow;
 - a Codex report exists;
