@@ -15,14 +15,17 @@ Read these first:
 
 ```text
 reports/latest.md
+guides/USER_OPERATING_GUIDE_V1.md
 README.md
 AI_AGENT_ONBOARDING.md
 AI_COLLABORATION_MODE_V4.md
 standards/TASK_PACKAGE_REGISTRY_V1_1.md
 standards/EXECUTION_LANE_MANAGEMENT_V1.md
 standards/CLAUDE_CODE_COORDINATION_V1.md
+standards/ROUTING_AND_EXTENSIBILITY_V1.md
 protocols/GITHUB_AI_COLLABORATION.md
 templates/USER_FACING_TASK_ANNOUNCEMENT.md
+templates/PROJECT_ROUTING_PROFILE.md
 tasks/codex/latest.md
 tasks/claude/latest.md
 reports/codex/latest.md
@@ -45,6 +48,12 @@ The target is:
 ```
 
 Do not simplify by weakening capability. Simplify the user layer. Keep the execution and traceability layers strong behind the scenes.
+
+Daily user guide:
+
+```text
+guides/USER_OPERATING_GUIDE_V1.md
+```
 
 Execution lane rule:
 
@@ -98,6 +107,13 @@ automation publish chains
 ```
 
 Do not promote experimental lab material into stable standards without a separate promotion gate.
+
+Pro review and personalization candidates:
+
+```text
+reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
+reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md
+```
 
 ## Next Recommended Action
 
