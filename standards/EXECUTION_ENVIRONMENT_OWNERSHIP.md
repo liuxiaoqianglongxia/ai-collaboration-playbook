@@ -1,9 +1,9 @@
 # Execution Environment Ownership Standard
 
 > **Purpose**: Define the preferred execution owner for playbook, business, local WSL, production, database, deployment, audit, archive, and low-risk migration work.
-> **Version**: Draft 0.1
+> **Version**: 1.0
 > **Maintained in**: `ai-collaboration-playbook/standards/EXECUTION_ENVIRONMENT_OWNERSHIP.md`
-> **Status**: Draft for controller review
+> **Status**: Accepted for `PLAYBOOK_OPERATIONAL_BASELINE_V1`
 
 ---
 
