@@ -3,13 +3,13 @@
 Current task package:
 
 ```text
-tasks/codex/PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1.md
+none
 ```
 
 Current execution status:
 
 ```text
-ACTIVE_CODEX_TASK
+NO_ACTIVE_CODEX_TASK
 ```
 
 Rules:
@@ -24,6 +24,8 @@ Rules:
 Previous completed task evidence:
 
 ```text
+reports/codex/playbook-v1-1-execution-lane-and-claude-stabilization-v1.md
+tasks/codex/PLAYBOOK-V1.1-EXECUTION-LANE-AND-CLAUDE-STABILIZATION-V1.md
 reports/codex/playbook-v1-1-local-validation-v1.md
 reports/chatgpt/task-packages/PLAYBOOK-V1.1-OPERATIONAL-CLEANUP-V1.md
 ```

@@ -94,6 +94,17 @@ reports/chatgpt/task-packages/
 
 它不接入自动化，不改变 V4，不新增默认协作成员，也不替代 `CURRENT.md`、`TASKS.md`、`DECISIONS.md`、`reports/latest.md` 等项目事实源。
 
+V1.1 追加两条稳定执行规则：
+
+- 一个阶段只保留一个 active execution lane。默认同一阶段只有一个 active Codex task。
+- Claude Code 由 Codex 在当前 Codex task 内编排；Claude Code 不替代 Codex 做最终集成。
+
+面向用户的任务公告应保持短格式，详见 `templates/USER_FACING_TASK_ANNOUNCEMENT.md`。用户通常只需要把这句发给 Codex：
+
+```text
+执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+```
+
 ## 新项目接入
 
 新项目第一轮只搭协作底座，不做业务开发。详见：

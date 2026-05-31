@@ -101,6 +101,8 @@ Codex is the delivery lead that turns assigned tasks into integrated results:
 
 Codex should not infer scope from chat when a GitHub task package exists.
 
+One stage should have one active execution lane. If `tasks/codex/latest.md` already points to `ACTIVE_CODEX_TASK`, do not create another active Codex task for the same stage. New findings should be recorded as candidate next steps until the active task reports `PASS`, `PARTIAL PASS`, `FAIL`, or `BLOCKED`.
+
 ## 7. Claude Code Coordination Rule
 
 Claude Code is a local engineering enhancement tool. It should be used when it adds real value:
@@ -116,6 +118,25 @@ review or second opinion
 Claude Code does not replace Codex as final integrator.
 
 Users should not be asked to manually relay long Claude Code tasks when Codex can coordinate Claude Code through `tasks/claude/latest.md`.
+
+Claude Code outputs are report evidence, not final authority. Codex verifies the output, decides what enters the final diff, and remains final integrator.
+
+## 7.1 User-Facing Task Announcement
+
+When ChatGPT assigns a GitHub-backed Codex task, chat should stay short:
+
+```text
+任务：<TASK-ID>
+能实现：
+- <one concrete outcome>
+- <one concrete outcome>
+- <one concrete outcome>
+不做：<key boundary>
+你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+详情：任务包已在 GitHub。
+```
+
+Do not paste the full task package in chat by default, and do not claim it is in GitHub unless the file exists.
 
 ## 8. Risk-Based Routing
 

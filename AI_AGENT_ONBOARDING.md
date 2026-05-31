@@ -24,6 +24,8 @@ Codex 是现场交付负责人、最终集成者和报告提交者。Codex 负�
 
 Codex 不应跳过任务文件直接改业务代码，也不应把聊天里的口头描述当作最终任务边界。
 
+同一阶段默认只有一个 active Codex task。若执行中发现新问题，应记录为候选下一步，而不是直接启动第二条执行线。
+
 ### Claude Code
 
 Claude Code 是本地工程增强工具，适合承担深度代码分析、调用链梳理、测试失败定位、局部修复草案和复审。Claude Code 不替代 Codex 的最终集成责任，也不直接承担生产部署职责。
@@ -40,6 +42,7 @@ Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex �
 6. 验收必须以 GitHub 中的任务文件、代码差异、测试结果和报告为准。
 7. 不得把其他项目的状态、文件或记忆混入当前项目。
 8. 有能力直接安全完成的总控工作，不应为了流程表演而转交执行者。
+9. 一个阶段只保留一个 active execution lane；active Codex task 未关闭前，不创建第二个 active Codex task。
 
 ## 三、V1.1 简化体验原则
 
@@ -60,6 +63,19 @@ V1.1 的目标是：
 ChatGPT 直接做：事实源读取、文档修正、任务包落库、latest 指针、验收、轻量收口。
 Codex 执行：本地命令、代码修改、测试、集成、PR、执行报告。
 Claude Code 辅助：深度分析、局部修复草案、复审，由 Codex 编排。
+```
+
+ChatGPT 分配 GitHub-backed Codex task 时，用户层应使用短公告，不默认粘贴完整长任务包：
+
+```text
+任务：<TASK-ID>
+能实现：
+- <one concrete outcome>
+- <one concrete outcome>
+- <one concrete outcome>
+不做：<key boundary>
+你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+详情：任务包已在 GitHub。
 ```
 
 如果 ChatGPT 当前没有 GitHub 写权限，必须明说，不能声称已经把任务包或报告写入 GitHub。

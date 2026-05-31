@@ -29,10 +29,14 @@
 - [ ] Uses a stable status.
 - [ ] Does not contain long task history.
 - [ ] Does not conflict with `CURRENT.md`, `TASKS.md`, or `reports/latest.md`.
+- [ ] Does not create a second active Codex execution lane for the same stage.
 
 ## 5. tasks/codex/<task-id>.md Check
 
 - [ ] Contains task name, goal, repository, state, allowed scope, forbidden scope, work, validation, report format, stop conditions, and next step.
+- [ ] Contains a user-facing summary suitable for short ChatGPT task announcements.
+- [ ] States execution lane status and what happens if new issues are discovered.
+- [ ] States whether Claude Code is allowed, required, or forbidden.
 - [ ] Gives Codex enough information to execute without guessing from chat.
 - [ ] Does not authorize deployment, database, credential, or production changes unless a separate safety package exists.
 
@@ -40,6 +44,7 @@
 
 - [ ] Points to one active Claude Code task or declares no active Claude Code task.
 - [ ] Does not replace Codex as final integrator.
+- [ ] If active, is bounded as support for an active Codex task or explicitly scoped read-only review.
 - [ ] Does not conflict with project status files.
 
 ## 7. reports/chatgpt/task-packages/ Check
@@ -61,6 +66,7 @@
 - [ ] `CURRENT.md` agrees with the task result.
 - [ ] `TASKS.md` agrees with the task result.
 - [ ] latest pointers do not drift from named task files.
+- [ ] `NO_ACTIVE_CODEX_TASK` and `NO_ACTIVE_CLAUDE_TASK` are restored after completion unless another task is explicitly assigned.
 
 ## 10. Forbidden Scope Check
 

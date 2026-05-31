@@ -6,6 +6,19 @@
 
 `<short-kebab-task-name>`
 
+## 用户短公告
+
+```text
+任务：<TASK-ID>
+能实现：
+- <one concrete outcome>
+- <one concrete outcome>
+- <one concrete outcome>
+不做：<key boundary>
+你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+详情：任务包已在 GitHub。
+```
+
 ## 背景
 
 说明为什么要做这件事，当前项目状态来自哪些 GitHub 事实源。
@@ -43,6 +56,23 @@
 - <path-or-module>
 ```
 
+## 执行通道
+
+```text
+当前 Codex 通道：ACTIVE_CODEX_TASK / NO_ACTIVE_CODEX_TASK
+当前 Claude Code 通道：ACTIVE_CLAUDE_TASK / NO_ACTIVE_CLAUDE_TASK
+本阶段规则：one active execution lane
+新发现处理：记录为候选下一步，不在当前任务未关闭时启动第二个 active Codex task
+```
+
+如需 Claude Code，必须写明：
+
+```text
+Claude Code：允许 / 要求 / 禁止
+用途：只读分析 / 局部草案 / diff 复审 / 不适用
+最终集成者：Codex
+```
+
 ## 禁止事项
 
 默认必须包含：
@@ -54,6 +84,8 @@
 - 不跨项目写入。
 - 不把实验室能力升级为稳定模块。
 - 不修改本任务未授权的目录。
+- 不创建第二条 active Codex execution lane。
+- 不让 Claude Code 替代 Codex 做最终集成。
 
 按项目需要补充更多禁止事项。
 

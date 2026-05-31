@@ -13,6 +13,8 @@
 - [ ] Read `CURRENT.md` for project state
 - [ ] Identify the task scope: what files are in-bounds, what is out-of-bounds
 - [ ] Confirm current git branch and workspace state
+- [ ] Confirm whether this Claude Code task is bounded support inside an active Codex task
+- [ ] Confirm Codex remains final integrator
 
 ## Safe Path Check
 
@@ -81,4 +83,5 @@ Stop immediately and report if:
 4. Git workspace is in an unexpected dirty state.
 5. Uncertain which file is the single source of truth.
 6. The task requires production environment changes.
+7. The task asks Claude Code to replace Codex as final integrator.
 7. A security vulnerability or exposed secret is discovered.
