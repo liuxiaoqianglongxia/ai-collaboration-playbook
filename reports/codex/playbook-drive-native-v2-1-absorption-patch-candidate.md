@@ -55,19 +55,19 @@ none
 commit:
 
 ```text
-pending at report write time; see branch tip and PR after push
+implementation commit: ba5b6775f1716af6d140a87b883922166fd63ace
 ```
 
 push 状态:
 
 ```text
-pending
+pushed to origin/docs/drive-native-v2-1-absorption-patch
 ```
 
 PR / main 状态:
 
 ```text
-draft PR pending
+draft PR #10: https://github.com/liuxiaoqianglongxia/ai-collaboration-playbook/pull/10
 main not changed
 no merge
 no tag
@@ -129,5 +129,6 @@ No application code or runtime behavior changed; validation is documentation and
 ## 五、报告位置
 
 - Drive report: pending write after PR URL is available
+- Drive report target: Google Drive/ai-collaboration-playbook/reports/codex/20260601/20260601_codex_report_drive_native_v2_1_absorption_patch_candidate.md
 - GitHub report: reports/codex/playbook-drive-native-v2-1-absorption-patch-candidate.md
-- next step: push branch and open draft PR for ChatGPT Pro acceptance; do not merge
+- next step: ChatGPT Pro acceptance on draft PR #10; do not merge before acceptance

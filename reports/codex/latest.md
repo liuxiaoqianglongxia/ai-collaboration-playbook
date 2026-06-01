@@ -16,6 +16,12 @@ reports/codex/playbook-drive-native-v2-1-absorption-patch-candidate.md
 
 已在分支 `docs/drive-native-v2-1-absorption-patch` 上完成 `DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE` 实现与检查。
 
+Draft PR:
+
+```text
+https://github.com/liuxiaoqianglongxia/ai-collaboration-playbook/pull/10
+```
+
 本轮完成：
 
 ```text
