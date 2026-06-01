@@ -1,6 +1,6 @@
 # 用户使用说明 V1
 
-> 适用版本：`PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> 适用版本：`PLAYBOOK_OPERATIONAL_BASELINE_V2`
 > 目标读者：用户、ChatGPT 新会话、Codex 执行会话、接入本 playbook 的项目维护者
 
 ## 1. 这套 playbook 是什么
@@ -14,7 +14,7 @@
 - 用户不用每天复制长任务包。
 - 执行、报告、验收都能回到同一个事实源。
 
-默认里程碑事实源是 GitHub。V1.2 增加 Drive 日常工作台，让日常任务、报告、截图、材料和交接更快流转。用户不需要每天维护 GitHub 细节，Agent 负责读写和同步关键事实。
+默认日常事实源是 Drive。GitHub 承载稳定成果、版本管理、release、rollback 和可复用文档。用户不需要每天维护 GitHub 细节，Agent 负责读写和同步关键事实。
 
 ## 2. 日常你怎么用
 
@@ -26,7 +26,7 @@
 按 V1.1 给这个项目发一个登录修复任务包。
 ```
 
-或者：
+如果项目明确启用 GitHub-backed registry 兼容入口，也可以说：
 
 ```text
 执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
@@ -35,29 +35,30 @@
 ChatGPT 应该在背后完成判断：
 
 ```text
-读 Drive 日常上下文和 GitHub 事实源
+读 Drive 日常上下文和 GitHub 稳定事实
 判断风险和执行者
-能自己安全完成就直接写 GitHub
-需要本地执行就写任务包并指向 Codex
+能自己安全完成就直接写 Drive 或稳定 GitHub 文档
+需要本地执行就写 Drive task package 并指向 Codex
 需要 first-pass 工程支持就由 Codex 编排 Claude Code
 完成后只读验收
 ```
 
-V1.2 的日常分工：
+V2 的日常分工：
 
 ```text
-Drive 管日常任务、报告、截图、材料、交接、临时验收笔记。
+Drive 管日常任务、报告、截图、材料、交接、临时验收、决策记录、daily log。
 WSL/local Git 管真实代码编辑、测试、集成。
-GitHub main 管里程碑代码和协作事实。
-GitHub tags 管版本锚点、生产依据和回滚点。
+GitHub main 管稳定代码和稳定文档。
+GitHub tags 管版本锚点、release 和 rollback。
 Codex 负责最终集成、验证、push main、tag、必要时 PR、报告。
 ```
 
 ## 3. 四个稳定角色
 
 ```text
-ChatGPT：总控、判断、任务包、验收、轻量 GitHub 写入
-GitHub：里程碑事实源、状态机、留痕、tag 锚点
+ChatGPT：总控、判断、任务包、验收、轻量 Drive/GitHub 写入
+Drive：日常事实源、任务、报告、材料、交接、临时验收、决策记录
+GitHub：稳定成果、版本、release、rollback、可复用文档
 Codex：本地执行、集成、测试、PR、执行报告
 Claude Code：由 Codex 编排的 first-pass 工程支持、深度代码阅读、局部草案、失败分析、复审
 ```
@@ -95,7 +96,7 @@ ChatGPT 给用户的任务公告应短，不默认粘贴长任务包：
 详情：任务包已在 GitHub。
 ```
 
-前提是任务包确实已经写入 GitHub。
+前提是项目明确启用了 GitHub-backed registry，且任务包确实已经写入 GitHub。V2 默认使用 Drive task package。
 
 ## 6. 怎么判断任务状态
 
@@ -103,11 +104,11 @@ ChatGPT 给用户的任务公告应短，不默认粘贴长任务包：
 
 ```text
 reports/latest.md
-tasks/codex/latest.md
-tasks/claude/latest.md
 reports/codex/latest.md
 reports/claude/latest.md
 ```
+
+如果项目启用 GitHub-backed registry，再看 `tasks/codex/latest.md` 和 `tasks/claude/latest.md`。
 
 状态含义：
 
@@ -142,11 +143,13 @@ Codex 完成后应写 `reports/codex/latest.md`，并指向命名报告。
 用户给目标
   |
   v
-ChatGPT 读取 Drive 日常上下文和 GitHub 事实源
+ChatGPT 读取 Drive 日常上下文和 GitHub 稳定事实
   |
-  +-- 安全文档/任务包/验收 --> ChatGPT 直接写 GitHub
+  +-- 日常任务/报告/验收 ----> ChatGPT 直接写 Drive
   |
-  +-- 需要本地执行 ---------> 写 tasks/codex/latest.md
+  +-- 稳定文档/release/rollback --> ChatGPT 或 Codex 同步 GitHub
+  |
+  +-- 需要本地执行 ---------> 写 Drive task package
                                   |
                                   v
                                 Codex 执行
@@ -171,7 +174,8 @@ ChatGPT 读取 Drive 日常上下文和 GitHub 事实源
 - 不在一个阶段同时启动多条写入执行线。
 - 不把 Claude Code 输出当作最终合并或部署授权。
 - 不把 Hermes、Qwen、MCP、automation、heartbeat、subagent 变成默认成员。
-- 不把 Drive 当代码仓库或最终里程碑事实源。
+- 不把 Drive 当生产部署源。
+- 不把 GitHub-backed registry 当默认日常派工入口。
 - 不把 branch 当版本记录；版本锚点应是 main 上的 tag。
 - 不未经授权部署、改数据库、改密钥、改生产配置或 force push。
 
@@ -195,4 +199,4 @@ reports/codex/latest.md
 reports/claude/latest.md
 ```
 
-通用规范在本仓库。项目事实在项目仓库。不要混用。
+V2 默认还应建立项目 Drive workbench。通用规范在本仓库。项目事实在项目自己的 Drive/GitHub 空间。不要混用。

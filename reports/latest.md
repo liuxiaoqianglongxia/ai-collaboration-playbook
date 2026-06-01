@@ -1,9 +1,9 @@
-# Latest Report｜PLAYBOOK_OPERATIONAL_BASELINE_V1.2
+# Latest Report｜PLAYBOOK_OPERATIONAL_BASELINE_V2
 
 ## 状态
 
 ```text
-PLAYBOOK_OPERATIONAL_BASELINE_V1.2
+PLAYBOOK_OPERATIONAL_BASELINE_V2
 ```
 
 ## 结论
@@ -12,24 +12,22 @@ PASS
 
 ## 当前主线成果
 
-`ai-collaboration-playbook` 已完成 `PLAYBOOK_OPERATIONAL_BASELINE_V1.2` 稳定冻结。
+`ai-collaboration-playbook` 已完成 `PLAYBOOK_OPERATIONAL_BASELINE_V2` 稳定提升测试。
 
-V1.2 在 V1.1 稳定基线上新增并冻结以下操作层：
+V2 将日常协作事实源迁移到 Drive 工作台，并把 GitHub 收口为稳定成果、版本管理、release、rollback 和最终可复用文档承载。V1.1/V1.2 保留为历史稳定基线。
 
 ```text
-Drive-first daily workflow
-main-only + tag versioning
-Claude-first-pass / Codex-final execution
-maximum practical authorization
-repository-local self-dogfood workbench
-final personalization copy
+daily_fact_source: Google Drive
+github_role: stable version / release / rollback / final reusable docs
+github_active_task_pointer: none
 ```
 
 V4 四件套角色模型保持不变：
 
 ```text
 ChatGPT: controller, task package, acceptance
-GitHub: milestone fact source, main, tags, trace log
+Drive: daily fact source, daily task/report/material/acceptance/decision workspace
+GitHub: stable result, version management, release, rollback, reusable docs
 Codex: local executor and final integrator
 Claude Code: first-pass engineering support coordinated by Codex
 ```
@@ -57,17 +55,20 @@ V1.2 Candidate Implementation: PASS
 V1.2 Self-Dogfood Stable Freeze: PASS
 ```
 
-## V1.2 稳定层
+## V2 稳定层
 
 ```text
-Drive-first daily workflow: PASS
-Main-only + tag versioning: PASS
-Claude-first-pass / Codex-final: PASS
-Maximum practical authorization: PASS
-Drive workbench templates: PASS
-Claude worker templates: PASS
-Repository-local self-dogfood workbench: PASS
-User-facing docs and final personalization: PASS
+Drive-native daily workflow: PASS
+GitHub release and version policy: PASS
+Drive-native templates: PASS
+Drive-native checklists: PASS
+Drive-native protocols: PASS
+Branch cleanup policy: PASS
+GitHub stable sync: PASS
+Private path leak scan: PASS
+Cross-project pollution scan: PASS
+Role conflict scan: PASS
+Registry default-dispatch residue scan: PASS
 ```
 
 ## 当前稳定入口
@@ -86,6 +87,12 @@ standards/DRIVE_FIRST_WORKFLOW_V1.md
 standards/MAIN_ONLY_TAG_VERSIONING_V1.md
 standards/CLAUDE_FIRST_CODEX_FINAL_V1.md
 standards/MAXIMUM_PRACTICAL_AUTHORIZATION_V1.md
+standards/DRIVE_NATIVE_WORKFLOW_V2.md
+standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md
+guides/DRIVE_NATIVE_V2_USER_GUIDE.md
+templates/drive-native-v2/
+checklists/drive-native-v2/
+protocols/drive-native-v2/
 protocols/GITHUB_AI_COLLABORATION.md
 templates/USER_FACING_TASK_ANNOUNCEMENT.md
 templates/drive-project-workbench/
@@ -96,14 +103,14 @@ reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
 reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md
 ```
 
-## 当前任务指针
+## 兼容任务指针
 
 ```text
 tasks/codex/latest.md: none / NO_ACTIVE_CODEX_TASK
 tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
 ```
 
-当前没有活跃 Codex 或 Claude Code 任务。
+这些指针是兼容入口，不是 Drive-native V2 默认日常派工入口。
 
 ## 当前操作原则
 
@@ -114,25 +121,22 @@ tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
 风险层兜底
 ```
 
-V1.2 日常模型：
+Drive-native V2 model:
 
 ```text
-Drive 管日常任务、报告、截图、材料、交接和临时验收笔记。
-Drive 不是 live code workspace，也不是最终里程碑事实源。
-WSL/local Git 管真实代码编辑、测试和集成。
-GitHub main 管里程碑代码和协作事实。
-GitHub tags 管 dev-ok、pre-prod、prod、rollback 等版本锚点。
+Drive 管日常任务、报告、截图、材料、交接、临时验收、决策记录和 daily log。
+GitHub 管稳定成果、版本、release、rollback、final reusable docs。
+Codex 做执行、集成、验证、GitHub 同步和报告。
 Claude Code 做 Codex 编排下的 first-pass 工程支持。
-Codex 做最终集成、验证、push main、tag、必要时 PR、报告。
-ChatGPT 做总控、任务包、验收和轻量 GitHub 写入。
+ChatGPT 做总控、任务设计、验收和 release decision。
 ```
 
 ## 保留边界
 
 ```text
 V4 四件套不变。
-GitHub 仍是里程碑事实源、版本锚点、生产依据和回滚点。
-Drive 是日常工作台，不是 live code workspace，也不是最终里程碑事实源。
+GitHub 是稳定成果、版本锚点、release、rollback 和 final reusable docs 承载。
+Drive 是日常事实源，不是生产部署源。
 WSL/local Git 仍是真实开发空间。
 Codex 仍是交付负责人和最终集成者。
 Claude Code 仍是工程增强工具和 first-pass worker，不替代 Codex。
@@ -141,17 +145,14 @@ Google Drive 不是第五个 Agent。
 Hermes 不是默认四件套成员。
 未接入自动化。
 未处理业务项目。
-未处理 sub2api-maijian。
 未执行生产类操作。
 ```
 
 ## 下一步建议
 
 ```text
-1. 将 PLAYBOOK_OPERATIONAL_BASELINE_V1.2 作为当前稳定协作基线使用。
-2. 业务项目采用 Drive-first 时，必须定义 Drive 到 GitHub 的同步点，避免两套 current state。
-3. main+tag 适合低风险里程碑锚点；需要 review/integration 保护时仍使用 branch/PR。
-4. Claude Code first-pass 应由 Codex 编排，Codex 必须复核 diff、验证并写报告。
-5. ChatGPT Pro 深度复核可从 reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md 开始；Pro 可提出修正，但 V1.2 当前可用。
-6. Personal Details / Custom Instructions 使用 reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md。
+1. 将 PLAYBOOK_OPERATIONAL_BASELINE_V2 作为当前稳定协作基线使用。
+2. 具体项目接入时先建 Drive workbench，再定义 GitHub stable sync 点。
+3. V1.1/V1.2 历史记录继续保留。
+4. 不恢复 GitHub registry 指针作为默认日常派工方式。
 ```
