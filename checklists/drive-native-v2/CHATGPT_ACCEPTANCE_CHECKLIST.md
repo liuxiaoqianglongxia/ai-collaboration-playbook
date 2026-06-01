@@ -3,7 +3,7 @@
 - [ ] Drive root files agree on V2 roles.
 - [ ] Drive is daily fact source.
 - [ ] GitHub is stable version / release / rollback / reusable docs.
-- [ ] GitHub daily task pointer is not default V2 dispatch.
+- [ ] Repository-backed registry pointers are compatibility entries only.
 - [ ] Required templates exist.
 - [ ] Required standards exist.
 - [ ] Required checklists exist.

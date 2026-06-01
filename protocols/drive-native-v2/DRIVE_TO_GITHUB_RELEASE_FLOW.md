@@ -1,7 +1,7 @@
 # Drive To GitHub Release Flow
 
 protocol_id: DRIVE_TO_GITHUB_RELEASE_FLOW
-status: candidate
+status: stable
 
 ## Flow
 

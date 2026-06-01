@@ -1,7 +1,7 @@
 # GitHub Release And Version Policy V2
 
 > Standard ID: `GITHUB_RELEASE_AND_VERSION_POLICY_V2`
-> Status: Candidate in `DRIVE_NATIVE_V2_CANDIDATE`
+> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V2`
 
 ## Purpose
 
@@ -69,4 +69,4 @@ Sync to GitHub only when the result is:
 - production deployment reference
 - rollback note
 
-Candidate V2 sync should use a draft PR unless acceptance and checks justify a ready PR.
+V2 stable documentation may move from draft to ready after role-conflict, private-path, cross-project pollution, and registry-residue checks pass.

@@ -1,13 +1,13 @@
 # Codex Report｜Drive-native V2 Stabilization V1
 
-Conclusion: PARTIAL PASS
+Conclusion: PASS
 
 task_id: PLAYBOOK-DRIVE-NATIVE-V2-SELF-UPGRADE-AND-GITHUB-BRANCH-CLEANUP-V1
-mode: DRIVE_NATIVE_V2_CANDIDATE
+mode: PLAYBOOK_OPERATIONAL_BASELINE_V2
 
 ## Summary
 
-This branch adds reusable Drive-native V2 candidate documentation to GitHub while preserving V1.2 as the historical stable baseline.
+This branch adds reusable Drive-native V2 documentation to GitHub while preserving V1.1 and V1.2 as historical stable baselines.
 
 ## Added Or Updated
 
@@ -22,16 +22,16 @@ This branch adds reusable Drive-native V2 candidate documentation to GitHub whil
 - `reports/latest.md`
 - `reports/codex/latest.md`
 
-## Candidate Status
+## Stable Status
 
 Use:
 
 ```text
-DRIVE_NATIVE_V2_CANDIDATE
-PARTIAL PASS
+PLAYBOOK_OPERATIONAL_BASELINE_V2
+PASS
 ```
 
-Do not use `PLAYBOOK_OPERATIONAL_BASELINE_V2` until ChatGPT acceptance promotes V2.
+Stable promotion testing passed on PR #9.
 
 ## Boundary Confirmation
 
@@ -46,4 +46,4 @@ Do not use `PLAYBOOK_OPERATIONAL_BASELINE_V2` until ChatGPT acceptance promotes 
 
 ## Notes
 
-Drive-native V2 makes Drive the daily fact source and GitHub the stable result, release, rollback, and reusable documentation carrier. GitHub daily task pointers are not restored as the default dispatch surface.
+Drive-native V2 makes Drive the daily fact source and GitHub the stable result, release, rollback, and reusable documentation carrier. Repository-backed registry pointers are retained as compatibility entries only; normal work uses Drive task packages.

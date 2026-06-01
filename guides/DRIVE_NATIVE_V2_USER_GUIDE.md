@@ -1,6 +1,6 @@
 # Drive-native V2 User Guide
 
-> Status: Candidate
+> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V2`
 
 ## What Changed
 
@@ -49,14 +49,14 @@ Sync the accepted reusable V2 docs to GitHub as a draft PR.
 
 ## What Not To Do
 
-- Do not use GitHub daily task pointers as the default V2 dispatch surface.
+- Do not use repository-backed registry pointers as the default V2 dispatch surface.
 - Do not keep branches as release records.
 - Do not promote Drive raw materials directly to stable GitHub docs.
 - Do not deploy, edit databases, change secrets, or force push without explicit authorization.
 
-## Acceptance
+## Stable Acceptance
 
-V2 becomes stable only after ChatGPT acceptance confirms:
+V2 is stable when these checks pass:
 
 - Drive structure is complete
 - entry files agree on V2 roles

@@ -7,14 +7,13 @@
 ## 当前状态
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
-candidate: DRIVE_NATIVE_V2_CANDIDATE
-reports/latest.md: PARTIAL PASS on the V2 candidate branch
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V2
+reports/latest.md: PASS
 ```
 
 V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 在 V1.1 上新增并冻结 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
 
-Drive-native V2 候选层把日常任务、报告、材料、截图、交接、临时验收、决策记录放到 Drive 工作台；GitHub 收口为稳定成果、版本管理、release、rollback 和其他项目复用入口。V1.2 仍是历史稳定基线，V2 候选层在验收前不得标记为 `PLAYBOOK_OPERATIONAL_BASELINE_V2`。
+Drive-native V2 是当前稳定基线。它把日常任务、报告、材料、截图、交接、临时验收、决策记录和 daily log 放到 Drive 工作台；GitHub 收口为稳定成果、版本管理、release、rollback 和其他项目复用入口。V1.1/V1.2 继续作为历史稳定基线保留。
 
 当前入口以 `reports/latest.md` 为准。
 
@@ -32,18 +31,19 @@ Drive-native V2 候选层把日常任务、报告、材料、截图、交接、�
 
 ## 稳定主链路
 
-当前稳定主链路是 `AI_COLLABORATION_MODE_V4.md`，四件套分工不变：
+当前稳定主链路是 Drive-native V2。V4 四件套角色保留，但日常事实源和 GitHub 职责按 V2 解释：
 
 - ChatGPT：总控、架构判断、任务包、验收。
-- GitHub：唯一事实源、项目状态机、留痕系统。
+- Drive：日常事实源、任务、报告、材料、截图、交接、临时验收和决策记录。
+- GitHub：稳定成果、版本管理、release、rollback、final reusable docs。
 - Codex：现场交付负责人、最终集成者、报告提交者。
 - Claude Code：本地工程增强工具、深度代码分析、局部修复、复审。
 
 Hermes、Qwen、MCP、自动化、心跳、子代理等能力不是默认四件套成员。只有具体项目事实源或用户明确授权时，才作为项目特化工具进入。
 
-## V1.2 的使用目标
+## V2 的使用目标
 
-V1.2 不是为了让用户面对更多流程，而是为了把日常操作从 GitHub 机械维护中释放出来，同时保留 GitHub 的里程碑事实源地位：
+V2 不是为了让用户面对更多流程，而是为了把日常操作从 GitHub 机械维护中释放出来，同时保留 GitHub 的稳定版本、release、rollback 和复用入口地位：
 
 ```text
 使用层极简
@@ -52,15 +52,15 @@ V1.2 不是为了让用户面对更多流程，而是为了把日常操作从 Gi
 风险层兜底
 ```
 
-理想使用方式应该像浏览器或微信一样：入口简单、动作短、结果清楚。复杂度由 Agent 层、GitHub 事实源和项目文件承担。
+理想使用方式应该像浏览器或微信一样：入口简单、动作短、结果清楚。复杂度由 Agent 层、Drive 日常事实源、GitHub 稳定成果和项目文件承担。
 
 日常分工：
 
 ```text
-Drive：日常任务、报告、截图、材料、交接、临时验收笔记。
+Drive：日常任务、报告、截图、材料、交接、临时验收、决策记录、daily log。
 WSL/local Git：真实代码编辑、测试、集成。
-GitHub main：里程碑代码和协作事实。
-GitHub tags：版本锚点、生产依据、回滚点。
+GitHub main：稳定代码和稳定文档。
+GitHub tags：版本锚点、release、rollback。
 Claude Code：由 Codex 编排的 first-pass 工程支持。
 Codex：最终集成、验证、提交、push、tag、必要时 PR、报告。
 ```
@@ -76,17 +76,17 @@ Codex：最终集成、验证、提交、push、tag、必要时 PR、报告。
 ChatGPT 应该完成背后判断：
 
 ```text
-1. 读取项目 GitHub 事实源。
+1. 读取 Drive 日常事实源和项目 GitHub 稳定事实。
 2. 判断任务风险、范围、执行者和验收方式。
 3. 能直接安全完成的文档、任务包、验收、轻量仓库操作，由 ChatGPT 直接完成。
-4. 日常上下文可先落在 Drive 工作台；关键执行事实必须同步回 GitHub 或项目仓库。
+4. 日常任务、报告、材料、交接和临时验收默认落 Drive；稳定成果、release、rollback 和可复用规范同步回 GitHub。
 5. 需要本地环境、代码修改、测试、集成、PR、tag 或部署前验证的工作，交给 Codex。
 6. 需要深度代码分析、局部修复草案、first-pass patch 或复审时，由 Codex 编排 Claude Code。
-7. Codex 完成后写回 reports/codex/latest.md。
+7. Codex 完成后写回 Drive 报告；稳定同步时更新 GitHub 报告。
 8. ChatGPT 只读验收并输出 PASS / PARTIAL PASS / FAIL / BLOCKED。
 ```
 
-如果当前 ChatGPT 会话有 GitHub 写权限，任务包应直接落 GitHub；如果没有写权限，必须明确说明，不能声称“已落 GitHub”。
+如果当前 ChatGPT 会话有 GitHub 写权限，稳定文档、release summary、rollback note、milestone summary 等可直接落 GitHub；日常任务包默认先落 Drive。如果没有写权限，必须明确说明，不能声称“已落 GitHub”。
 
 ## Drive 与 GitHub 的定位
 
@@ -109,10 +109,10 @@ Agent 负责读写细节。
 把所有注意力都耗在 GitHub 文件维护上。
 把简单任务搞成复杂仪式。
 把 Drive 当成生产部署源。
-把 GitHub daily task pointer 恢复为默认派工方式。
+把 repository-backed registry 恢复为默认日常派工方式。
 ```
 
-## V1.1 任务包注册表
+## V1.1 任务包注册表兼容层
 
 V1.1 在 V4 基线上新增项目级任务包注册表：
 
@@ -122,22 +122,31 @@ tasks/claude/latest.md
 reports/chatgpt/task-packages/
 ```
 
-它的作用是减少聊天复制，让 Codex 和 Claude Code 从稳定 GitHub 文件接任务。
+它的作用是减少聊天复制，让 Codex 和 Claude Code 在需要 repository-backed task 时从稳定 GitHub 文件接任务。
 
-它不接入自动化，不改变 V4，不新增默认协作成员，也不替代 `CURRENT.md`、`TASKS.md`、`DECISIONS.md`、`reports/latest.md` 等项目事实源。
+在 Drive-native V2 中，这套 registry 是兼容入口，不是默认日常派工入口。它不接入自动化，不改变四件套，不新增默认协作成员，也不替代 Drive 日常事实源或项目自己的 current state。
 
 V1.1 追加两条稳定执行规则：
 
 - 一个阶段只保留一个 active execution lane。默认同一阶段只有一个 active Codex task。
 - Claude Code 由 Codex 在当前 Codex task 内编排；Claude Code 不替代 Codex 做最终集成。
 
-面向用户的任务公告应保持短格式，详见 `templates/USER_FACING_TASK_ANNOUNCEMENT.md`。用户通常只需要把这句发给 Codex：
+面向用户的任务公告应保持短格式，详见 `templates/USER_FACING_TASK_ANNOUNCEMENT.md`。V2 默认使用 Drive task package；只有任务明确要求 GitHub-backed registry 时，才使用类似下面的兼容指令：
 
 ```text
 执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
 ```
 
 跨项目路由和扩展规则见 `standards/ROUTING_AND_EXTENSIBILITY_V1.md`。项目接入时可从 `templates/PROJECT_ROUTING_PROFILE.md` 生成项目自己的路由配置。
+
+V2 稳定层：
+
+- `standards/DRIVE_NATIVE_WORKFLOW_V2.md`
+- `standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md`
+- `guides/DRIVE_NATIVE_V2_USER_GUIDE.md`
+- `templates/drive-native-v2/`
+- `checklists/drive-native-v2/`
+- `protocols/drive-native-v2/`
 
 V1.2 稳定层：
 
@@ -169,10 +178,10 @@ CURRENT.md
 TASKS.md
 DECISIONS.md
 reports/latest.md
-tasks/codex/latest.md
-tasks/claude/latest.md
 reports/codex/latest.md
 ```
+
+如项目需要兼容 GitHub-backed registry，可再补 `tasks/codex/latest.md`、`tasks/claude/latest.md` 和对应 reports；默认日常派工先使用项目 Drive workbench。
 
 ## 模板 / 清单
 
@@ -182,9 +191,7 @@ reports/codex/latest.md
 
 `archive/` 用于保存迁移、误写抢救、历史版本与原始材料。归档内容只作为证据和素材，不直接代表当前最新规范。
 
-当前归档入口：
-
-- `archive/recovered-from-sub2api-misroute/2026-05-30/`
+归档内容可保留历史误写和迁移材料，但不得作为新项目接入入口。
 
 ## whitepapers
 

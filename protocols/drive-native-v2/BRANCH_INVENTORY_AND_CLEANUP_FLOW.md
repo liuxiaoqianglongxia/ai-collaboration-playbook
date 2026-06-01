@@ -1,7 +1,7 @@
 # Branch Inventory And Cleanup Flow
 
 protocol_id: BRANCH_INVENTORY_AND_CLEANUP_FLOW
-status: candidate
+status: stable
 
 ## Inventory Commands
 

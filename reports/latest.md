@@ -1,20 +1,20 @@
-# Latest Report｜DRIVE_NATIVE_V2_CANDIDATE
+# Latest Report｜PLAYBOOK_OPERATIONAL_BASELINE_V2
 
 ## 状态
 
 ```text
-DRIVE_NATIVE_V2_CANDIDATE
+PLAYBOOK_OPERATIONAL_BASELINE_V2
 ```
 
 ## 结论
 
-PARTIAL PASS
+PASS
 
 ## 当前主线成果
 
-`ai-collaboration-playbook` 已完成 `PLAYBOOK_OPERATIONAL_BASELINE_V1.2` 稳定冻结，并正在通过 Drive-native V2 candidate 把日常协作事实源迁移到 Drive 工作台。
+`ai-collaboration-playbook` 已完成 `PLAYBOOK_OPERATIONAL_BASELINE_V2` 稳定提升测试。
 
-V1.2 仍作为历史稳定基线保留。V2 候选层尚未标记为 `PLAYBOOK_OPERATIONAL_BASELINE_V2`，需要 ChatGPT 最终验收后才能升级为稳定基线。
+V2 将日常协作事实源迁移到 Drive 工作台，并把 GitHub 收口为稳定成果、版本管理、release、rollback 和最终可复用文档承载。V1.1/V1.2 保留为历史稳定基线。
 
 ```text
 daily_fact_source: Google Drive
@@ -26,7 +26,8 @@ V4 四件套角色模型保持不变：
 
 ```text
 ChatGPT: controller, task package, acceptance
-GitHub: milestone fact source, main, tags, trace log
+Drive: daily fact source, daily task/report/material/acceptance/decision workspace
+GitHub: stable result, version management, release, rollback, reusable docs
 Codex: local executor and final integrator
 Claude Code: first-pass engineering support coordinated by Codex
 ```
@@ -54,16 +55,20 @@ V1.2 Candidate Implementation: PASS
 V1.2 Self-Dogfood Stable Freeze: PASS
 ```
 
-## V2 候选层
+## V2 稳定层
 
 ```text
-Drive-native daily workflow: PARTIAL PASS
-GitHub release and version policy: PARTIAL PASS
-Drive-native templates: PARTIAL PASS
-Drive-native checklists: PARTIAL PASS
-Drive-native protocols: PARTIAL PASS
-Branch cleanup policy: PARTIAL PASS
-GitHub candidate sync: PARTIAL PASS
+Drive-native daily workflow: PASS
+GitHub release and version policy: PASS
+Drive-native templates: PASS
+Drive-native checklists: PASS
+Drive-native protocols: PASS
+Branch cleanup policy: PASS
+GitHub stable sync: PASS
+Private path leak scan: PASS
+Cross-project pollution scan: PASS
+Role conflict scan: PASS
+Registry default-dispatch residue scan: PASS
 ```
 
 ## 当前稳定入口
@@ -98,14 +103,14 @@ reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
 reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md
 ```
 
-## 当前任务指针
+## 兼容任务指针
 
 ```text
 tasks/codex/latest.md: none / NO_ACTIVE_CODEX_TASK
 tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
 ```
 
-GitHub daily task pointers are not the default Drive-native V2 dispatch surface.
+这些指针是兼容入口，不是 Drive-native V2 默认日常派工入口。
 
 ## 当前操作原则
 
@@ -116,7 +121,7 @@ GitHub daily task pointers are not the default Drive-native V2 dispatch surface.
 风险层兜底
 ```
 
-Drive-native V2 candidate model:
+Drive-native V2 model:
 
 ```text
 Drive 管日常任务、报告、截图、材料、交接、临时验收、决策记录和 daily log。
@@ -130,8 +135,8 @@ ChatGPT 做总控、任务设计、验收和 release decision。
 
 ```text
 V4 四件套不变。
-GitHub 仍是里程碑事实源、版本锚点、生产依据和回滚点。
-Drive 是日常工作台，不是 live code workspace，也不是最终里程碑事实源。
+GitHub 是稳定成果、版本锚点、release、rollback 和 final reusable docs 承载。
+Drive 是日常事实源，不是生产部署源。
 WSL/local Git 仍是真实开发空间。
 Codex 仍是交付负责人和最终集成者。
 Claude Code 仍是工程增强工具和 first-pass worker，不替代 Codex。
@@ -140,15 +145,14 @@ Google Drive 不是第五个 Agent。
 Hermes 不是默认四件套成员。
 未接入自动化。
 未处理业务项目。
-未处理 sub2api-maijian。
 未执行生产类操作。
 ```
 
 ## 下一步建议
 
 ```text
-1. ChatGPT 验收 Drive-native V2 candidate。
-2. 如通过，再把 V2 candidate 提升为稳定基线。
+1. 将 PLAYBOOK_OPERATIONAL_BASELINE_V2 作为当前稳定协作基线使用。
+2. 具体项目接入时先建 Drive workbench，再定义 GitHub stable sync 点。
 3. V1.1/V1.2 历史记录继续保留。
-4. 不恢复 GitHub-first daily task pointer 模式。
+4. 不恢复 GitHub registry 指针作为默认日常派工方式。
 ```

@@ -1,7 +1,7 @@
 # ChatGPT Codex Claude Routing
 
 protocol_id: CHATGPT_CODEX_CLAUDE_ROUTING
-status: candidate
+status: stable
 
 ## Roles
 
@@ -12,5 +12,5 @@ status: candidate
 ## Rules
 
 - Claude Code does not replace Codex.
-- GitHub daily task pointers are not the default Drive-native V2 dispatch channel.
+- Repository-backed registry pointers are compatibility entries only.
 - Stable reusable output may be synced to GitHub after validation.

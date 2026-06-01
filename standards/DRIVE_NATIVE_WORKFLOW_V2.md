@@ -1,7 +1,7 @@
 # Drive-native Workflow V2
 
 > Standard ID: `DRIVE_NATIVE_WORKFLOW_V2`
-> Status: Candidate in `DRIVE_NATIVE_V2_CANDIDATE`
+> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V2`
 
 ## Purpose
 
@@ -46,20 +46,20 @@ GitHub owns the stable and reusable surface:
 
 ## GitHub Pointer Rule
 
-`tasks/codex/latest.md` and `tasks/claude/latest.md` remain valid historical and repository-backed mechanisms, but they are not the default daily dispatch surface in Drive-native V2.
+`tasks/codex/latest.md` and `tasks/claude/latest.md` remain valid historical repository-backed mechanisms, but they are compatibility entries. Normal Drive-native V2 work uses Drive task packages.
 
 Use GitHub task pointers only when an executable task must be anchored in the repository.
 
-## Candidate Rule
+## Stable Rule
 
-Before ChatGPT acceptance, use:
+Current stable status:
 
 ```text
-DRIVE_NATIVE_V2_CANDIDATE
-PARTIAL PASS
+PLAYBOOK_OPERATIONAL_BASELINE_V2
+PASS
 ```
 
-Do not write `PLAYBOOK_OPERATIONAL_BASELINE_V2` until V2 is accepted.
+V1.1 and V1.2 remain historical baselines.
 
 ## Safety
 

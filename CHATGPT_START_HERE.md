@@ -3,30 +3,29 @@
 ## Current Baseline
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
-candidate: DRIVE_NATIVE_V2_CANDIDATE
-reports/latest.md: PARTIAL PASS on the V2 candidate branch
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V2
+reports/latest.md: PASS
 ```
 
 This repository is the general AI collaboration playbook. It is not a business project repository and does not contain production application code.
 
-V1.2 keeps V4 intact and adds a faster operating layer:
+Drive-native V2 is the current stable operating baseline:
 
 ```text
-Drive daily workbench
+Drive daily fact source
 WSL/local Git for real development
-GitHub main for milestone code and facts
+GitHub main for stable code/docs
 GitHub tags for release and rollback anchors
 Claude Code first-pass support coordinated by Codex
 Codex final integration
 ```
 
-Drive-native V2 candidate keeps V1.2 as the historical stable baseline while changing the daily operating surface:
+V1.1 and V1.2 remain historical stable baselines. V2 changes the daily operating surface:
 
 ```text
 Drive: daily task, report, material, screenshot, handoff, temporary acceptance, decision record, daily log
 GitHub: stable result, version management, release, rollback, final reusable docs
-GitHub daily task pointers: not the default V2 dispatch surface
+repository-backed task registry: compatibility surface only
 ```
 
 ## Read Order For A New ChatGPT Session
@@ -53,19 +52,17 @@ standards/ROUTING_AND_EXTENSIBILITY_V1.md
 protocols/GITHUB_AI_COLLABORATION.md
 templates/USER_FACING_TASK_ANNOUNCEMENT.md
 templates/PROJECT_ROUTING_PROFILE.md
-tasks/codex/latest.md
-tasks/claude/latest.md
 reports/codex/latest.md
 reports/claude/latest.md
 ```
+
+Read `tasks/codex/latest.md` and `tasks/claude/latest.md` only when the current project explicitly uses the GitHub-backed compatibility registry.
 
 If files conflict, treat `reports/latest.md` as the current status source and historical reports as evidence, not current state.
 
 ## Operating Mode
 
-The stable operating mode is `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`.
-
-The current candidate upgrade is `DRIVE_NATIVE_V2_CANDIDATE`. Do not mark it as `PLAYBOOK_OPERATIONAL_BASELINE_V2` until ChatGPT acceptance promotes it.
+The stable operating mode is `PLAYBOOK_OPERATIONAL_BASELINE_V2`.
 
 The target is:
 
@@ -113,7 +110,8 @@ If Claude Code is needed, Codex coordinates it inside the active Codex task.
 
 ```text
 ChatGPT: controller, architecture judgment, task package, acceptance, safe lightweight GitHub writes when available
-GitHub: single source of truth, state machine, trace log
+Drive: daily fact source, daily task/report/material/acceptance/decision workspace
+GitHub: stable result, version management, release, rollback, reusable docs
 Codex: delivery lead, local execution, final integration, reports
 Claude Code: local engineering enhancement, first-pass draft fixes, deep analysis, review
 ```
@@ -122,7 +120,7 @@ Hermes, Qwen, MCP, heartbeat, automation, and subagents are not default members.
 
 ## ChatGPT Direct-Work Rule
 
-If ChatGPT has GitHub write access and the task is safe documentation / task-package / pointer / report / acceptance work, ChatGPT should do it directly.
+If ChatGPT has GitHub write access and the task is safe stable documentation / release summary / milestone summary / rollback note work, ChatGPT may do it directly.
 
 Do not hand off safe controller work to Codex just to show process.
 
@@ -130,14 +128,14 @@ Use Codex for local execution, code changes, tests, integration, PR delivery, an
 
 If ChatGPT does not have GitHub write access, say so clearly and do not claim that anything was written to GitHub.
 
-## Current Task Pointers
+## Compatibility Task Pointers
 
 ```text
 tasks/codex/latest.md: none / NO_ACTIVE_CODEX_TASK
 tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
 ```
 
-GitHub daily task pointers are not the default Drive-native V2 dispatch surface. Use them only when a stable repository-backed task package is explicitly needed.
+These pointers are compatibility entries. They are not the default Drive-native V2 dispatch surface. Use them only when a stable repository-backed task package is explicitly needed.
 
 ## Safety Boundary
 
@@ -163,4 +161,4 @@ reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md
 
 ## Next Recommended Action
 
-Use this playbook as the stable V1.2 baseline for concrete projects. For each project, read the project's own fact source first and do not mix project state across repositories.
+Use this playbook as the stable V2 baseline for concrete projects. For each project, read its Drive workbench and GitHub stable facts first, and do not mix project state across repositories.
