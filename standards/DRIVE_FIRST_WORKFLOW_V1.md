@@ -1,7 +1,8 @@
 # Drive First Workflow Standard V1
 
 > Standard ID: `DRIVE_FIRST_WORKFLOW_V1`
-> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Status: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Current V2 note: historical baseline. Current default is `DRIVE_NATIVE_WORKFLOW_V2`.
 
 ## Purpose
 

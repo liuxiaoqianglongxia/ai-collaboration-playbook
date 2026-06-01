@@ -88,8 +88,8 @@ ChatGPT 分配 Codex task 时，用户层应使用短公告，不默认粘贴完
 - <one concrete outcome>
 - <one concrete outcome>
 不做：<key boundary>
-你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
-详情：任务包已在 GitHub。
+你发给 Codex：任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
+详情：任务包已在 Drive。
 ```
 
 如果 ChatGPT 当前没有 GitHub 写权限，必须明说，不能声称已经把任务包或报告写入 GitHub。
@@ -106,7 +106,7 @@ ChatGPT 分配 Codex task 时，用户层应使用短公告，不默认粘贴完
 6. `DECISIONS.md`
 7. `reports/latest.md`
 
-如果项目已经接入 V1.1/V1.2 任务包注册表兼容层，可在基础事实源之后继续读取：
+如果项目已经接入 GitHub-backed registry 兼容层，可在基础事实源之后继续读取：
 
 8. `tasks/README.md`
 9. `tasks/codex/latest.md`

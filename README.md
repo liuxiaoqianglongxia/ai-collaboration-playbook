@@ -19,12 +19,10 @@ Drive-native V2 是当前稳定基线。它把日常任务、报告、材料、�
 
 日常使用先读：
 
+- `QUICK_START.md`
 - `guides/USER_OPERATING_GUIDE_V1.md`
 - `CHATGPT_START_HERE.md`
 - `reports/latest.md`
-- `standards/DRIVE_FIRST_WORKFLOW_V1.md`
-- `standards/MAIN_ONLY_TAG_VERSIONING_V1.md`
-- `standards/CLAUDE_FIRST_CODEX_FINAL_V1.md`
 - `standards/DRIVE_NATIVE_WORKFLOW_V2.md`
 - `standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md`
 - `guides/DRIVE_NATIVE_V2_USER_GUIDE.md`
@@ -70,7 +68,7 @@ Codex：最终集成、验证、提交、push、tag、必要时 PR、报告。
 用户只需要给目标，例如：
 
 ```text
-按 V1.1 给这个项目发一个登录修复任务包。
+按 V2 给这个项目发一个登录修复任务包，并安排 Codex 执行。
 ```
 
 ChatGPT 应该完成背后判断：
@@ -131,11 +129,14 @@ V1.1 追加两条稳定执行规则：
 - 一个阶段只保留一个 active execution lane。默认同一阶段只有一个 active Codex task。
 - Claude Code 由 Codex 在当前 Codex task 内编排；Claude Code 不替代 Codex 做最终集成。
 
-面向用户的任务公告应保持短格式，详见 `templates/USER_FACING_TASK_ANNOUNCEMENT.md`。V2 默认使用 Drive task package；只有任务明确要求 GitHub-backed registry 时，才使用类似下面的兼容指令：
+面向用户的任务公告应保持短格式，详见 `templates/USER_FACING_TASK_ANNOUNCEMENT.md`。V2 默认使用 Drive task package：
 
 ```text
-执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md
+请 Codex 读取该任务包执行，完成后写 Drive 报告。
 ```
+
+只有任务明确要求 GitHub-backed registry 时，才使用项目声明的兼容入口。
 
 跨项目路由和扩展规则见 `standards/ROUTING_AND_EXTENSIBILITY_V1.md`。项目接入时可从 `templates/PROJECT_ROUTING_PROFILE.md` 生成项目自己的路由配置。
 
@@ -159,7 +160,7 @@ V1.2 稳定层：
 - `templates/CLAUDE_PATCH_WORKER_TASK.md`
 - `templates/CODEX_CLAUDE_ORCHESTRATION.md`
 
-ChatGPT Pro 深度复核入口见 `reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md`。最终个性化内容见 `reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md`。
+ChatGPT Pro 深度复核入口见 `reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md`。当前最终个性化内容见 `reports/chatgpt/personalization/PERSONALIZATION_FINAL_V2.md`。
 
 ## 新项目接入
 

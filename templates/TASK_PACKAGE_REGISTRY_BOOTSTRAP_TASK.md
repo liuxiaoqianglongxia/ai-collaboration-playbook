@@ -1,6 +1,6 @@
 # Task Package Registry Bootstrap Task Template
 
-> Use this template inside a project repository to add the V1.1 task-package registry structure. The first registry task only creates collaboration routing files; it does not perform business development.
+> V2 note: use this template only when a project explicitly needs the GitHub-backed task-package registry compatibility layer. The default V2 daily task surface is a Drive task package. The first registry task only creates compatibility routing files; it does not perform business development.
 
 ## 1. Task Name
 
@@ -10,7 +10,7 @@ project-task-package-registry-bootstrap-v1
 
 ## 2. Background
 
-This project already uses, or is preparing to use, the V4 collaboration pattern. To reduce chat-only task transfer, the project should add stable GitHub task-package pointers for Codex and Claude Code.
+This project already uses Drive-native V2 and explicitly needs GitHub-backed task-package pointers as a compatibility layer.
 
 ## 3. Goal
 

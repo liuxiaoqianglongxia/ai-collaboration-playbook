@@ -1,6 +1,6 @@
 # tasks
 
-Copy this directory into a project repository when adopting the V1.1 task-package registry.
+Copy this directory into a project repository only when adopting the GitHub-backed task-package registry compatibility layer.
 
 After copying, this file becomes:
 
@@ -10,9 +10,9 @@ tasks/README.md
 
 ## Purpose
 
-`tasks/` is the project-local registry for executable AI task packages.
+`tasks/` is the project-local compatibility registry for executable AI task packages.
 
-ChatGPT writes task packages and updates latest pointers. Codex and Claude Code read those pointers before executing or reviewing work.
+Drive-native V2 uses Drive task packages by default. ChatGPT writes these GitHub pointers only when a project explicitly enables repository-backed task dispatch.
 
 ## Entry Points
 
@@ -21,9 +21,9 @@ tasks/codex/latest.md
 tasks/claude/latest.md
 ```
 
-Codex reads `tasks/codex/latest.md`.
+When this compatibility layer is enabled, Codex reads `tasks/codex/latest.md`.
 
-Claude Code reads `tasks/claude/latest.md`.
+When this compatibility layer is enabled, Claude Code reads `tasks/claude/latest.md`.
 
 ## Rules
 

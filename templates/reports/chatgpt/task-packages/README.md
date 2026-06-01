@@ -1,6 +1,6 @@
 # ChatGPT Task Package Snapshots
 
-Copy this directory into a project repository when adopting the V1.1 task-package registry.
+Copy this directory into a project repository only when adopting the GitHub-backed task-package registry compatibility layer.
 
 After copying, this file becomes:
 

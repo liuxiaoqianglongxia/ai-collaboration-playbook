@@ -1,7 +1,8 @@
 # Main Only Tag Versioning Standard V1
 
 > Standard ID: `MAIN_ONLY_TAG_VERSIONING_V1`
-> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Status: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Current V2 note: historical baseline. Current GitHub policy is `GITHUB_RELEASE_AND_VERSION_POLICY_V2`.
 
 ## Purpose
 

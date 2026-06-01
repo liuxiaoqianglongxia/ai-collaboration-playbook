@@ -13,9 +13,10 @@ primary_fact_source: <CHATGPT_START_HERE.md or equivalent>
 ## Universal Baseline
 
 ```text
-playbook_baseline: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
+playbook_baseline: PLAYBOOK_OPERATIONAL_BASELINE_V2
 one_active_execution_lane: yes
-github_is_fact_source: yes
+drive_is_daily_fact_source: yes
+github_is_stable_carrier: yes
 codex_final_integrator: yes
 claude_code_final_integrator: no
 ```
@@ -32,10 +33,15 @@ CURRENT.md
 TASKS.md
 DECISIONS.md
 reports/latest.md
-tasks/codex/latest.md
-tasks/claude/latest.md
 reports/codex/latest.md
 reports/claude/latest.md
+```
+
+Optional compatibility files when GitHub-backed registry is explicitly enabled:
+
+```text
+tasks/codex/latest.md
+tasks/claude/latest.md
 ```
 
 ## Routing
@@ -62,7 +68,7 @@ no cross-project state copying
 no second active Codex task in the same stage
 ```
 
-## Current Task Pointers
+## Optional Compatibility Task Pointers
 
 ```text
 tasks/codex/latest.md: <none-or-task-path> / <status>

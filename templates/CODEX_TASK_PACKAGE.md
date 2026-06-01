@@ -15,13 +15,13 @@
 - <one concrete outcome>
 - <one concrete outcome>
 不做：<key boundary>
-你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
-详情：任务包已在 GitHub。
+你发给 Codex：任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
+详情：任务包已在 Drive。
 ```
 
 ## 背景
 
-说明为什么要做这件事，当前项目状态来自哪些 GitHub 事实源。
+说明为什么要做这件事，当前项目状态来自哪些 Drive 日常事实和 GitHub 稳定事实。
 
 必须写明：
 
@@ -108,7 +108,7 @@ Claude Code：允许 / 要求 / 禁止
 - 相关测试通过。
 - 指定文件存在且内容符合要求。
 - 未修改禁止范围。
-- 报告写回 GitHub。
+- 报告写回 Drive；稳定成果同步时再写回 GitHub。
 - 仍然保留回滚路径。
 
 ## 报告要求

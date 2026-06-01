@@ -1,7 +1,8 @@
 # Execution Lane Management Standard V1
 
 > **Standard ID**: `EXECUTION_LANE_MANAGEMENT_V1`
-> **Status**: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Status**: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Current V2 note**: historical execution-lane standard. V2 keeps one active execution lane, but daily dispatch defaults to Drive task packages.
 > **Maintained in**: `ai-collaboration-playbook/standards/EXECUTION_LANE_MANAGEMENT_V1.md`
 
 ---
@@ -22,7 +23,7 @@ This keeps the user-facing layer simple while preserving full execution power be
 ## Core Rule
 
 - A project stage must not have more than one active Codex execution lane.
-- If `tasks/codex/latest.md` points to an active Codex task, ChatGPT must not create another active Codex task.
+- If a Drive task package or GitHub-backed compatibility pointer already defines an active Codex task, ChatGPT must not create another active Codex task.
 - The current Codex task must end with `PASS`, `PARTIAL PASS`, `FAIL`, or `BLOCKED` before a new Codex task becomes active.
 - New findings during an active task become candidate next steps, not new active task pointers.
 - ChatGPT may prepare notes, acceptance checklists, or future task drafts, but must not move latest pointers to a new active task while the current task is unfinished.
@@ -68,7 +69,7 @@ They must not:
 
 ## latest Pointer Requirements
 
-During active execution:
+During active execution in the GitHub-backed compatibility registry:
 
 ```text
 tasks/codex/latest.md: <current task path> / ACTIVE_CODEX_TASK

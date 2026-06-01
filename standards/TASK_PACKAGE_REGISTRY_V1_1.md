@@ -1,20 +1,23 @@
 # Task Package Registry Standard V1.1
 
 > **Standard ID**: `TASK_PACKAGE_REGISTRY_V1_1`
-> **Status**: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Status**: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Current V2 note**: historical compatibility layer only. `PLAYBOOK_OPERATIONAL_BASELINE_V2` uses Drive task packages by default.
 > **Maintained in**: `ai-collaboration-playbook/standards/TASK_PACKAGE_REGISTRY_V1_1.md`
 
 ---
 
 ## Purpose
 
-Define a project-level registry for executable AI task packages so ChatGPT, GitHub, Codex, and Claude Code coordinate through files instead of long chat transcripts.
+Define a project-level GitHub-backed compatibility registry for executable AI task packages so ChatGPT, GitHub, Codex, and Claude Code can coordinate through files when a project explicitly chooses repository-backed dispatch.
 
-The registry gives each project stable entry points for current Codex and Claude Code tasks, plus a durable archive of ChatGPT task-package and acceptance snapshots.
+The registry gives each opted-in project stable compatibility entry points for Codex and Claude Code tasks, plus a durable archive of ChatGPT task-package and acceptance snapshots.
+
+In Drive-native V2 this registry is optional compatibility infrastructure, not the default daily dispatch mechanism.
 
 ## Status
 
-`TASK_PACKAGE_REGISTRY_V1_1` is stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`.
+`TASK_PACKAGE_REGISTRY_V1_1` was stabilized in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1` and is now historical compatibility material under V2.
 
 Promotion history:
 
@@ -80,11 +83,11 @@ Good pattern:
 
 ```text
 User states the goal.
-ChatGPT reads GitHub facts and chooses the route.
-Task package and pointer live in GitHub.
-Codex executes the current task entry.
+ChatGPT reads Drive daily facts and GitHub stable facts, then chooses the route.
+Daily task package and report live in Drive by default.
+Codex executes the current Drive task entry.
 Claude Code is coordinated only when useful.
-ChatGPT validates from GitHub.
+ChatGPT validates from Drive reports and GitHub stable evidence.
 ```
 
 ## One Active Execution Lane
@@ -105,7 +108,7 @@ While waiting for an active task, ChatGPT may read status, explain scope, or pre
 
 ## User-Facing Task Announcement
 
-When a GitHub-backed Codex task exists, ChatGPT should give the user a short announcement instead of pasting the full task package by default:
+For current V2 work, ChatGPT should give the user a short Drive task announcement instead of pasting the full task package by default:
 
 ```text
 任务：<TASK-ID>
@@ -114,11 +117,11 @@ When a GitHub-backed Codex task exists, ChatGPT should give the user a short ann
 - <one concrete outcome>
 - <one concrete outcome>
 不做：<key boundary>
-你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
-详情：任务包已在 GitHub。
+你发给 Codex：任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
+详情：任务包已在 Drive。
 ```
 
-Do not claim the task package is in GitHub unless it actually exists in the repository.
+When a project explicitly enables the GitHub-backed registry compatibility layer, use the project's declared compatibility entry. Do not claim the task package is in GitHub unless it actually exists in the repository.
 
 ## GitHub Write Capability Boundary
 
@@ -176,7 +179,7 @@ review / second opinion
 
 ## Required Project Structure
 
-Projects that adopt V1.1 should add this structure:
+Projects that explicitly adopt the GitHub-backed registry compatibility layer should add this structure:
 
 ```text
 tasks/README.md
@@ -190,11 +193,11 @@ reports/chatgpt/task-packages/README.md
 reports/chatgpt/task-packages/<TASK-ID>-ACCEPTANCE.md
 ```
 
-This is a project-level structure. The playbook repository provides reusable templates and standards, but it does not replace the project repository as the execution fact source.
+This is a project-level compatibility structure. The playbook repository provides reusable templates and standards, but it does not replace the project Drive workbench as the default daily fact source.
 
 ## Codex Task Registry
 
-`tasks/codex/latest.md` is the stable entry point for the current Codex task.
+Inside this compatibility registry, `tasks/codex/latest.md` is the repository-backed entry point for the current Codex task.
 
 Rules:
 
@@ -207,7 +210,7 @@ Rules:
 
 ## Claude Code Task Registry
 
-`tasks/claude/latest.md` is the stable entry point for the current Claude Code analysis or review task.
+Inside this compatibility registry, `tasks/claude/latest.md` is the repository-backed entry point for the current Claude Code analysis or review task.
 
 Rules:
 

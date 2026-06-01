@@ -9,8 +9,8 @@
 - <one concrete outcome>
 - <one concrete outcome>
 不做：<key boundary>
-你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
-详情：任务包已在 GitHub。
+你发给 Codex：任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
+详情：任务包已在 Drive。
 ```
 
 ## 1. Task Name
@@ -33,7 +33,7 @@ base_commit: <sha-or-unknown>
 
 ## 4. Current Project State
 
-List the GitHub fact-source files that define the current state.
+List the Drive daily facts and GitHub stable facts that define the current state.
 
 ## 5. Execution Lane Status
 

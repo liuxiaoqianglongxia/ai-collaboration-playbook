@@ -166,7 +166,7 @@ rollback
 
 ```text
 不要让用户反复复制几千行任务包。
-不要把 tasks/codex/latest.md 恢复为默认日常派工入口。
+不要把 GitHub-backed registry 恢复为默认日常派工入口。
 不要把 Drive 当生产部署源。
 不要把 GitHub 当 daily log 或截图仓库。
 不要把具体业务项目代码提交到本 playbook 仓库。

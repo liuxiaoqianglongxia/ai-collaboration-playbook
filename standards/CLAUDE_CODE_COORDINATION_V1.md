@@ -1,7 +1,8 @@
 # Claude Code Coordination Standard V1
 
 > **Standard ID**: `CLAUDE_CODE_COORDINATION_V1`
-> **Status**: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Status**: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> **Current V2 note**: historical coordination standard. V2 still requires Codex to coordinate Claude Code, but daily tasks default to Drive task packages.
 > **Maintained in**: `ai-collaboration-playbook/standards/CLAUDE_CODE_COORDINATION_V1.md`
 
 ---
@@ -53,13 +54,13 @@ Stable coordination flow:
 
 The user should not manually relay long Claude Code task packages when Codex can coordinate the local workflow.
 
-Preferred user-facing instruction:
+Current V2 preferred user-facing instruction:
 
 ```text
-执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
 ```
 
-The detailed Claude Code coordination belongs in GitHub task files and reports.
+The detailed Claude Code coordination belongs in the active task package and report. Use GitHub task files only when a project explicitly enables the GitHub-backed compatibility registry.
 
 ## Evidence Rule
 

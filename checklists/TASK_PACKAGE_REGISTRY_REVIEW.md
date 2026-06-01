@@ -1,6 +1,6 @@
 # Task Package Registry Review Checklist
 
-> Use this checklist to review a project-level V1.1 task-package registry and its latest pointers.
+> V2 note: use this checklist only for projects that explicitly enable the GitHub-backed registry compatibility layer. Drive task packages are the default V2 daily dispatch surface.
 
 ## 1. Routing Check
 

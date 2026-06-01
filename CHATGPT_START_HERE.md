@@ -33,25 +33,15 @@ repository-backed task registry: compatibility surface only
 Read these first:
 
 ```text
+QUICK_START.md
 reports/latest.md
 guides/USER_OPERATING_GUIDE_V1.md
 README.md
 AI_AGENT_ONBOARDING.md
 AI_COLLABORATION_MODE_V4.md
-standards/DRIVE_FIRST_WORKFLOW_V1.md
-standards/MAIN_ONLY_TAG_VERSIONING_V1.md
-standards/CLAUDE_FIRST_CODEX_FINAL_V1.md
 standards/DRIVE_NATIVE_WORKFLOW_V2.md
 standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md
 guides/DRIVE_NATIVE_V2_USER_GUIDE.md
-standards/MAXIMUM_PRACTICAL_AUTHORIZATION_V1.md
-standards/TASK_PACKAGE_REGISTRY_V1_1.md
-standards/EXECUTION_LANE_MANAGEMENT_V1.md
-standards/CLAUDE_CODE_COORDINATION_V1.md
-standards/ROUTING_AND_EXTENSIBILITY_V1.md
-protocols/GITHUB_AI_COLLABORATION.md
-templates/USER_FACING_TASK_ANNOUNCEMENT.md
-templates/PROJECT_ROUTING_PROFILE.md
 reports/codex/latest.md
 reports/claude/latest.md
 ```
@@ -156,7 +146,7 @@ Pro review and final personalization:
 
 ```text
 reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
-reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md
+reports/chatgpt/personalization/PERSONALIZATION_FINAL_V2.md
 ```
 
 ## Next Recommended Action

@@ -23,13 +23,13 @@
 示例：
 
 ```text
-按 V1.1 给这个项目发一个登录修复任务包。
+按 V2 给这个项目发一个登录修复任务包，并安排 Codex 执行。
 ```
 
 如果项目明确启用 GitHub-backed registry 兼容入口，也可以说：
 
 ```text
-执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
+按该项目的 GitHub-backed registry 兼容入口执行当前 Codex 任务。
 ```
 
 ChatGPT 应该在背后完成判断：
@@ -92,8 +92,8 @@ ChatGPT 给用户的任务公告应短，不默认粘贴长任务包：
 - <one concrete outcome>
 - <one concrete outcome>
 不做：<key boundary>
-你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
-详情：任务包已在 GitHub。
+你发给 Codex：任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
+详情：任务包已在 Drive。
 ```
 
 前提是项目明确启用了 GitHub-backed registry，且任务包确实已经写入 GitHub。V2 默认使用 Drive task package。
@@ -193,10 +193,8 @@ CURRENT.md
 TASKS.md
 DECISIONS.md
 reports/latest.md
-tasks/codex/latest.md
-tasks/claude/latest.md
 reports/codex/latest.md
 reports/claude/latest.md
 ```
 
-V2 默认还应建立项目 Drive workbench。通用规范在本仓库。项目事实在项目自己的 Drive/GitHub 空间。不要混用。
+V2 默认还应建立项目 Drive workbench。若项目启用 GitHub-backed registry，再补 `tasks/codex/latest.md` 和 `tasks/claude/latest.md`。通用规范在本仓库。项目事实在项目自己的 Drive/GitHub 空间。不要混用。

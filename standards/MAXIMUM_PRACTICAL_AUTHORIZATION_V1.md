@@ -1,7 +1,8 @@
 # Maximum Practical Authorization Standard V1
 
 > Standard ID: `MAXIMUM_PRACTICAL_AUTHORIZATION_V1`
-> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Status: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Current V2 note: historical baseline. V2 keeps the same safety boundary while using Drive as daily fact source.
 
 ## Purpose
 

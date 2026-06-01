@@ -1,4 +1,4 @@
-# Latest Codex Report｜PLAYBOOK-DRIVE-NATIVE-V2-STABLE-PROMOTION-V1
+# Latest Codex Report｜PLAYBOOK-V2-PUBLIC-DOCS-FINAL-AUDIT-V1
 
 状态：PASS
 
@@ -9,25 +9,25 @@ PASS
 ## 最新报告
 
 ```text
-reports/codex/playbook-drive-native-v2-stable-promotion-v1.md
+reports/codex/playbook-v2-public-docs-final-audit-v1.md
 ```
 
 ## 摘要
 
-已对 PR #9 的 Drive-native V2 文档分支完成稳定提升测试，并将状态提升为 `PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS`。
+已在最新 `main` 上完成 V2 公开文档最终审计，清理会误导外部用户的 V1.1/V1.2 默认入口残留。
 
 本轮完成：
 
 ```text
-PLAYBOOK_OPERATIONAL_BASELINE_V2 docs
-Drive daily fact source
-GitHub stable version / release / rollback / final reusable docs role
-Registry pointers retained as compatibility only
-V1.1/V1.2 retained as historical stable baselines
-PR #9 ready for review
+README V2 example fixed
+QUICK_START public entry references completed
+PERSONALIZATION_FINAL_V2 set as current personalization entry
+GitHub-backed registry retained as compatibility only
+V1.1/V1.2 retained as historical stable baselines only
+private path leak scan PASS
 ```
 
-本轮未编排 Claude Code；Codex 使用本地文件检查、GitHub branch/PR 状态核验和 Markdown diff 检查完成验证。
+本轮未编排 Claude Code；Codex 使用本地文件检查、公开文档扫描和 Markdown diff 检查完成验证。
 
 ## 禁止范围确认
 
@@ -40,5 +40,6 @@ PR #9 ready for review
 未改数据库。
 未改密钥。
 未 force push。
-未 merge main。
+未改 tag。
+未重写 main。
 ```

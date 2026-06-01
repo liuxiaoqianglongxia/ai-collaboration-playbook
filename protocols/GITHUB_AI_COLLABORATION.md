@@ -2,6 +2,7 @@
 
 > **Purpose**: Define how ChatGPT, Drive, GitHub, Codex, and Claude Code collaborate without making repository maintenance the user's daily burden.
 > **Version**: 1.2
+> **Status**: historical compatibility protocol. Current default baseline is `PLAYBOOK_OPERATIONAL_BASELINE_V2`; read `QUICK_START.md`, `standards/DRIVE_NATIVE_WORKFLOW_V2.md`, and `protocols/drive-native-v2/` first.
 > **Maintained in**: `ai-collaboration-playbook/protocols/GITHUB_AI_COLLABORATION.md`
 
 ---
@@ -32,14 +33,14 @@ The user should be able to say a short goal. The system behind it may be complex
 
 ## 3. How ChatGPT Uses GitHub
 
-ChatGPT should read GitHub before judging current project status:
+In V2, ChatGPT reads the project Drive workbench for daily facts and GitHub for stable facts. For projects that still use this historical GitHub-backed protocol, ChatGPT should read GitHub before judging stable project status:
 
 1. Read `CHATGPT_START_HERE.md` when present.
 2. Read `CURRENT.md` when present.
 3. Read `TASKS.md` when present.
 4. Read `DECISIONS.md` when present.
 5. Read `reports/latest.md`.
-6. If V1.1 registry exists, read `tasks/codex/latest.md`, `tasks/claude/latest.md`, `reports/codex/latest.md`, and `reports/claude/latest.md`.
+6. If a GitHub-backed registry compatibility layer exists, read `tasks/codex/latest.md`, `tasks/claude/latest.md`, `reports/codex/latest.md`, and `reports/claude/latest.md`.
 7. Read only the source files relevant to the task.
 
 Never act on chat history alone when repository facts are needed.
@@ -74,15 +75,15 @@ Drive notes should sync back to GitHub when they become execution instructions, 
 
 ## 5. How GitHub Serves as Fact Source
 
-GitHub holds the authoritative state through these files:
+For projects that explicitly enable GitHub-backed compatibility, GitHub holds repository-level state through these files. In V2, Drive remains the default daily fact source.
 
 | File | Purpose | Update Trigger |
 |------|---------|----------------|
 | `CHATGPT_START_HERE.md` | New-session entry | Project onboarding or major status shift |
 | `CURRENT.md` | Project state card | Phase change, milestone, risk identified |
 | `TASKS.md` | Task list and lifecycle | Task created, completed, blocked |
-| `tasks/codex/latest.md` | Current Codex task pointer | ChatGPT assigns or clears Codex task package |
-| `tasks/claude/latest.md` | Current Claude Code task pointer | ChatGPT assigns or clears Claude Code task package |
+| `tasks/codex/latest.md` | Compatibility Codex task pointer | ChatGPT assigns or clears repository-backed Codex task package |
+| `tasks/claude/latest.md` | Compatibility Claude Code task pointer | ChatGPT assigns or clears repository-backed Claude Code task package |
 | `DECISIONS.md` | Decision log | Architecture choice made, alternative rejected |
 | `AGENTS.md` | Execution rules | Team composition, repo commands, safety boundary |
 | `CLAUDE.md` | Claude Code boundary | Local review or analysis mode changes |
@@ -119,7 +120,7 @@ If the current ChatGPT session does not have GitHub write access, ChatGPT must s
 
 Codex is the delivery lead that turns assigned tasks into integrated results:
 
-1. Receive task packages from `tasks/codex/latest.md` when the registry exists.
+1. Receive task packages from Drive by default, or from `tasks/codex/latest.md` when the GitHub-backed registry compatibility layer is explicitly enabled.
 2. Verify repository identity, branch, and allowed scope.
 3. Execute the task: apply fixes, run tests, verify.
 4. Use Claude Code or other local tools only within task boundaries.
@@ -154,7 +155,7 @@ Claude Code outputs are report evidence, not final authority. Codex verifies the
 
 ## 8.1 User-Facing Task Announcement
 
-When ChatGPT assigns a GitHub-backed Codex task, chat should stay short:
+When ChatGPT assigns a V2 Drive task package, chat should stay short:
 
 ```text
 任务：<TASK-ID>
@@ -163,11 +164,11 @@ When ChatGPT assigns a GitHub-backed Codex task, chat should stay short:
 - <one concrete outcome>
 - <one concrete outcome>
 不做：<key boundary>
-你发给 Codex：执行 tasks/codex/latest.md，完成后更新 reports/codex/latest.md。
-详情：任务包已在 GitHub。
+你发给 Codex：任务已写入 Drive：tasks/codex/YYYYMMDD/<task-name>.md；请读取该任务包执行，完成后写 Drive 报告。
+详情：任务包已在 Drive。
 ```
 
-Do not paste the full task package in chat by default, and do not claim it is in GitHub unless the file exists.
+Use the old `tasks/codex/latest.md` wording only when a project explicitly enables the GitHub-backed compatibility registry. Do not paste the full task package in chat by default, and do not claim it is in Drive or GitHub unless the file exists there.
 
 ## 9. Risk-Based Routing
 
@@ -191,11 +192,11 @@ Medium-risk task:
 Codex may coordinate Claude Code for review, failure analysis, or local fix drafts.
 ```
 
-V1.2 normal engineering task:
+V2 normal engineering task:
 
 ```text
-Drive can hold daily handoff notes.
-GitHub holds the executable task or milestone report.
+Drive holds daily task packages and reports.
+GitHub holds stable outcomes, release notes, rollback notes, or milestone reports.
 Codex executes in WSL/local Git.
 Claude Code may provide first-pass support.
 Codex pushes main, tags, or opens PR according to task risk.

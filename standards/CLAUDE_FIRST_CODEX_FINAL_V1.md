@@ -1,7 +1,8 @@
 # Claude First Codex Final Standard V1
 
 > Standard ID: `CLAUDE_FIRST_CODEX_FINAL_V1`
-> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Status: Historical stable baseline from `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
+> Current V2 note: historical baseline. V2 keeps Codex final integration and Claude Code first-pass support.
 
 ## Purpose
 
