@@ -1,7 +1,7 @@
 # GitHub AI Collaboration Protocol
 
-> **Purpose**: Define how ChatGPT, GitHub, Codex, and Claude Code collaborate using GitHub as the central hub without making GitHub maintenance the user's daily burden.
-> **Version**: 1.1
+> **Purpose**: Define how ChatGPT, Drive, GitHub, Codex, and Claude Code collaborate without making repository maintenance the user's daily burden.
+> **Version**: 1.2 candidate
 > **Maintained in**: `ai-collaboration-playbook/protocols/GITHUB_AI_COLLABORATION.md`
 
 ---
@@ -15,7 +15,7 @@
 | Delivery Lead | Codex | Hands | Local execution, integration, tests, PR, delivery reports |
 | Engineering Muscle | Claude Code | Muscle | Code exploration, draft fixes, failure analysis, review |
 
-V1.1 does not add a fifth default member. Hermes, Qwen, MCP, automation, heartbeat, and subagents are optional project-specific tools only.
+V1.2 candidate does not add a fifth default engineering member. Drive is a daily workbench layer, not a code executor or final fact source. Hermes, Qwen, MCP, automation, heartbeat, and subagents are optional project-specific tools only.
 
 ## 2. Design Goal
 
@@ -28,7 +28,7 @@ The user-facing layer must stay simple:
 风险层兜底
 ```
 
-The user should be able to say a short goal. The system behind it may be complex, but the complexity belongs to ChatGPT, GitHub, Codex, Claude Code, and project files.
+The user should be able to say a short goal. The system behind it may be complex, but the complexity belongs to ChatGPT, Drive daily files, GitHub durable facts, Codex, Claude Code, and project files.
 
 ## 3. How ChatGPT Uses GitHub
 
@@ -44,7 +44,35 @@ ChatGPT should read GitHub before judging current project status:
 
 Never act on chat history alone when repository facts are needed.
 
-## 4. How GitHub Serves as Fact Source
+## 4. Drive Daily Workbench And GitHub Fact Source
+
+Drive may hold daily working material:
+
+```text
+tasks
+reports
+screenshots
+handoffs
+temporary acceptance notes
+materials and exports
+```
+
+GitHub remains the durable milestone source:
+
+```text
+main code
+task packages
+reports
+decisions
+acceptance snapshots
+tags
+production references
+rollback anchors
+```
+
+Drive notes should sync back to GitHub when they become execution instructions, milestone decisions, acceptance evidence, release anchors, production references, or rollback references.
+
+## 5. How GitHub Serves as Fact Source
 
 GitHub holds the authoritative state through these files:
 
@@ -63,10 +91,11 @@ GitHub holds the authoritative state through these files:
 | `reports/claude/latest.md` | Latest Claude Code result | Claude Code completes review or analysis |
 | `reports/chatgpt/task-packages/` | ChatGPT task and acceptance snapshots | Task package or acceptance issued |
 | Source code | Application logic | Code changes committed and reviewed |
+| Tags | Version anchors | dev-ok, pre-prod, prod, rollback, or project-specific milestones |
 
 GitHub is the source of truth, but the user should not be forced to operate every detail manually.
 
-## 5. ChatGPT Direct-Work Rule
+## 6. ChatGPT Direct-Work Rule
 
 ChatGPT is not merely a dispatcher.
 
@@ -86,7 +115,7 @@ ChatGPT should not hand these tasks to Codex merely to prove that Codex exists.
 
 If the current ChatGPT session does not have GitHub write access, ChatGPT must say so clearly and must not claim that a task package or report has been written to GitHub.
 
-## 6. Codex Execution Rule
+## 7. Codex Execution Rule
 
 Codex is the delivery lead that turns assigned tasks into integrated results:
 
@@ -95,19 +124,21 @@ Codex is the delivery lead that turns assigned tasks into integrated results:
 3. Execute the task: apply fixes, run tests, verify.
 4. Use Claude Code or other local tools only within task boundaries.
 5. Commit with clear messages following project conventions.
-6. Push to a feature branch or prepare the requested diff.
-7. Create PR when required.
-8. Report delivery results to `reports/codex/latest.md`.
+6. Push to main when the task is low-risk and direct-main is authorized.
+7. Create a tag when the task needs a version, production, or rollback anchor.
+8. Create PR when review or integration protection is useful.
+9. Report delivery results to `reports/codex/latest.md`.
 
 Codex should not infer scope from chat when a GitHub task package exists.
 
 One stage should have one active execution lane. If `tasks/codex/latest.md` already points to `ACTIVE_CODEX_TASK`, do not create another active Codex task for the same stage. New findings should be recorded as candidate next steps until the active task reports `PASS`, `PARTIAL PASS`, `FAIL`, or `BLOCKED`.
 
-## 7. Claude Code Coordination Rule
+## 8. Claude Code Coordination Rule
 
 Claude Code is a local engineering enhancement tool. It should be used when it adds real value:
 
 ```text
+bounded first-pass implementation
 deep code reading
 call-chain analysis
 complex bug localization
@@ -117,11 +148,11 @@ review or second opinion
 
 Claude Code does not replace Codex as final integrator.
 
-Users should not be asked to manually relay long Claude Code tasks when Codex can coordinate Claude Code through `tasks/claude/latest.md`.
+Codex should coordinate Claude Code through a bounded prompt, patch-worker task, or `tasks/claude/latest.md` when that adds value.
 
 Claude Code outputs are report evidence, not final authority. Codex verifies the output, decides what enters the final diff, and remains final integrator.
 
-## 7.1 User-Facing Task Announcement
+## 8.1 User-Facing Task Announcement
 
 When ChatGPT assigns a GitHub-backed Codex task, chat should stay short:
 
@@ -138,7 +169,7 @@ When ChatGPT assigns a GitHub-backed Codex task, chat should stay short:
 
 Do not paste the full task package in chat by default, and do not claim it is in GitHub unless the file exists.
 
-## 8. Risk-Based Routing
+## 9. Risk-Based Routing
 
 Light task:
 
@@ -160,6 +191,16 @@ Medium-risk task:
 Codex may coordinate Claude Code for review, failure analysis, or local fix drafts.
 ```
 
+V1.2 candidate normal engineering task:
+
+```text
+Drive can hold daily handoff notes.
+GitHub holds the executable task or milestone report.
+Codex executes in WSL/local Git.
+Claude Code may provide first-pass support.
+Codex pushes main, tags, or opens PR according to task risk.
+```
+
 High-risk task:
 
 ```text
@@ -167,7 +208,24 @@ Production, deployment, database, secrets, data deletion, force push, service re
 Must use a separate safety task package and explicit user authorization.
 ```
 
-## 9. Branches and PRs
+## 10. Main, Tags, Branches, And PRs
+
+Default:
+
+```text
+main only
+```
+
+Use tags for version anchors:
+
+```text
+dev-ok-YYYYMMDD
+pre-prod-YYYYMMDD
+prod-YYYYMMDD
+rollback-before-YYYYMMDD
+```
+
+Use branches only when a real review or integration boundary is useful. Do not use branches as version records.
 
 | Scenario | Branch Pattern | Notes |
 |----------|----------------|-------|
@@ -180,19 +238,20 @@ Must use a separate safety task package and explicit user authorization.
 
 Do not force push unless explicitly authorized.
 
-## 10. PR and Report Traceability
+## 11. PR, Tag, And Report Traceability
 
 Every significant change should be traceable:
 
 1. Task in `TASKS.md` or `tasks/*/latest.md`.
 2. Branch or direct commit according to risk.
-3. PR when appropriate.
-4. Report written.
-5. ChatGPT acceptance from GitHub facts.
+3. Tag when a version, production, or rollback anchor is needed.
+4. PR when appropriate.
+5. Report written.
+6. ChatGPT acceptance from durable facts.
 
 If a task is blocked, the reason should appear in the relevant task/report files, not only in chat.
 
-## 11. Preventing Copy-Paste Chaos
+## 12. Preventing Copy-Paste Chaos
 
 The main failure mode is relying on chat history instead of GitHub:
 

@@ -1,6 +1,6 @@
 # 用户使用说明 V1
 
-> 适用版本：`PLAYBOOK_OPERATIONAL_BASELINE_V1.1`
+> 适用版本：`PLAYBOOK_OPERATIONAL_BASELINE_V1.1` + `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE`
 > 目标读者：用户、ChatGPT 新会话、Codex 执行会话、接入本 playbook 的项目维护者
 
 ## 1. 这套 playbook 是什么
@@ -14,7 +14,7 @@
 - 用户不用每天复制长任务包。
 - 执行、报告、验收都能回到同一个事实源。
 
-默认事实源是 GitHub。用户不需要每天维护 GitHub 细节，Agent 负责读写。
+默认里程碑事实源是 GitHub。V1.2 candidate 增加 Drive 日常工作台，让日常任务、报告、截图、材料和交接更快流转。用户不需要每天维护 GitHub 细节，Agent 负责读写和同步关键事实。
 
 ## 2. 日常你怎么用
 
@@ -35,21 +35,31 @@
 ChatGPT 应该在背后完成判断：
 
 ```text
-读 GitHub 事实源
+读 Drive 日常上下文和 GitHub 事实源
 判断风险和执行者
 能自己安全完成就直接写 GitHub
 需要本地执行就写任务包并指向 Codex
-需要深度分析就让 Codex 编排 Claude Code
+需要 first-pass 工程支持就由 Codex 编排 Claude Code
 完成后只读验收
+```
+
+V1.2 candidate 的日常分工：
+
+```text
+Drive 管日常任务、报告、截图、材料、交接、临时验收笔记。
+WSL/local Git 管真实代码编辑、测试、集成。
+GitHub main 管里程碑代码和协作事实。
+GitHub tags 管版本锚点、生产依据和回滚点。
+Codex 负责最终集成、验证、push main、tag、必要时 PR、报告。
 ```
 
 ## 3. 四个稳定角色
 
 ```text
 ChatGPT：总控、判断、任务包、验收、轻量 GitHub 写入
-GitHub：唯一事实源、状态机、留痕
+GitHub：里程碑事实源、状态机、留痕、tag 锚点
 Codex：本地执行、集成、测试、PR、执行报告
-Claude Code：深度代码阅读、局部草案、失败分析、复审
+Claude Code：由 Codex 编排的 first-pass 工程支持、深度代码阅读、局部草案、失败分析、复审
 ```
 
 Hermes、Qwen、MCP、automation、heartbeat、subagent 不是默认成员。只有项目事实源或用户明确授权时，才作为项目特化工具进入。
@@ -132,7 +142,7 @@ Codex 完成后应写 `reports/codex/latest.md`，并指向命名报告。
 用户给目标
   |
   v
-ChatGPT 读取 GitHub 事实源
+ChatGPT 读取 Drive 日常上下文和 GitHub 事实源
   |
   +-- 安全文档/任务包/验收 --> ChatGPT 直接写 GitHub
   |
@@ -141,7 +151,10 @@ ChatGPT 读取 GitHub 事实源
                                   v
                                 Codex 执行
                                   |
-                                  +-- 需要深度分析 --> Codex 编排 Claude Code
+                                  +-- 需要 first-pass 支持 --> Codex 编排 Claude Code
+                                  |
+                                  v
+                                Codex 在 WSL/local Git 集成、验证、push main/tag
                                   |
                                   v
                                 Codex 写 reports/codex/latest.md
@@ -158,6 +171,8 @@ ChatGPT 读取 GitHub 事实源
 - 不在一个阶段同时启动多条写入执行线。
 - 不把 Claude Code 输出当作最终合并或部署授权。
 - 不把 Hermes、Qwen、MCP、automation、heartbeat、subagent 变成默认成员。
+- 不把 Drive 当代码仓库或最终里程碑事实源。
+- 不把 branch 当版本记录；版本锚点应是 main 上的 tag。
 - 不未经授权部署、改数据库、改密钥、改生产配置或 force push。
 
 ## 10. 项目接入时怎么用

@@ -4,20 +4,26 @@
 
 它不是某一个业务项目的源码仓库，也不承载任何生产系统代码。它的职责是作为多个项目共享的“协作操作系统”：让 ChatGPT、GitHub、Codex、Claude Code 围绕同一套事实源、任务文件和验收规则工作。
 
-## 当前稳定版本
+## 当前状态
 
 ```text
-PLAYBOOK_OPERATIONAL_BASELINE_V1.1
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
+candidate: PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE
 reports/latest.md: PASS
 ```
 
-V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。当前入口以 `reports/latest.md` 为准。
+V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 candidate 在 V1.1 上新增 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
+
+当前入口以 `reports/latest.md` 为准。
 
 日常使用先读：
 
 - `guides/USER_OPERATING_GUIDE_V1.md`
 - `CHATGPT_START_HERE.md`
 - `reports/latest.md`
+- `standards/DRIVE_FIRST_WORKFLOW_V1.md`
+- `standards/MAIN_ONLY_TAG_VERSIONING_V1.md`
+- `standards/CLAUDE_FIRST_CODEX_FINAL_V1.md`
 
 ## 稳定主链路
 
@@ -30,9 +36,9 @@ V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge 
 
 Hermes、Qwen、MCP、自动化、心跳、子代理等能力不是默认四件套成员。只有具体项目事实源或用户明确授权时，才作为项目特化工具进入。
 
-## V1.1 的使用目标
+## V1.2 Candidate 的使用目标
 
-V1.1 不是为了让用户面对更多流程，而是为了把复杂度放到背后：
+V1.2 candidate 不是为了让用户面对更多流程，而是为了把日常操作从 GitHub 机械维护中释放出来，同时保留 GitHub 的里程碑事实源地位：
 
 ```text
 使用层极简
@@ -41,7 +47,18 @@ V1.1 不是为了让用户面对更多流程，而是为了把复杂度放到背
 风险层兜底
 ```
 
-对用户来说，理想使用方式应该像浏览器或微信一样：入口简单、动作短、结果清楚；背后可以复杂，但复杂度应由 ChatGPT、GitHub、Codex、Claude Code 和项目文件承担，而不是让用户每天复制长任务包。
+理想使用方式应该像浏览器或微信一样：入口简单、动作短、结果清楚。复杂度由 Agent 层、GitHub 事实源和项目文件承担。
+
+日常分工：
+
+```text
+Drive：日常任务、报告、截图、材料、交接、临时验收笔记。
+WSL/local Git：真实代码编辑、测试、集成。
+GitHub main：里程碑代码和协作事实。
+GitHub tags：版本锚点、生产依据、回滚点。
+Claude Code：由 Codex 编排的 first-pass 工程支持。
+Codex：最终集成、验证、提交、push、tag、必要时 PR、报告。
+```
 
 ## 默认工作方式
 
@@ -57,23 +74,25 @@ ChatGPT 应该完成背后判断：
 1. 读取项目 GitHub 事实源。
 2. 判断任务风险、范围、执行者和验收方式。
 3. 能直接安全完成的文档、任务包、验收、轻量仓库操作，由 ChatGPT 直接完成。
-4. 需要本地环境、代码修改、测试、集成、PR、部署前验证的工作，交给 Codex。
-5. 需要深度代码分析、局部修复草案或复审时，由 Codex 编排 Claude Code。
-6. Codex 完成后写回 reports/codex/latest.md。
-7. ChatGPT 只读验收并输出 PASS / PARTIAL PASS / FAIL / BLOCKED。
+4. 日常上下文可先落在 Drive 工作台；关键执行事实必须同步回 GitHub 或项目仓库。
+5. 需要本地环境、代码修改、测试、集成、PR、tag 或部署前验证的工作，交给 Codex。
+6. 需要深度代码分析、局部修复草案、first-pass patch 或复审时，由 Codex 编排 Claude Code。
+7. Codex 完成后写回 reports/codex/latest.md。
+8. ChatGPT 只读验收并输出 PASS / PARTIAL PASS / FAIL / BLOCKED。
 ```
 
 如果当前 ChatGPT 会话有 GitHub 写权限，任务包应直接落 GitHub；如果没有写权限，必须明确说明，不能声称“已落 GitHub”。
 
-## GitHub 的定位
+## Drive 与 GitHub 的定位
 
-GitHub 是事实源，不是让用户消耗精力的地方。
+Drive 是日常工作台。GitHub 是里程碑事实源、版本锚点、生产依据和回滚点。
 
 正确用法：
 
 ```text
-GitHub 保存当前状态、任务包、报告、决策和验收证据。
-用户只看关键结论和下一句指令。
+Drive 保存日常任务、截图、材料、交接和临时验收笔记。
+GitHub 保存里程碑状态、任务包、报告、决策、代码、tag 和验收证据。
+用户侧只看关键结论和下一句指令。
 Agent 负责读写细节。
 ```
 
@@ -84,6 +103,7 @@ Agent 负责读写细节。
 让用户反复复制大段任务包。
 把所有注意力都耗在 GitHub 文件维护上。
 把简单任务搞成复杂仪式。
+把 Drive 当成代码仓库或最终事实源。
 ```
 
 ## V1.1 任务包注册表
@@ -112,6 +132,17 @@ V1.1 追加两条稳定执行规则：
 ```
 
 跨项目路由和扩展规则见 `standards/ROUTING_AND_EXTENSIBILITY_V1.md`。项目接入时可从 `templates/PROJECT_ROUTING_PROFILE.md` 生成项目自己的路由配置。
+
+V1.2 candidate 新增：
+
+- `standards/DRIVE_FIRST_WORKFLOW_V1.md`
+- `standards/MAIN_ONLY_TAG_VERSIONING_V1.md`
+- `standards/CLAUDE_FIRST_CODEX_FINAL_V1.md`
+- `standards/MAXIMUM_PRACTICAL_AUTHORIZATION_V1.md`
+- `templates/drive-project-workbench/`
+- `templates/CLAUDE_BOUNDED_IMPLEMENTATION_TASK.md`
+- `templates/CLAUDE_PATCH_WORKER_TASK.md`
+- `templates/CODEX_CLAUDE_ORCHESTRATION.md`
 
 ChatGPT Pro 深度复核入口见 `reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md`。个性化候选内容见 `reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md`，该文件是候选，不是最终个人设置。
 

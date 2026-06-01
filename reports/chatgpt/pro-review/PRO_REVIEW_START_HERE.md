@@ -1,12 +1,13 @@
 # Pro Review Start Here
 
-> Purpose: first source file for a future ChatGPT Pro deep review of `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`.
+> Purpose: first source file for a future ChatGPT Pro deep review of `PLAYBOOK_OPERATIONAL_BASELINE_V1.1` and the `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE` operating layer.
 
 ## Current Stable Status
 
 ```text
 repository_full_name: liuxiaoqianglongxia/ai-collaboration-playbook
-baseline: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
+stable_baseline: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
+candidate_layer: PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE
 reports/latest.md: PASS
 current task pointers after Codex closeout: none / NO_ACTIVE_CODEX_TASK, none / NO_ACTIVE_CLAUDE_TASK
 ```
@@ -20,6 +21,10 @@ README.md
 CHATGPT_START_HERE.md
 AI_AGENT_ONBOARDING.md
 AI_COLLABORATION_MODE_V4.md
+standards/DRIVE_FIRST_WORKFLOW_V1.md
+standards/MAIN_ONLY_TAG_VERSIONING_V1.md
+standards/CLAUDE_FIRST_CODEX_FINAL_V1.md
+standards/MAXIMUM_PRACTICAL_AUTHORIZATION_V1.md
 standards/TASK_PACKAGE_REGISTRY_V1_1.md
 standards/EXECUTION_LANE_MANAGEMENT_V1.md
 standards/CLAUDE_CODE_COORDINATION_V1.md
@@ -43,6 +48,7 @@ reports/claude/latest.md
 - Routing/extensibility guidance now separates universal rules from project facts and optional tools.
 - User operating guide exists.
 - Personalization content is prepared as a candidate, not final.
+- V1.2 candidate adds Drive-first daily workbench, WSL/local Git development, main+tag milestone anchors, Claude-first-pass / Codex-final execution, and maximum practical authorization.
 
 ## User Concern To Review Carefully
 
@@ -66,6 +72,17 @@ ChatGPT: controller and acceptance
 Codex: final integrator, verifier, PR/report owner, hard-problem executor
 Claude Code: deep engineering assistant, bounded implementation worker, local draft generator, reviewer
 GitHub: fact source
+```
+
+V1.2 candidate makes this explicit:
+
+```text
+Drive: daily workbench, not live code or final milestone source
+GitHub main: milestone code and durable facts
+GitHub tags: version, production, and rollback anchors
+WSL/local Git: real development workspace
+Claude Code: first-pass worker coordinated by Codex
+Codex: final integrator
 ```
 
 ## Claude Code Value-Maximization Question
@@ -372,6 +389,9 @@ Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Cod
 10. Should Claude Code be allowed to perform bounded implementation work by default for low/medium-risk tasks?
 11. How should Codex verify Claude Code edits before owning the final commit/PR?
 12. Should the playbook add a stable `CLAUDE_CODE_INVOCATION_PATTERNS_V1` doc, or keep invocation examples in templates only?
+13. Does Drive-first create any ambiguity with GitHub as milestone fact source?
+14. Are the main-only + tag rules concrete enough for rollback and production references?
+15. Is maximum practical authorization clear enough to reduce friction without authorizing protected actions?
 
 ## Known Uncertainties
 
@@ -379,6 +399,8 @@ Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Cod
 - Claude Code interactive coordination can require TTY and human permission handling; only non-interactive no-tools smoke was verified in the last task.
 - Claude Code write-capable workflows need stronger validation than read-only review workflows.
 - Claude Code CLI and settings features can change, so Pro should verify current official docs before recommending a stable invocation pattern.
+- Drive-first workflows need project-specific sync discipline so Drive and GitHub do not become competing current states.
+- Tag naming may need project-specific release conventions before production use.
 - Qwen, Hermes, MCP, heartbeat, automation, and subagents remain optional or experimental unless a project fact source authorizes them.
 - Pro should check whether the candidate personalization is too project-management-heavy for everyday ChatGPT use.
 - OpenClaw / Hermes references should be treated as design references, not sources of authority, unless the actual repo/docs are read.
@@ -392,6 +414,8 @@ Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Cod
 - Do not mix business project facts into this generic playbook.
 - Do not weaken GitHub fact-source discipline.
 - Do not authorize production, database, secrets, deployment, automation, or force push by default.
+- Do not make Drive the live code workspace or final milestone fact source.
+- Do not use branches as version records when tags are the intended anchor.
 
 ## Freeze Judgment
 
@@ -408,6 +432,8 @@ The playbook is stable enough to freeze Personal Details and Custom Instructions
 8. Claude Code can perform bounded implementation work where safe, not just review.
 9. Codex remains final integrator and verifier for Claude Code work.
 10. OpenClaw / Hermes / skill-style patterns are considered for routing and repeatability, but only stable, safe patterns are promoted.
+11. Drive-first wording keeps GitHub as milestone fact source and WSL/local Git as real code workspace.
+12. Main+tag wording does not remove PR branches where review or integration protection is useful.
 ```
 
 ## Expected Output From Pro
@@ -423,4 +449,5 @@ The playbook is stable enough to freeze Personal Details and Custom Instructions
 8. Which OpenClaw / Hermes / skill-style ideas should be adopted, deferred, or rejected.
 9. Minimal required edits before freeze, if any.
 10. Final copyable Personal Details and Custom Instructions.
+11. Whether V1.2 candidate should be promoted, revised, or kept as an operating-layer candidate.
 ```

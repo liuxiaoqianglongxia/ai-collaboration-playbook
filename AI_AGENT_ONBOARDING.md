@@ -14,9 +14,9 @@ ChatGPT 也不是只能派活。当前会话具备 GitHub 写权限、且任务�
 
 ### GitHub
 
-GitHub 是唯一事实源、项目状态机和留痕系统。讨论可以发生在聊天里，但执行依据、任务文件、状态报告、验收记录必须落到 GitHub。
+GitHub 是里程碑事实源、项目状态机、版本锚点和留痕系统。讨论可以发生在聊天里或 Drive 日常工作台里，但执行依据、任务文件、状态报告、验收记录和版本锚点必须能回到 GitHub 或项目仓库。
 
-GitHub 的目标不是增加用户负担。用户层应保持极简，GitHub 的复杂读写应主要由 ChatGPT、Codex 和 Claude Code 承担。
+GitHub 的目标不是增加用户负担。用户层应保持极简，GitHub 的复杂读写应主要由 ChatGPT、Codex 和 Claude Code 承担。V1.2 candidate 允许 Drive 承担日常工作台角色，但 Drive 不替代 GitHub 的里程碑事实源地位。
 
 ### Codex
 
@@ -26,9 +26,11 @@ Codex 不应跳过任务文件直接改业务代码，也不应把聊天里的�
 
 同一阶段默认只有一个 active Codex task。若执行中发现新问题，应记录为候选下一步，而不是直接启动第二条执行线。
 
+V1.2 candidate 下，Codex 还负责把真实开发留在 WSL/local Git，完成最终集成、验证、push main、tag、必要时 PR 和报告。
+
 ### Claude Code
 
-Claude Code 是本地工程增强工具，适合承担深度代码分析、调用链梳理、测试失败定位、局部修复草案和复审。Claude Code 不替代 Codex 的最终集成责任，也不直接承担生产部署职责。
+Claude Code 是本地工程增强工具，适合承担 first-pass 工程草案、深度代码分析、调用链梳理、测试失败定位、局部修复草案和复审。Claude Code 不替代 Codex 的最终集成责任，也不直接承担生产部署职责。
 
 Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex 通过 `tasks/claude/latest.md` 编排。
 
@@ -44,9 +46,9 @@ Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex �
 8. 有能力直接安全完成的总控工作，不应为了流程表演而转交执行者。
 9. 一个阶段只保留一个 active execution lane；active Codex task 未关闭前，不创建第二个 active Codex task。
 
-## 三、V1.1 简化体验原则
+## 三、V1.2 Candidate 简化体验原则
 
-V1.1 的目标是：
+V1.1 的稳定目标仍然有效：
 
 ```text
 使用层极简
@@ -55,14 +57,26 @@ V1.1 的目标是：
 风险层兜底
 ```
 
+V1.2 candidate 在这个基础上增加：
+
+```text
+Drive daily workbench
+WSL/local Git real development
+GitHub main milestone code
+GitHub tags version anchors
+Claude Code first-pass support
+Codex final integration
+```
+
 用户通常只需要说目标。ChatGPT 负责读取事实源、判断风险、决定自己做还是交 Codex，并把复杂度放到背后。
 
 默认分流：
 
 ```text
 ChatGPT 直接做：事实源读取、文档修正、任务包落库、latest 指针、验收、轻量收口。
-Codex 执行：本地命令、代码修改、测试、集成、PR、执行报告。
-Claude Code 辅助：深度分析、局部修复草案、复审，由 Codex 编排。
+Drive 承担：日常任务、报告、截图、材料、交接、临时验收笔记。
+Codex 执行：本地命令、代码修改、测试、集成、push main、tag、必要时 PR、执行报告。
+Claude Code 辅助：first-pass 草案、深度分析、局部修复草案、复审，由 Codex 编排。
 ```
 
 ChatGPT 分配 GitHub-backed Codex task 时，用户层应使用短公告，不默认粘贴完整长任务包：
@@ -92,7 +106,7 @@ ChatGPT 分配 GitHub-backed Codex task 时，用户层应使用短公告，不�
 6. `DECISIONS.md`
 7. `reports/latest.md`
 
-如果项目已经接入 V1.1 任务包注册表，应在基础事实源之后继续读取：
+如果项目已经接入 V1.1/V1.2 任务包注册表，应在基础事实源之后继续读取：
 
 8. `tasks/README.md`
 9. `tasks/codex/latest.md`
@@ -100,7 +114,9 @@ ChatGPT 分配 GitHub-backed Codex task 时，用户层应使用短公告，不�
 11. `reports/codex/latest.md`
 12. `reports/claude/latest.md`
 
-Codex 和 Claude Code 不得从聊天历史推断当前任务。存在 registry 时，任务包必须以 GitHub 文件为准；如果 registry 指针与 `CURRENT.md`、`TASKS.md` 或 `reports/latest.md` 冲突，应停止并报告 `BLOCKED`。
+Codex 和 Claude Code 不得从聊天历史推断当前任务。存在 registry 时，任务包必须以 GitHub 文件为准。
+
+如果 registry 指针与 `CURRENT.md`、`TASKS.md` 或 `reports/latest.md` 冲突，应先判断任务是否授权修正该状态。未授权、范围不清或涉及高风险写入时，停止并报告 `BLOCKED`。
 
 有 `tasks/` 的项目中，Codex 必须从 `tasks/codex/latest.md` 读取任务，Claude Code 必须从 `tasks/claude/latest.md` 读取任务。
 
@@ -113,10 +129,12 @@ Codex 和 Claude Code 不得从聊天历史推断当前任务。存在 registry 
 - 执行结论：PASS / PARTIAL PASS / FAIL / BLOCKED。
 - 实际修改文件列表。
 - 实际运行的检查、测试或命令。
+- Claude Code first-pass 是否使用、证据是什么、Codex 接受或拒绝了什么。
+- push main、tag 或 PR 状态，如果任务要求。
 - 未完成项与阻塞原因。
 - 是否触碰禁止范围。
 - 下一步建议。
 
 ## 六、验收原则
 
-ChatGPT 验收时只承认 GitHub 事实源，不以执行者口头承诺为准。若 GitHub 状态与聊天描述冲突，以 GitHub 为准，并要求补充报告或回滚说明。
+ChatGPT 验收时只承认 durable facts，不以执行者口头承诺为准。Drive 可作为日常速记和材料入口，但最终验收必须回到 GitHub、项目仓库、代码 diff、测试、tag、运行证据或正式报告。若 GitHub 状态与聊天描述冲突，以 GitHub 为准，并要求补充报告或回滚说明。
