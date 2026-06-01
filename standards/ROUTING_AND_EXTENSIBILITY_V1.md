@@ -1,7 +1,7 @@
 # Routing And Extensibility Standard V1
 
 > **Standard ID**: `ROUTING_AND_EXTENSIBILITY_V1`
-> **Status**: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.1`; extended by `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE`
+> **Status**: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
 > **Maintained in**: `ai-collaboration-playbook/standards/ROUTING_AND_EXTENSIBILITY_V1.md`
 
 ---
@@ -18,7 +18,7 @@ Project-specific facts stay in the project repository.
 Optional tools can be routed in, but they are not default members unless the project fact source explicitly says so.
 ```
 
-V1.2 candidate adds a Drive-first daily workbench and main+tag versioning layer. These layers do not replace the universal V4 roles.
+V1.2 adds a Drive-first daily workbench and main+tag versioning layer. These layers do not replace the universal V4 roles.
 
 ## Layers
 

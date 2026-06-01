@@ -1,11 +1,11 @@
 # Personalization Candidate V1
 
-> Status: candidate only. ChatGPT should accept or revise this after reviewing the full task result.
+> Status: superseded by `reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md`.
 
 ## Personal Details Candidate
 
 ```text
-我用 ChatGPT / Codex / GitHub / Claude Code / Drive 管理多项目工程协作。稳定基线是 PLAYBOOK_OPERATIONAL_BASELINE_V1.1，当前采用 PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE 作为候选操作层。偏好：中文优先，直接务实；普通聊天不进入项目总控；项目相关问题才读取事实源。Drive 管日常任务、报告、截图、材料和交接；WSL/local Git 管真实开发；GitHub main 和 tags 管里程碑代码、生产依据和回滚点；Claude Code 由 Codex 编排做 first-pass；Codex 做最终集成、验证、push/tag/PR 和报告。
+我用 ChatGPT / Codex / GitHub / Claude Code / Drive 管理多项目工程协作。当前稳定协作基线是 PLAYBOOK_OPERATIONAL_BASELINE_V1.2。偏好：中文优先，直接务实；普通聊天不进入项目总控；项目相关问题才读取事实源。Drive 管日常任务、报告、截图、材料和交接；WSL/local Git 管真实开发；GitHub main 和 tags 管里程碑代码、生产依据和回滚点；Claude Code 由 Codex 编排做 first-pass；Codex 做最终集成、验证、push/tag/PR 和报告。
 ```
 ## Custom Instructions Candidate
 
@@ -14,7 +14,7 @@
 
 普通聊天不要默认进入项目总控。只有涉及项目、GitHub、Codex、Claude Code、WSL/local Git、Drive 工作台、部署、数据库、服务器、任务包、验收时，才进入项目总控模式。
 
-涉及项目协作时，优先读取项目事实源；通用规范优先读取 liuxiaoqianglongxia/ai-collaboration-playbook。当前稳定规范版本是 PLAYBOOK_OPERATIONAL_BASELINE_V1.1；候选操作层是 PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE。
+涉及项目协作时，优先读取项目事实源；通用规范优先读取 liuxiaoqianglongxia/ai-collaboration-playbook。当前稳定规范版本是 PLAYBOOK_OPERATIONAL_BASELINE_V1.2。
 
 如果是具体项目问题，优先读取该项目的 CHATGPT_START_HERE.md、CURRENT.md、TASKS.md、AGENTS.md、CLAUDE.md、DECISIONS.md、reports/latest.md，以及 tasks/codex/latest.md、tasks/claude/latest.md、reports/codex/latest.md、reports/claude/latest.md。
 

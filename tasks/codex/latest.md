@@ -3,13 +3,13 @@
 Current task package:
 
 ```text
-tasks/codex/PLAYBOOK-V1.2-SELF-DOGFOOD-STABLE-FREEZE-V1.md
+none
 ```
 
 Current execution status:
 
 ```text
-ACTIVE_CODEX_TASK
+NO_ACTIVE_CODEX_TASK
 ```
 
 Rules:
@@ -21,5 +21,5 @@ Rules:
 Previous completed task evidence:
 
 ```text
-reports/codex/playbook-v1-2-drive-first-main-tag-claude-first-v1.md
+reports/codex/playbook-v1-2-self-dogfood-stable-freeze-v1.md
 ```

@@ -1,13 +1,13 @@
 # Pro Review Start Here
 
-> Purpose: first source file for a future ChatGPT Pro deep review of `PLAYBOOK_OPERATIONAL_BASELINE_V1.1` and the `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE` operating layer.
+> Purpose: first source file for a future ChatGPT Pro deep review of the stable `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`.
 
 ## Current Stable Status
 
 ```text
 repository_full_name: liuxiaoqianglongxia/ai-collaboration-playbook
-stable_baseline: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
-candidate_layer: PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE
+stable_baseline: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
+historical_baseline: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
 reports/latest.md: PASS
 current task pointers after Codex closeout: none / NO_ACTIVE_CODEX_TASK, none / NO_ACTIVE_CLAUDE_TASK
 ```
@@ -32,7 +32,7 @@ standards/ROUTING_AND_EXTENSIBILITY_V1.md
 protocols/GITHUB_AI_COLLABORATION.md
 templates/USER_FACING_TASK_ANNOUNCEMENT.md
 templates/PROJECT_ROUTING_PROFILE.md
-reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md
+reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md
 reports/codex/latest.md
 reports/claude/latest.md
 ```
@@ -47,8 +47,8 @@ reports/claude/latest.md
 - User-facing task announcement format is short.
 - Routing/extensibility guidance now separates universal rules from project facts and optional tools.
 - User operating guide exists.
-- Personalization content is prepared as a candidate, not final.
-- V1.2 candidate adds Drive-first daily workbench, WSL/local Git development, main+tag milestone anchors, Claude-first-pass / Codex-final execution, and maximum practical authorization.
+- Personalization final copy is prepared.
+- V1.2 adds Drive-first daily workbench, WSL/local Git development, main+tag milestone anchors, Claude-first-pass / Codex-final execution, and maximum practical authorization.
 
 ## User Concern To Review Carefully
 
@@ -74,7 +74,7 @@ Claude Code: deep engineering assistant, bounded implementation worker, local dr
 GitHub: fact source
 ```
 
-V1.2 candidate makes this explicit:
+V1.2 makes this explicit:
 
 ```text
 Drive: daily workbench, not live code or final milestone source
@@ -378,7 +378,7 @@ Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Cod
 ## Questions For Pro Reasoning
 
 1. Is the user-facing guide short enough for daily use?
-2. Are the Personal Details and Custom Instructions candidates concise enough for ChatGPT personalization fields?
+2. Are the Personal Details and Custom Instructions final copies concise enough for ChatGPT personalization fields?
 3. Does `ROUTING_AND_EXTENSIBILITY_V1` keep the playbook flexible instead of rigid?
 4. Are optional tools clearly useful without becoming default members?
 5. Is the one-active-execution-lane rule too strict for any legitimate parallel read-only review scenario?
@@ -402,7 +402,7 @@ Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Cod
 - Drive-first workflows need project-specific sync discipline so Drive and GitHub do not become competing current states.
 - Tag naming may need project-specific release conventions before production use.
 - Qwen, Hermes, MCP, heartbeat, automation, and subagents remain optional or experimental unless a project fact source authorizes them.
-- Pro should check whether the candidate personalization is too project-management-heavy for everyday ChatGPT use.
+- Pro should check whether the final personalization copy is too project-management-heavy for everyday ChatGPT use.
 - OpenClaw / Hermes references should be treated as design references, not sources of authority, unless the actual repo/docs are read.
 
 ## Do Not Change Casually
@@ -422,9 +422,9 @@ Do not let skill routing bypass GitHub facts, one-active-lane discipline, or Cod
 The playbook is stable enough to freeze Personal Details and Custom Instructions only if:
 
 ```text
-1. reports/latest.md remains PLAYBOOK_OPERATIONAL_BASELINE_V1.1 / PASS.
+1. reports/latest.md remains PLAYBOOK_OPERATIONAL_BASELINE_V1.2 / PASS.
 2. latest task pointers are clear after the active task closes.
-3. candidate personalization is short, general, and not tied to one PR.
+3. final personalization is short, general, and not tied to one PR.
 4. V4 role boundaries remain intact.
 5. optional tools remain project-specific, not default.
 6. user daily workflow remains short: goal -> GitHub-backed task -> Codex report -> ChatGPT acceptance.
@@ -449,5 +449,5 @@ The playbook is stable enough to freeze Personal Details and Custom Instructions
 8. Which OpenClaw / Hermes / skill-style ideas should be adopted, deferred, or rejected.
 9. Minimal required edits before freeze, if any.
 10. Final copyable Personal Details and Custom Instructions.
-11. Whether V1.2 candidate should be promoted, revised, or kept as an operating-layer candidate.
+11. Whether V1.2 stable should remain as-is, be revised, or be split into smaller follow-up standards.
 ```

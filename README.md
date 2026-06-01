@@ -7,12 +7,11 @@
 ## 当前状态
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
-candidate: PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
 reports/latest.md: PASS
 ```
 
-V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 candidate 在 V1.1 上新增 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
+V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 在 V1.1 上新增并冻结 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
 
 当前入口以 `reports/latest.md` 为准。
 
@@ -36,9 +35,9 @@ V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge 
 
 Hermes、Qwen、MCP、自动化、心跳、子代理等能力不是默认四件套成员。只有具体项目事实源或用户明确授权时，才作为项目特化工具进入。
 
-## V1.2 Candidate 的使用目标
+## V1.2 的使用目标
 
-V1.2 candidate 不是为了让用户面对更多流程，而是为了把日常操作从 GitHub 机械维护中释放出来，同时保留 GitHub 的里程碑事实源地位：
+V1.2 不是为了让用户面对更多流程，而是为了把日常操作从 GitHub 机械维护中释放出来，同时保留 GitHub 的里程碑事实源地位：
 
 ```text
 使用层极简
@@ -133,7 +132,7 @@ V1.1 追加两条稳定执行规则：
 
 跨项目路由和扩展规则见 `standards/ROUTING_AND_EXTENSIBILITY_V1.md`。项目接入时可从 `templates/PROJECT_ROUTING_PROFILE.md` 生成项目自己的路由配置。
 
-V1.2 candidate 新增：
+V1.2 稳定层：
 
 - `standards/DRIVE_FIRST_WORKFLOW_V1.md`
 - `standards/MAIN_ONLY_TAG_VERSIONING_V1.md`
@@ -144,7 +143,7 @@ V1.2 candidate 新增：
 - `templates/CLAUDE_PATCH_WORKER_TASK.md`
 - `templates/CODEX_CLAUDE_ORCHESTRATION.md`
 
-ChatGPT Pro 深度复核入口见 `reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md`。个性化候选内容见 `reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md`，该文件是候选，不是最终个人设置。
+ChatGPT Pro 深度复核入口见 `reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md`。最终个性化内容见 `reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md`。
 
 ## 新项目接入
 

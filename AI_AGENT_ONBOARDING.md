@@ -16,7 +16,7 @@ ChatGPT 也不是只能派活。当前会话具备 GitHub 写权限、且任务�
 
 GitHub 是里程碑事实源、项目状态机、版本锚点和留痕系统。讨论可以发生在聊天里或 Drive 日常工作台里，但执行依据、任务文件、状态报告、验收记录和版本锚点必须能回到 GitHub 或项目仓库。
 
-GitHub 的目标不是增加用户负担。用户层应保持极简，GitHub 的复杂读写应主要由 ChatGPT、Codex 和 Claude Code 承担。V1.2 candidate 允许 Drive 承担日常工作台角色，但 Drive 不替代 GitHub 的里程碑事实源地位。
+GitHub 的目标不是增加用户负担。用户层应保持极简，GitHub 的复杂读写应主要由 ChatGPT、Codex 和 Claude Code 承担。V1.2 允许 Drive 承担日常工作台角色，但 Drive 不替代 GitHub 的里程碑事实源地位。
 
 ### Codex
 
@@ -26,7 +26,7 @@ Codex 不应跳过任务文件直接改业务代码，也不应把聊天里的�
 
 同一阶段默认只有一个 active Codex task。若执行中发现新问题，应记录为候选下一步，而不是直接启动第二条执行线。
 
-V1.2 candidate 下，Codex 还负责把真实开发留在 WSL/local Git，完成最终集成、验证、push main、tag、必要时 PR 和报告。
+V1.2 下，Codex 还负责把真实开发留在 WSL/local Git，完成最终集成、验证、push main、tag、必要时 PR 和报告。
 
 ### Claude Code
 
@@ -46,7 +46,7 @@ Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex �
 8. 有能力直接安全完成的总控工作，不应为了流程表演而转交执行者。
 9. 一个阶段只保留一个 active execution lane；active Codex task 未关闭前，不创建第二个 active Codex task。
 
-## 三、V1.2 Candidate 简化体验原则
+## 三、V1.2 简化体验原则
 
 V1.1 的稳定目标仍然有效：
 
@@ -57,7 +57,7 @@ V1.1 的稳定目标仍然有效：
 风险层兜底
 ```
 
-V1.2 candidate 在这个基础上增加：
+V1.2 在这个基础上增加：
 
 ```text
 Drive daily workbench

@@ -1,7 +1,7 @@
 # Drive First Workflow Standard V1
 
 > Standard ID: `DRIVE_FIRST_WORKFLOW_V1`
-> Status: Candidate in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE`
+> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
 
 ## Purpose
 

@@ -1,7 +1,7 @@
 # Main Only Tag Versioning Standard V1
 
 > Standard ID: `MAIN_ONLY_TAG_VERSIONING_V1`
-> Status: Candidate in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE`
+> Status: Stable in `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
 
 ## Purpose
 

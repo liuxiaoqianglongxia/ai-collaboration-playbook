@@ -1,6 +1,6 @@
 # 用户使用说明 V1
 
-> 适用版本：`PLAYBOOK_OPERATIONAL_BASELINE_V1.1` + `PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE`
+> 适用版本：`PLAYBOOK_OPERATIONAL_BASELINE_V1.2`
 > 目标读者：用户、ChatGPT 新会话、Codex 执行会话、接入本 playbook 的项目维护者
 
 ## 1. 这套 playbook 是什么
@@ -14,7 +14,7 @@
 - 用户不用每天复制长任务包。
 - 执行、报告、验收都能回到同一个事实源。
 
-默认里程碑事实源是 GitHub。V1.2 candidate 增加 Drive 日常工作台，让日常任务、报告、截图、材料和交接更快流转。用户不需要每天维护 GitHub 细节，Agent 负责读写和同步关键事实。
+默认里程碑事实源是 GitHub。V1.2 增加 Drive 日常工作台，让日常任务、报告、截图、材料和交接更快流转。用户不需要每天维护 GitHub 细节，Agent 负责读写和同步关键事实。
 
 ## 2. 日常你怎么用
 
@@ -43,7 +43,7 @@ ChatGPT 应该在背后完成判断：
 完成后只读验收
 ```
 
-V1.2 candidate 的日常分工：
+V1.2 的日常分工：
 
 ```text
 Drive 管日常任务、报告、截图、材料、交接、临时验收笔记。

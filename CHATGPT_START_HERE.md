@@ -3,14 +3,13 @@
 ## Current Baseline
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.1
-candidate: PLAYBOOK_OPERATIONAL_BASELINE_V1.2_CANDIDATE
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
 reports/latest.md: PASS
 ```
 
 This repository is the general AI collaboration playbook. It is not a business project repository and does not contain production application code.
 
-V1.2 candidate keeps V4 intact and adds a faster operating layer:
+V1.2 keeps V4 intact and adds a faster operating layer:
 
 ```text
 Drive daily workbench
@@ -52,7 +51,7 @@ If files conflict, treat `reports/latest.md` as the current status source and hi
 
 ## Operating Mode
 
-The current operating mode is V1.2 candidate on top of the stable V1.1 task-package mode.
+The current operating mode is PLAYBOOK_OPERATIONAL_BASELINE_V1.2.
 
 The target is:
 
@@ -140,13 +139,13 @@ automation publish chains
 
 Do not promote experimental lab material into stable standards without a separate promotion gate.
 
-Pro review and personalization candidates:
+Pro review and final personalization:
 
 ```text
 reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
-reports/chatgpt/personalization/PERSONALIZATION_CANDIDATE_V1.md
+reports/chatgpt/personalization/PERSONALIZATION_FINAL_V1_2.md
 ```
 
 ## Next Recommended Action
 
-Use this playbook as the stable V1.1 baseline plus V1.2 candidate operating layer for concrete projects. For each project, read the project's own fact source first and do not mix project state across repositories.
+Use this playbook as the stable V1.2 baseline for concrete projects. For each project, read the project's own fact source first and do not mix project state across repositories.

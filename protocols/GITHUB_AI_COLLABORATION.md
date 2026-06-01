@@ -1,7 +1,7 @@
 # GitHub AI Collaboration Protocol
 
 > **Purpose**: Define how ChatGPT, Drive, GitHub, Codex, and Claude Code collaborate without making repository maintenance the user's daily burden.
-> **Version**: 1.2 candidate
+> **Version**: 1.2
 > **Maintained in**: `ai-collaboration-playbook/protocols/GITHUB_AI_COLLABORATION.md`
 
 ---
@@ -15,7 +15,7 @@
 | Delivery Lead | Codex | Hands | Local execution, integration, tests, PR, delivery reports |
 | Engineering Muscle | Claude Code | Muscle | Code exploration, draft fixes, failure analysis, review |
 
-V1.2 candidate does not add a fifth default engineering member. Drive is a daily workbench layer, not a code executor or final fact source. Hermes, Qwen, MCP, automation, heartbeat, and subagents are optional project-specific tools only.
+V1.2 does not add a fifth default engineering member. Drive is a daily workbench layer, not a code executor or final fact source. Hermes, Qwen, MCP, automation, heartbeat, and subagents are optional project-specific tools only.
 
 ## 2. Design Goal
 
@@ -191,7 +191,7 @@ Medium-risk task:
 Codex may coordinate Claude Code for review, failure analysis, or local fix drafts.
 ```
 
-V1.2 candidate normal engineering task:
+V1.2 normal engineering task:
 
 ```text
 Drive can hold daily handoff notes.
