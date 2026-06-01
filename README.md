@@ -8,10 +8,13 @@
 
 ```text
 stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
-reports/latest.md: PASS
+candidate: DRIVE_NATIVE_V2_CANDIDATE
+reports/latest.md: PARTIAL PASS on the V2 candidate branch
 ```
 
 V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 在 V1.1 上新增并冻结 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
+
+Drive-native V2 候选层把日常任务、报告、材料、截图、交接、临时验收、决策记录放到 Drive 工作台；GitHub 收口为稳定成果、版本管理、release、rollback 和其他项目复用入口。V1.2 仍是历史稳定基线，V2 候选层在验收前不得标记为 `PLAYBOOK_OPERATIONAL_BASELINE_V2`。
 
 当前入口以 `reports/latest.md` 为准。
 
@@ -23,6 +26,9 @@ V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge 
 - `standards/DRIVE_FIRST_WORKFLOW_V1.md`
 - `standards/MAIN_ONLY_TAG_VERSIONING_V1.md`
 - `standards/CLAUDE_FIRST_CODEX_FINAL_V1.md`
+- `standards/DRIVE_NATIVE_WORKFLOW_V2.md`
+- `standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md`
+- `guides/DRIVE_NATIVE_V2_USER_GUIDE.md`
 
 ## 稳定主链路
 
@@ -84,13 +90,13 @@ ChatGPT 应该完成背后判断：
 
 ## Drive 与 GitHub 的定位
 
-Drive 是日常工作台。GitHub 是里程碑事实源、版本锚点、生产依据和回滚点。
+Drive 是日常工作台和日常事实源。GitHub 是稳定成果、版本锚点、release、rollback 和最终可复用文档承载。
 
 正确用法：
 
 ```text
-Drive 保存日常任务、截图、材料、交接和临时验收笔记。
-GitHub 保存里程碑状态、任务包、报告、决策、代码、tag 和验收证据。
+Drive 保存日常任务、报告、截图、材料、交接、daily log、临时验收和决策记录。
+GitHub 保存稳定成果、main/tag、release notes、rollback anchors、milestone summaries 和最终可复用规范。
 用户侧只看关键结论和下一句指令。
 Agent 负责读写细节。
 ```
@@ -102,7 +108,8 @@ Agent 负责读写细节。
 让用户反复复制大段任务包。
 把所有注意力都耗在 GitHub 文件维护上。
 把简单任务搞成复杂仪式。
-把 Drive 当成代码仓库或最终事实源。
+把 Drive 当成生产部署源。
+把 GitHub daily task pointer 恢复为默认派工方式。
 ```
 
 ## V1.1 任务包注册表

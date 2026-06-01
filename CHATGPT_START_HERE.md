@@ -4,7 +4,8 @@
 
 ```text
 stable: PLAYBOOK_OPERATIONAL_BASELINE_V1.2
-reports/latest.md: PASS
+candidate: DRIVE_NATIVE_V2_CANDIDATE
+reports/latest.md: PARTIAL PASS on the V2 candidate branch
 ```
 
 This repository is the general AI collaboration playbook. It is not a business project repository and does not contain production application code.
@@ -20,6 +21,14 @@ Claude Code first-pass support coordinated by Codex
 Codex final integration
 ```
 
+Drive-native V2 candidate keeps V1.2 as the historical stable baseline while changing the daily operating surface:
+
+```text
+Drive: daily task, report, material, screenshot, handoff, temporary acceptance, decision record, daily log
+GitHub: stable result, version management, release, rollback, final reusable docs
+GitHub daily task pointers: not the default V2 dispatch surface
+```
+
 ## Read Order For A New ChatGPT Session
 
 Read these first:
@@ -33,6 +42,9 @@ AI_COLLABORATION_MODE_V4.md
 standards/DRIVE_FIRST_WORKFLOW_V1.md
 standards/MAIN_ONLY_TAG_VERSIONING_V1.md
 standards/CLAUDE_FIRST_CODEX_FINAL_V1.md
+standards/DRIVE_NATIVE_WORKFLOW_V2.md
+standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md
+guides/DRIVE_NATIVE_V2_USER_GUIDE.md
 standards/MAXIMUM_PRACTICAL_AUTHORIZATION_V1.md
 standards/TASK_PACKAGE_REGISTRY_V1_1.md
 standards/EXECUTION_LANE_MANAGEMENT_V1.md
@@ -51,7 +63,9 @@ If files conflict, treat `reports/latest.md` as the current status source and hi
 
 ## Operating Mode
 
-The current operating mode is PLAYBOOK_OPERATIONAL_BASELINE_V1.2.
+The stable operating mode is `PLAYBOOK_OPERATIONAL_BASELINE_V1.2`.
+
+The current candidate upgrade is `DRIVE_NATIVE_V2_CANDIDATE`. Do not mark it as `PLAYBOOK_OPERATIONAL_BASELINE_V2` until ChatGPT acceptance promotes it.
 
 The target is:
 
@@ -64,20 +78,21 @@ The target is:
 
 Do not simplify by weakening capability. Simplify the user layer. Keep the execution and traceability layers strong behind the scenes.
 
-Daily surface:
+V2 daily surface:
 
 ```text
-Drive can hold daily tasks, reports, screenshots, materials, handoffs, and temporary acceptance notes.
-Drive is not the live code workspace.
-Drive is not the durable milestone fact source.
+Drive holds daily tasks, reports, screenshots, materials, handoffs, temporary acceptance notes, decisions, and daily logs.
+Drive is the daily fact source.
+Drive is not the production deploy source.
 ```
 
-Development and milestone surface:
+GitHub surface:
 
 ```text
-WSL/local Git: real code editing and tests.
-GitHub main: milestone code and collaboration facts.
-GitHub tags: dev-ok, pre-prod, prod, and rollback anchors.
+GitHub main: stable code/docs.
+GitHub tags: release and rollback anchors.
+GitHub PRs: review and candidate stabilization when needed.
+GitHub reports: release summary, milestone summary, public reusable docs, rollback notes.
 ```
 
 Daily user guide:
@@ -122,7 +137,7 @@ tasks/codex/latest.md: none / NO_ACTIVE_CODEX_TASK
 tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
 ```
 
-No active Codex or Claude Code task is currently assigned in the playbook repository.
+GitHub daily task pointers are not the default Drive-native V2 dispatch surface. Use them only when a stable repository-backed task package is explicitly needed.
 
 ## Safety Boundary
 
