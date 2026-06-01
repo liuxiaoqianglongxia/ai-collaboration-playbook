@@ -3,13 +3,13 @@
 Current task package:
 
 ```text
-tasks/codex/PLAYBOOK-V1.1-PROCESS-SPEED-RESEARCH-V1.md
+none
 ```
 
 Current execution status:
 
 ```text
-ACTIVE_CODEX_TASK
+NO_ACTIVE_CODEX_TASK
 ```
 
 Rules:
@@ -22,6 +22,8 @@ Rules:
 Previous completed task evidence:
 
 ```text
+reports/codex/playbook-v1-1-process-speed-research-v1.md
+tasks/codex/PLAYBOOK-V1.1-PROCESS-SPEED-RESEARCH-V1.md
 reports/codex/playbook-v1-1-final-user-guide-routing-pro-review-v1.md
 tasks/codex/PLAYBOOK-V1.1-FINAL-USER-GUIDE-ROUTING-PRO-REVIEW-V1.md
 reports/codex/playbook-v1-1-execution-lane-and-claude-stabilization-v1.md
