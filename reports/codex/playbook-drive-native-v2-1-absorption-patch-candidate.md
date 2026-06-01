@@ -56,6 +56,7 @@ commit:
 
 ```text
 implementation commit: ba5b6775f1716af6d140a87b883922166fd63ace
+report closeout commit: 06e539586bc39e2cbf331c578d7e98af6d9ead98
 ```
 
 push 状态:
@@ -128,7 +129,6 @@ No application code or runtime behavior changed; validation is documentation and
 
 ## 五、报告位置
 
-- Drive report: pending write after PR URL is available
 - Drive report target: Google Drive/ai-collaboration-playbook/reports/codex/20260601/20260601_codex_report_drive_native_v2_1_absorption_patch_candidate.md
 - GitHub report: reports/codex/playbook-drive-native-v2-1-absorption-patch-candidate.md
 - next step: ChatGPT Pro acceptance on draft PR #10; do not merge before acceptance
