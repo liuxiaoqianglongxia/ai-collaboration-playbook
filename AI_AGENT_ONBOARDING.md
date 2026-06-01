@@ -34,6 +34,8 @@ Claude Code 是本地工程增强工具，适合承担 first-pass 工程草案�
 
 Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex 在当前 Drive task package 内编排；GitHub-backed `tasks/claude/latest.md` 仅作为兼容入口。
 
+For high-token engineering analysis, Codex should prefer interactive Claude Code first-pass when useful, then verify all Claude findings before final integration.
+
 ## 二、核心协作纪律
 
 1. 讨论可以在聊天里，日常执行事实必须落 Drive，稳定成果必须落 GitHub。
@@ -45,6 +47,8 @@ Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex �
 7. 不得把其他项目的状态、文件或记忆混入当前项目。
 8. 有能力直接安全完成的总控工作，不应为了流程表演而转交执行者。
 9. 一个阶段只保留一个 active execution lane；active Codex task 未关闭前，不创建第二个 active Codex task。
+10. ChatGPT may claim a Drive write only after the target project folder or parent folder is verified. If not verified, fallback to Codex writing through the local Google Drive sync directory.
+11. V2.1 patch adoption must be patch-level. Do not rename old projects from V2 to a new stable baseline.
 
 ## 三、V2 简化体验原则
 
@@ -67,6 +71,8 @@ GitHub release and rollback anchors
 Claude Code first-pass support
 Codex final integration
 ```
+
+Patch-level candidate `DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE` may be used for old-project Level 1 absorption. It must not be treated as a new stable baseline.
 
 用户通常只需要说目标。ChatGPT 负责读取事实源、判断风险、决定自己做还是交 Codex，并把复杂度放到背后。
 
@@ -119,6 +125,8 @@ Codex 和 Claude Code 不得从聊天历史推断当前任务。V2 默认以 Dri
 如果 registry 指针与 `CURRENT.md`、`TASKS.md` 或 `reports/latest.md` 冲突，应先判断任务是否授权修正该状态。未授权、范围不清或涉及高风险写入时，停止并报告 `BLOCKED`。
 
 有 Drive workbench 的项目中，Codex 必须从当前 Drive task package 读取任务。只有项目明确启用 GitHub-backed registry 时，Codex/Claude Code 才从 `tasks/codex/latest.md` 或 `tasks/claude/latest.md` 读取任务。
+
+For V2.1 absorption candidate work, Codex owns final diff review, checks, reports, push, and PR.
 
 如果这些文件不存在，第一轮任务应先建立协作底座，而不是直接开始业务开发。
 

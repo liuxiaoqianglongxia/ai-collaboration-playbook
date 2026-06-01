@@ -33,6 +33,17 @@ For stable work, the controller or Codex syncs to GitHub:
 - release notes
 - rollback notes
 
+## V2.1 patch-level absorption
+
+Existing V2 projects do not need to migrate to a new baseline. Add the patch-level line and use the new fallback rules on the next task.
+
+```text
+baseline: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+patch_level: DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE
+```
+
+If ChatGPT cannot verify a Drive file's parent folder, it must fallback to Codex using the local Google Drive sync directory rather than making the user copy a long task package.
+
 ## User-facing Pattern
 
 You can give a short instruction:

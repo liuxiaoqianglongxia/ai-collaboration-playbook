@@ -3,9 +3,18 @@
 ## Current Baseline
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V2
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
 reports/latest.md: PASS
 ```
+
+Patch-level candidate:
+
+```text
+patch_level: DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE
+stable remains: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+```
+
+Do not call this a new stable baseline until Codex implementation, Claude first-pass review, and ChatGPT Pro acceptance pass.
 
 This repository is the general AI collaboration playbook. It is not a business project repository and does not contain production application code.
 
@@ -42,6 +51,10 @@ AI_COLLABORATION_MODE_V4.md
 standards/DRIVE_NATIVE_WORKFLOW_V2.md
 standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md
 guides/DRIVE_NATIVE_V2_USER_GUIDE.md
+standards/CHATGPT_DRIVE_TOOL_CAPABILITY_BOUNDARY_V2_1.md
+standards/DRIVE_NATIVE_V2_ABSORPTION_AND_COMPATIBILITY_POLICY.md
+standards/CLAUDE_CODE_FIRST_PASS_ROUTING_V2_1.md
+guides/OLD_PROJECT_V2_ABSORPTION_GUIDE.md
 reports/codex/latest.md
 reports/claude/latest.md
 ```

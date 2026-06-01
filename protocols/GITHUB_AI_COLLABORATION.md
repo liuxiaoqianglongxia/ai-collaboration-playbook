@@ -168,7 +168,7 @@ When ChatGPT assigns a V2 Drive task package, chat should stay short:
 详情：任务包已在 Drive。
 ```
 
-Use the old `tasks/codex/latest.md` wording only when a project explicitly enables the GitHub-backed compatibility registry. Do not paste the full task package in chat by default, and do not claim it is in Drive or GitHub unless the file exists there.
+Use the old repository-backed latest-pointer wording only when a project explicitly enables the GitHub-backed compatibility registry. Do not paste the full task package in chat as routine behavior, and do not claim it is in Drive or GitHub unless the file exists there.
 
 ## 9. Risk-Based Routing
 

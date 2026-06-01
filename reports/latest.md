@@ -16,6 +16,22 @@ PASS
 
 V2 将日常协作事实源迁移到 Drive 工作台，并把 GitHub 收口为稳定成果、版本管理、release、rollback 和最终可复用文档承载。V1.1/V1.2 保留为历史稳定基线。
 
+## Patch-level candidate
+
+```text
+patch_level: DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE
+stable remains: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+```
+
+Purpose:
+
+```text
+Drive write boundary
+Codex local Drive sync fallback
+old-project absorption levels
+Claude Code interactive first-pass routing
+```
+
 ```text
 daily_fact_source: Google Drive
 github_role: stable version / release / rollback / final reusable docs
@@ -87,6 +103,11 @@ guides/DRIVE_NATIVE_V2_USER_GUIDE.md
 templates/drive-native-v2/
 checklists/drive-native-v2/
 protocols/drive-native-v2/
+standards/CHATGPT_DRIVE_TOOL_CAPABILITY_BOUNDARY_V2_1.md
+standards/DRIVE_NATIVE_V2_ABSORPTION_AND_COMPATIBILITY_POLICY.md
+standards/CLAUDE_CODE_FIRST_PASS_ROUTING_V2_1.md
+guides/OLD_PROJECT_V2_ABSORPTION_GUIDE.md
+guides/SMALL_PROJECT_DRIVE_NATIVE_V2_MINIMAL_GUIDE.md
 templates/USER_FACING_TASK_ANNOUNCEMENT.md
 reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
 reports/chatgpt/personalization/PERSONALIZATION_FINAL_V2.md

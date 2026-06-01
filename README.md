@@ -7,13 +7,27 @@
 ## 当前状态
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V2
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
 reports/latest.md: PASS
 ```
 
 V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 在 V1.1 上新增并冻结 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
 
 Drive-native V2 是当前稳定基线。它把日常任务、报告、材料、截图、交接、临时验收、决策记录和 daily log 放到 Drive 工作台；GitHub 收口为稳定成果、版本管理、release、rollback 和其他项目复用入口。V1.1/V1.2 继续作为历史稳定基线保留。
+
+### V2.1 absorption patch candidate
+
+`DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE` is an additive patch-level update for V2. It does not replace `PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS`.
+
+It adds:
+
+- ChatGPT Drive write capability boundary.
+- Codex fallback through local Google Drive sync directory.
+- Drive parent-folder verification after writes.
+- Old-project V2 absorption levels.
+- Claude Code interactive first-pass routing under Codex.
+
+Existing V2 projects should absorb it as a patch level, not as a new baseline.
 
 当前入口以 `reports/latest.md` 为准。
 
@@ -148,6 +162,14 @@ V2 稳定层：
 - `templates/drive-native-v2/`
 - `checklists/drive-native-v2/`
 - `protocols/drive-native-v2/`
+
+V2.1 patch-level candidate layer:
+
+- `standards/CHATGPT_DRIVE_TOOL_CAPABILITY_BOUNDARY_V2_1.md`
+- `standards/DRIVE_NATIVE_V2_ABSORPTION_AND_COMPATIBILITY_POLICY.md`
+- `standards/CLAUDE_CODE_FIRST_PASS_ROUTING_V2_1.md`
+- `guides/OLD_PROJECT_V2_ABSORPTION_GUIDE.md`
+- `guides/SMALL_PROJECT_DRIVE_NATIVE_V2_MINIMAL_GUIDE.md`
 
 V1.2 稳定层：
 

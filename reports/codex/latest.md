@@ -1,4 +1,4 @@
-# Latest Codex Report｜PLAYBOOK-V2-PUBLIC-DOCS-FINAL-AUDIT-V1
+# Latest Codex Report｜PLAYBOOK-DRIVE-NATIVE-V2-1-ABSORPTION-PATCH-CANDIDATE
 
 状态：PASS
 
@@ -9,25 +9,29 @@ PASS
 ## 最新报告
 
 ```text
-reports/codex/playbook-v2-public-docs-final-audit-v1.md
+reports/codex/playbook-drive-native-v2-1-absorption-patch-candidate.md
 ```
 
 ## 摘要
 
-已在最新 `main` 上完成 V2 公开文档最终审计，清理会误导外部用户的 V1.1/V1.2 默认入口残留。
+已在分支 `docs/drive-native-v2-1-absorption-patch` 上完成 `DRIVE_NATIVE_V2_1_ABSORPTION_PATCH_CANDIDATE` 实现与检查。
 
 本轮完成：
 
 ```text
-README V2 example fixed
-QUICK_START public entry references completed
-PERSONALIZATION_FINAL_V2 set as current personalization entry
-GitHub-backed registry retained as compatibility only
-V1.1/V1.2 retained as historical stable baselines only
+V2 stable baseline kept as PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+V2.1 added only as patch-level candidate
+Drive write boundary docs added
+Codex local Drive sync fallback docs added
+old-project absorption docs added
+Claude Code interactive first-pass routing docs added
+Claude Code first-pass review completed: PARTIAL PASS, Codex accepted required fixes
 private path leak scan PASS
+registry default-dispatch scan PASS
+candidate/stable conflict scan PASS
 ```
 
-本轮未编排 Claude Code；Codex 使用本地文件检查、公开文档扫描和 Markdown diff 检查完成验证。
+本轮已编排 Claude Code 做只读 first-pass review；Codex 做最终 diff review、修正和检查。
 
 ## 禁止范围确认
 
@@ -42,4 +46,5 @@ private path leak scan PASS
 未 force push。
 未改 tag。
 未重写 main。
+未 merge。
 ```
