@@ -1,138 +1,131 @@
 # CHATGPT_START_HERE
 
-## Current Baseline
+## Current baseline
 
 ```text
-stable: PLAYBOOK_OPERATIONAL_BASELINE_V2
-reports/latest.md: PASS
+stable: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+optional extension: Task Hall optional stable extension / PASS
 ```
 
 This repository is the general AI collaboration playbook. It is not a business project repository and does not contain production application code.
 
-Drive-native V2 is the current stable operating baseline:
-
-```text
-Drive daily fact source
-WSL/local Git for real development
-GitHub main for stable code/docs
-GitHub tags for release and rollback anchors
-Claude Code first-pass support coordinated by Codex
-Codex final integration
-```
-
-V1.1 and V1.2 remain historical stable baselines. V2 changes the daily operating surface:
-
-```text
-Drive: daily task, report, material, screenshot, handoff, temporary acceptance, decision record, daily log
-GitHub: stable result, version management, release, rollback, final reusable docs
-repository-backed task registry: compatibility surface only
-```
-
-## Read Order For A New ChatGPT Session
+## Minimum read order
 
 Read these first:
 
 ```text
 QUICK_START.md
 reports/latest.md
-guides/USER_OPERATING_GUIDE_V1.md
-README.md
-AI_AGENT_ONBOARDING.md
-AI_COLLABORATION_MODE_V4.md
-standards/DRIVE_NATIVE_WORKFLOW_V2.md
-standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md
-guides/DRIVE_NATIVE_V2_USER_GUIDE.md
 reports/codex/latest.md
-reports/claude/latest.md
+lab/task-hall-mvp/README.md
+reports/codex/20260602/PLAYBOOK_TASK_HALL_OPTIONAL_STABLE_EXTENSION_CLOSEOUT.md
+standards/DRIVE_TASK_HALL_BOOTSTRAP_GATE_V1.md
 ```
 
 Read `tasks/codex/latest.md` and `tasks/claude/latest.md` only when the current project explicitly uses the GitHub-backed compatibility registry.
 
 If files conflict, treat `reports/latest.md` as the current status source and historical reports as evidence, not current state.
 
-## Operating Mode
-
-The stable operating mode is `PLAYBOOK_OPERATIONAL_BASELINE_V2`.
-
-The target is:
+## Operating mode
 
 ```text
-使用层极简
-执行层清楚
-留痕层完整
-风险层兜底
+Drive handles daily work.
+GitHub handles stable results.
+Task Hall is the optional daily task/workbench extension.
 ```
 
-Do not simplify by weakening capability. Simplify the user layer. Keep the execution and traceability layers strong behind the scenes.
+V2 remains the stable baseline. Task Hall does not create V3 and does not replace Drive-native V2.
 
-V2 daily surface:
+## Mandatory bootstrap gate for Task Hall
+
+Before writing, uploading, importing, creating, or updating any Google Doc task package, ChatGPT must check whether the target project's Drive workbench exists.
+
+Minimum required workbench:
 
 ```text
-Drive holds daily tasks, reports, screenshots, materials, handoffs, temporary acceptance notes, decisions, and daily logs.
-Drive is the daily fact source.
-Drive is not the production deploy source.
+<project-name>/
+  00_HOME.md
+  01_CURRENT.md
+  02_INDEX.md
+  task-hall/
+    00_BOARD.md
+    01_NOW.md
+    02_ACCEPTANCE_QUEUE.md
+    docs/active/
+    tasks/
+    reports/
+    indexes/
+    db/
 ```
 
-GitHub surface:
+If the project folder or `task-hall/` skeleton is missing, ChatGPT must not use Google Drive upload/import/create document. It must return a plain-text Codex instruction so Codex can create the workbench through local Drive sync.
+
+Reference:
 
 ```text
-GitHub main: stable code/docs.
-GitHub tags: release and rollback anchors.
-GitHub PRs: review and candidate stabilization when needed.
-GitHub reports: release summary, milestone summary, public reusable docs, rollback notes.
+standards/DRIVE_TASK_HALL_BOOTSTRAP_GATE_V1.md
 ```
 
-Daily user guide:
+## Correct first response when the Drive workbench is missing
 
 ```text
-guides/USER_OPERATING_GUIDE_V1.md
+请在本地 Google Drive 同步目录中，为当前项目创建最小 Drive Task Hall 工作台。
+
+只创建协作底座，不改业务代码。
+
+目标结构：
+<project-name>/
+  00_HOME.md
+  01_CURRENT.md
+  02_INDEX.md
+  task-hall/
+    00_BOARD.md
+    01_NOW.md
+    02_ACCEPTANCE_QUEUE.md
+    docs/active/
+    tasks/
+    reports/
+    indexes/
+    db/
+
+完成后回报：
+- PASS / PARTIAL PASS / FAIL / BLOCKED
+- Drive 本地路径
+- 是否创建 task-hall/
+- 是否创建 00_BOARD.md / 01_NOW.md / 02_ACCEPTANCE_QUEUE.md
+- 是否没有改业务代码
+- 下一步是否可以让 ChatGPT 写正式 Task Hall 任务
 ```
 
-Execution lane rule:
+## Role model
 
 ```text
-One stage has one active execution lane.
-Default: one active Codex task at a time.
-If Claude Code is needed, Codex coordinates it inside the active Codex task.
-```
-
-## Role Model
-
-```text
-ChatGPT: controller, architecture judgment, task package, acceptance, safe lightweight GitHub writes when available
-Drive: daily fact source, daily task/report/material/acceptance/decision workspace
+ChatGPT: controller, architecture judgment, task package, acceptance, safe stable documentation writes when available
+Drive: daily fact source and daily task/report/material/acceptance/decision workspace
 GitHub: stable result, version management, release, rollback, reusable docs
 Codex: delivery lead, local execution, final integration, reports
-Claude Code: local engineering enhancement, first-pass draft fixes, deep analysis, review
+Claude Code: local engineering enhancement, first-pass draft fixes, deep analysis, review coordinated by Codex
 ```
 
 Hermes, Qwen, MCP, heartbeat, automation, and subagents are not default members. Use them only when a project fact source or explicit user authorization requires them.
 
-## ChatGPT Direct-Work Rule
-
-If ChatGPT has GitHub write access and the task is safe stable documentation / release summary / milestone summary / rollback note work, ChatGPT may do it directly.
-
-Do not hand off safe controller work to Codex just to show process.
-
-Use Codex for local execution, code changes, tests, integration, PR delivery, and heavy validation.
-
-If ChatGPT does not have GitHub write access, say so clearly and do not claim that anything was written to GitHub.
-
-## Compatibility Task Pointers
+## Daily Task Hall flow after bootstrap
 
 ```text
-tasks/codex/latest.md: none / NO_ACTIVE_CODEX_TASK
-tasks/claude/latest.md: none / NO_ACTIVE_CLAUDE_TASK
+Board: task-hall/00_BOARD.md
+Task: task-hall/tasks/YYYYMMDD/<TASK_ID>.md
+Report: task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Acceptance: task-hall/02_ACCEPTANCE_QUEUE.md
+Fixed Docs registry: task-hall/docs/active/fixed-docs.json
 ```
 
-These pointers are compatibility entries. They are not the default Drive-native V2 dispatch surface. Use them only when a stable repository-backed task package is explicitly needed.
+GitHub `tasks/codex/latest.md` remains compatibility-only and is not the default Drive Task Hall dispatch surface.
 
-## Safety Boundary
+## Safety boundary
 
 Do not modify:
 
 ```text
-AI_COLLABORATION_MODE_V4.md unless explicitly authorized
 business repositories
 production servers
 databases
@@ -142,13 +135,6 @@ automation publish chains
 
 Do not promote experimental lab material into stable standards without a separate promotion gate.
 
-Pro review and final personalization:
+## Next recommended action
 
-```text
-reports/chatgpt/pro-review/PRO_REVIEW_START_HERE.md
-reports/chatgpt/personalization/PERSONALIZATION_FINAL_V2.md
-```
-
-## Next Recommended Action
-
-Use this playbook as the stable V2 baseline for concrete projects. For each project, read its Drive workbench and GitHub stable facts first, and do not mix project state across repositories.
+Use this playbook as the stable V2 baseline plus Task Hall optional stable extension. For each project, check the Drive workbench first; if the workbench is missing, send plain-text bootstrap instructions to Codex instead of creating root-level Google Docs.
