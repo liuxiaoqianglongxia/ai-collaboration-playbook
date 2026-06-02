@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-06-02T00:00:00+08:00",
+  "documents": {
+    "acceptance_log": {
+      "id": "1pKKZcm7gIlXeYh9zsJS7Fa1l34MykAR6Y2gn0BlwkO0",
+      "title": "TASK_HALL__03_ACCEPTANCE_LOG",
+      "url": "https://docs.google.com/document/d/1pKKZcm7gIlXeYh9zsJS7Fa1l34MykAR6Y2gn0BlwkO0/edit?usp=drivesdk"
+    },
+    "control_index": {
+      "id": "1R0Osj4Gjew3AyebV9npnQJMuYHPGueh9jsqUXN9DCDE",
+      "title": "TASK_HALL__05_CONTROL_INDEX",
+      "url": "https://docs.google.com/document/d/1R0Osj4Gjew3AyebV9npnQJMuYHPGueh9jsqUXN9DCDE/edit?usp=drivesdk"
+    },
+    "decision_log": {
+      "id": "1m8w8hiqI4seBWSiM8AjfoQzH4uhzVGVZ8PSN9F4zT7w",
+      "title": "TASK_HALL__04_DECISION_LOG",
+      "url": "https://docs.google.com/document/d/1m8w8hiqI4seBWSiM8AjfoQzH4uhzVGVZ8PSN9F4zT7w/edit?usp=drivesdk"
+    },
+    "report_outbox": {
+      "id": "1CxsSC82FDWHpHzxeKxtPhi_7bCyvHp5nB-JwRpMPT8M",
+      "title": "TASK_HALL__02_REPORT_OUTBOX",
+      "url": "https://docs.google.com/document/d/1CxsSC82FDWHpHzxeKxtPhi_7bCyvHp5nB-JwRpMPT8M/edit?usp=drivesdk"
+    },
+    "task_inbox": {
+      "id": "12vInd9n0em9RogagXWyFJIS5y6QUwLMBry3tL91E37M",
+      "title": "TASK_HALL__01_TASK_INBOX",
+      "url": "https://docs.google.com/document/d/12vInd9n0em9RogagXWyFJIS5y6QUwLMBry3tL91E37M/edit?usp=drivesdk"
+    }
+  },
+  "source": "Google Drive connector native document creation; files may be in Drive default/root location because folder placement is not exposed by the current connector."
+}

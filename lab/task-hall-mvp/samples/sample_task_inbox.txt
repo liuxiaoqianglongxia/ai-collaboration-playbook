@@ -1,0 +1,37 @@
+TASK_BEGIN
+TASK_ID: TASK-HALL-20260602-001
+PROJECT: ai-collaboration-playbook
+TITLE: Run the first file-native task hall canary
+STATUS: READY
+OWNER: codex-local-01
+CLAUDE_MODE: optional
+HERMES_MODE: indexer
+RISK: low
+PRIORITY: P0
+GOAL: Prove that a fixed Google Doc task package can become local task files, events, state, board, report, acceptance, UI, and context pack.
+SCOPE: Local Drive workbench and lab/task-hall-mvp canary only.
+INPUTS: TASK_PACKAGE_FOR_CODEX_TASK_HALL_MVP_CANARY_20260602 and fixed Docs.
+OUTPUTS: task markdown, JSON, events, SQLite, board, report, acceptance queue, UI, context pack.
+ACCEPTANCE: End-to-end self-test passes and no GitHub daily registry is restored.
+NEEDS_CHATGPT_READ: 01_NOW.md, 02_ACCEPTANCE_QUEUE.md, indexes/project_brief.md, reports/20260602/TASK-HALL-20260602-001-report.md
+LIMITS: No deploy, no database mutation outside local taskhall.sqlite, no secrets, no force push, no release, no rollback.
+TASK_END
+
+TASK_BEGIN
+TASK_ID: TASK-HALL-20260602-002
+PROJECT: ai-collaboration-playbook
+TITLE: Prepare old-project minimal absorption notes
+STATUS: READY
+OWNER: codex-local-01
+CLAUDE_MODE: none
+HERMES_MODE: none
+RISK: low
+PRIORITY: P1
+GOAL: Keep old projects from redoing all V2 documents when adopting the task hall skeleton.
+SCOPE: Documentation only.
+INPUTS: Drive-native V2 baseline and Task Hall MVP canary.
+OUTPUTS: OLD_PROJECT_ABSORPTION_MINIMAL.md.
+ACCEPTANCE: The note says to copy only the small skeleton and not restore GitHub daily task registry.
+NEEDS_CHATGPT_READ: lab/task-hall-mvp/docs/OLD_PROJECT_ABSORPTION_MINIMAL.md
+LIMITS: Do not modify shanxi-edu-hot or sub2api-maijian in this task.
+TASK_END
