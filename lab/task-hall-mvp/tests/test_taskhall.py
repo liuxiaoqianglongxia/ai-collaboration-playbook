@@ -134,3 +134,53 @@ def test_accept_rejects_unknown_verdict(tmp_path):
     )
     assert result.returncode != 0
     assert "unsupported verdict" in result.stderr
+
+
+def test_start_rejects_ready_without_claim(tmp_path):
+    wb = tmp_path / "task-hall"
+    run_cmd("init", "--workbench", str(wb), "--date", "20260602")
+    run_cmd("ingest", "--workbench", str(wb), "--source", str(SAMPLES / "sample_task_inbox.txt"))
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "taskhall",
+            "start",
+            "--workbench",
+            str(wb),
+            "--task-id",
+            "TASK-HALL-20260602-001",
+            "--agent",
+            "codex-local-01",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    assert result.returncode != 0
+    assert "invalid transition" in result.stderr
+
+
+def test_accept_requires_needs_acceptance(tmp_path):
+    wb = tmp_path / "task-hall"
+    run_cmd("init", "--workbench", str(wb), "--date", "20260602")
+    run_cmd("ingest", "--workbench", str(wb), "--source", str(SAMPLES / "sample_task_inbox.txt"))
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "taskhall",
+            "accept",
+            "--workbench",
+            str(wb),
+            "--task-id",
+            "TASK-HALL-20260602-001",
+            "--verdict",
+            "PASS",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    assert result.returncode != 0
+    assert "invalid transition" in result.stderr

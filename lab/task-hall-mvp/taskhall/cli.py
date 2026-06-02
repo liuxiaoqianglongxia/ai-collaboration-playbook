@@ -22,6 +22,15 @@ STATE_ORDER = [
     "ARCHIVED",
 ]
 FINAL_STATES = {"ACCEPTED", "ARCHIVED"}
+ALLOWED_TRANSITIONS = {
+    "DRAFT": {"READY", "ARCHIVED"},
+    "READY": {"CLAIMED", "BLOCKED", "ARCHIVED"},
+    "CLAIMED": {"IN_PROGRESS", "BLOCKED", "ARCHIVED"},
+    "IN_PROGRESS": {"NEEDS_ACCEPTANCE", "BLOCKED", "ARCHIVED"},
+    "NEEDS_ACCEPTANCE": {"ACCEPTED", "NEEDS_REVISION", "BLOCKED", "ARCHIVED"},
+    "NEEDS_REVISION": {"READY", "BLOCKED", "ARCHIVED"},
+    "BLOCKED": {"READY", "ARCHIVED"},
+}
 TASK_ID_RE = re.compile(r"^TASK-HALL-(\d{8})-(\d{3})$")
 FIELD_RE = re.compile(r"^([A-Z][A-Z0-9_]*):\s*(.*)$")
 TASK_BLOCK_RE = re.compile(r"TASK_BEGIN\s*(.*?)\s*TASK_END", re.DOTALL)
@@ -479,6 +488,19 @@ def cmd_ingest(args: argparse.Namespace) -> int:
     return 0 if created else 1
 
 
+
+def validate_transition(task_id: str, current: str, target: str) -> None:
+    if current in FINAL_STATES:
+        raise SystemExit(f"task is final: {task_id} {current}")
+    allowed = ALLOWED_TRANSITIONS.get(current, set())
+    if target not in allowed:
+        allowed_text = ", ".join(sorted(allowed)) or "none"
+        raise SystemExit(
+            f"invalid transition for {task_id}: {current} -> {target}; "
+            f"allowed: {allowed_text}"
+        )
+
+
 def update_task_status(
     wb: Path,
     task_id: str,
@@ -493,8 +515,8 @@ def update_task_status(
     task = tasks_state.get("tasks", {}).get(task_id)
     if not task:
         raise SystemExit(f"task not found: {task_id}")
-    if task.get("status") in FINAL_STATES and status != "ARCHIVED":
-        raise SystemExit(f"task is final: {task_id} {task.get('status')}")
+    current_status = task.get("status", "")
+    validate_transition(task_id, current_status, status)
     task["status"] = status
     task["updated_at"] = utc_now()
     tasks_state["tasks"][task_id] = task

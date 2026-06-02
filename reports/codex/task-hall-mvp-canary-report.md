@@ -1,4 +1,4 @@
-﻿# Codex Report | Task Hall MVP Canary
+# Codex Report | Task Hall MVP Canary
 
 Conclusion: PASS
 
@@ -41,7 +41,7 @@ Conclusion: PASS
 - test command: Python in-memory compile check for lab/task-hall-mvp/**/*.py
 - test result: PASS
 - test command: python -m pytest -q -p no:cacheprovider lab/task-hall-mvp/tests
-- test result: PASS, 3 passed
+- test result: PASS, 5 passed
 - test command: git -c safe.directory=* diff --check
 - test result: PASS
 - test command: public text scan for private local paths and credential-shaped strings
@@ -53,21 +53,21 @@ Conclusion: PASS
 ## Claude Code usage summary
 
 - Claude Code used: yes, read-only review through claude -p with Bash/Edit/Write disallowed
-- accepted suggestions: added explicit verdict validation and a regression test for unknown verdicts
-- rejected suggestions: full transition-table enforcement, concurrent file locking, and pyproject packaging were kept out of MVP scope
+- accepted suggestions: added explicit verdict validation, state-transition enforcement, and regression tests for unknown verdicts and invalid transitions
+- rejected suggestions: concurrent file locking, broad report schema validation, SQLite batching, and pyproject packaging were kept out of RC1 scope
 - files changed after Claude review: lab/task-hall-mvp/taskhall/cli.py; lab/task-hall-mvp/tests/test_taskhall.py
 
 ## AgentMind reference summary
 
-AgentMind was inspected read-only from default branch 0.1-stabilization. Borrowed ideas were task panel, event timeline, agent registry shape, audit trail, SQLite, and context-pack vocabulary. Rejected scope includes AgentMind dependency, memory replacement, automatic unknown CLI scanning, multi-user server, and production operations.
+AgentMind was inspected read-only from default branch v0.1-stabilization. Borrowed ideas were task panel, event timeline, agent registry shape, audit trail, SQLite, and context-pack vocabulary. Rejected scope includes AgentMind dependency, memory replacement, automatic unknown CLI scanning, multi-user server, and production operations.
 
 ## Hermes/local worker status
 
-Hermes is stub-only in this MVP. The workbench contains gents/hermes-local-01/inbox/, outbox/, and heartbeat.json. The canary runs without Hermes.
+Hermes is stub-only in this MVP. The workbench contains agents/hermes-local-01/inbox/, outbox/, and heartbeat.json. The canary runs without Hermes.
 
 ## Old project absorption summary
 
-Old projects should copy only the small 	ask-hall/ skeleton and add these control lines: Task Hall status enabled, mode DOC_FIRST_FILE_NATIVE_MVP, entry task-hall/00_BOARD.md. They should not redo all V2 docs or restore GitHub daily task registry.
+Old projects should copy only the small task-hall/ skeleton and add these control lines: Task Hall status enabled, mode DOC_FIRST_FILE_NATIVE_MVP, entry task-hall/00_BOARD.md. They should not redo all V2 docs or restore GitHub daily task registry.
 
 ## Risk boundary
 
