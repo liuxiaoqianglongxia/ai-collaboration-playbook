@@ -58,6 +58,23 @@ DIRS = [
     "quarantine/conflict",
 ]
 
+BOOTSTRAP_REQUIRED_PATHS = [
+    "00_BOARD.md",
+    "01_NOW.md",
+    "02_ACCEPTANCE_QUEUE.md",
+    "docs/active",
+    "tasks",
+    "reports",
+    "indexes",
+    "db",
+]
+
+PROJECT_REQUIRED_PATHS = [
+    "00_HOME.md",
+    "01_CURRENT.md",
+    "02_INDEX.md",
+]
+
 DOC_LINK_FILES = {
     "task_inbox": "TASK_INBOX_DOC_LINK.md",
     "report_outbox": "REPORT_INBOX_DOC_LINK.md",
@@ -77,6 +94,16 @@ def today_yyyymmdd() -> str:
 
 def workbench_path(raw: str | Path) -> Path:
     return Path(raw).expanduser().resolve()
+
+
+def require_bootstrapped_workbench(wb: Path, action: str) -> None:
+    missing = [rel for rel in BOOTSTRAP_REQUIRED_PATHS if not (wb / rel).exists()]
+    if missing:
+        missing_text = ", ".join(missing)
+        raise SystemExit(
+            f"Drive Task Hall bootstrap gate failed before {action}: "
+            f"missing {missing_text}. Run init through local Drive sync before writing task packages."
+        )
 
 
 def ensure_json(path: Path, default: Any) -> Any:
@@ -428,6 +455,7 @@ def cmd_ingest(args: argparse.Namespace) -> int:
     wb = workbench_path(args.workbench)
     source = Path(args.source).resolve()
     text = source.read_text(encoding="utf-8")
+    require_bootstrapped_workbench(wb, "task package ingest")
     blocks = TASK_BLOCK_RE.findall(text)
     if not blocks:
         quarantine(wb, "parse_failed", source.name, text, {"reason": "no blocks"})
@@ -1013,6 +1041,27 @@ def cmd_revive(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_check(args: argparse.Namespace) -> int:
+    target = Path(args.path).expanduser().resolve()
+    mode = getattr(args, "mode", "auto")
+    if mode == "auto":
+        mode = "workbench" if (target / "00_BOARD.md").exists() else "project"
+    if mode == "workbench":
+        missing = [rel for rel in BOOTSTRAP_REQUIRED_PATHS if not (target / rel).exists()]
+    else:
+        missing = [rel for rel in PROJECT_REQUIRED_PATHS if not (target / rel).exists()]
+        missing += [f"task-hall/{rel}" for rel in BOOTSTRAP_REQUIRED_PATHS if not (target / "task-hall" / rel).exists()]
+    result = "FAIL" if missing else "PASS"
+    payload = {
+        "result": result,
+        "mode": mode,
+        "path": str(target),
+        "missing": sorted(missing),
+    }
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0 if result == "PASS" else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="taskhall", description="Doc-first file-native Task Hall MVP canary"
@@ -1080,6 +1129,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--port", type=int, default=8765)
     p.add_argument("--once", action="store_true")
     p.set_defaults(func=cmd_serve)
+
+    p = sub.add_parser("check")
+    p.add_argument("--path", required=True)
+    p.add_argument("--mode", default="auto", choices=["auto", "workbench", "project"])
+    p.set_defaults(func=cmd_check)
+
     return parser
 
 

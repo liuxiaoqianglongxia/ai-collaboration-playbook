@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLES = ROOT / "samples"
+PROJECT_REQUIRED_PATHS = ["00_HOME.md", "01_CURRENT.md", "02_INDEX.md"]
 
 
 def run_cmd(*args, cwd=ROOT):
@@ -109,6 +110,28 @@ TASK_END
     assert set(tasks) == {"TASK-HALL-20260602-003"}
     assert list((wb / "quarantine" / "conflict").glob("*.txt"))
     assert list((wb / "quarantine" / "parse_failed").glob("*.txt"))
+
+
+def test_ingest_requires_bootstrapped_workbench(tmp_path):
+    wb = tmp_path / "missing-workbench"
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "taskhall",
+            "ingest",
+            "--workbench",
+            str(wb),
+            "--source",
+            str(SAMPLES / "sample_task_inbox.txt"),
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    assert result.returncode != 0
+    assert "bootstrap gate failed" in result.stderr
+    assert not (wb / "tasks").exists()
 
 
 def test_accept_rejects_unknown_verdict(tmp_path):
@@ -418,3 +441,78 @@ def test_sqlite_reports_reflect_json_state(tmp_path):
     assert len(rows) == 1
     assert rows[0][0] == "TASK-HALL-20260602-001"
     assert rows[0][1] == "PASS"  # report status from the submitted report
+
+
+# ---------------------------------------------------------------------------
+# RC1 gap 5: check command – validates workbench or project skeleton
+# ---------------------------------------------------------------------------
+
+def test_check_pass_workbench(tmp_path):
+    """check returns PASS when all bootstrap paths exist."""
+    wb = tmp_path / "task-hall"
+    run_cmd("init", "--workbench", str(wb), "--date", "20260602")
+    result = subprocess.run(
+        [sys.executable, "-m", "taskhall", "check", "--path", str(wb)],
+        cwd=ROOT, text=True, capture_output=True,
+    )
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["result"] == "PASS"
+    assert payload["mode"] == "workbench"
+    assert payload["missing"] == []
+
+
+def test_check_fail_workbench(tmp_path):
+    """check returns FAIL with missing list when paths are absent."""
+    wb = tmp_path / "empty"
+    wb.mkdir()
+    result = subprocess.run(
+        [sys.executable, "-m", "taskhall", "check", "--path", str(wb), "--mode", "workbench"],
+        cwd=ROOT, text=True, capture_output=True,
+    )
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["result"] == "FAIL"
+    assert payload["missing"]  # should list missing paths
+
+
+def test_check_pass_project(tmp_path):
+    """check --mode project returns PASS when full skeleton exists."""
+    project = tmp_path / "my-project"
+    for f in PROJECT_REQUIRED_PATHS:
+        (project / f).parent.mkdir(parents=True, exist_ok=True)
+        (project / f).touch()
+    th = project / "task-hall"
+    run_cmd("init", "--workbench", str(th), "--date", "20260602")
+    result = subprocess.run(
+        [sys.executable, "-m", "taskhall", "check", "--path", str(project), "--mode", "project"],
+        cwd=ROOT, text=True, capture_output=True,
+    )
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["result"] == "PASS"
+    assert payload["mode"] == "project"
+
+
+def test_check_auto_detects_workbench(tmp_path):
+    """check --mode auto detects workbench when 00_BOARD.md exists."""
+    wb = tmp_path / "task-hall"
+    run_cmd("init", "--workbench", str(wb), "--date", "20260602")
+    result = subprocess.run(
+        [sys.executable, "-m", "taskhall", "check", "--path", str(wb)],
+        cwd=ROOT, text=True, capture_output=True,
+    )
+    payload = json.loads(result.stdout)
+    assert payload["mode"] == "workbench"
+
+
+def test_check_auto_detects_project(tmp_path):
+    """check --mode auto detects project mode when 00_BOARD.md is absent."""
+    project = tmp_path / "my-project"
+    project.mkdir()
+    result = subprocess.run(
+        [sys.executable, "-m", "taskhall", "check", "--path", str(project)],
+        cwd=ROOT, text=True, capture_output=True,
+    )
+    payload = json.loads(result.stdout)
+    assert payload["mode"] == "project"

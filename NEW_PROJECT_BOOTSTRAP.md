@@ -1,5 +1,7 @@
 # 新项目接入手册
 
+**Status**: This document is a **history/reference** bootstrap guide. For current V3 bootstrap, see `checklists/V3_TASK_HALL_PROJECT_INTAKE_CHECKLIST.md` and `templates/task-hall-v3/`.
+
 新项目接入 `PLAYBOOK_OPERATIONAL_BASELINE_V2` 时，第一轮只做协作底座，不做业务开发。
 
 ## 一、第一轮目标

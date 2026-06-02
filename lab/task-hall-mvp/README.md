@@ -1,5 +1,7 @@
 # Task Hall Doc-first File-native MVP Canary
 
+**Classification**: lab — experimental canary. The V3 standard is `standards/TASK_HALL_V3.md`.
+
 Task Hall is an optional stable extension on top of `PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS`.
 
 It is not V3 and it does not replace Drive-native V2. It provides a daily task/workbench layer when a project has a Drive workbench.
@@ -76,6 +78,7 @@ python -m taskhall revive --workbench PATH --task-id ID
 python -m taskhall build-board --workbench PATH
 python -m taskhall build-context-pack --workbench PATH --project-root PATH
 python -m taskhall serve --workbench PATH --port 8765
+python -m taskhall check --path PATH [--mode workbench|project]
 ```
 
 For a non-blocking UI generation smoke test, use:

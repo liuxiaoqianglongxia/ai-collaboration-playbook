@@ -1,36 +1,40 @@
-# Quick Start | Drive-native V2 + Task Hall Optional Stable Extension
+# Quick Start | Task Hall V3 RC1
 
-This page is for a new ChatGPT / Codex / Claude Code session entering the playbook repository or applying it to another project.
+This page is the **single one-page entry** for a new ChatGPT / Codex / Claude Code session entering the playbook repository or applying it to another project.
 
-## Current stable baseline
+For the canonical standard, see `standards/TASK_HALL_V3.md`.
+
+## Current status
 
 ```text
-PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
-Task Hall optional stable extension: PASS
+stable baseline: PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+Task Hall V3 RC1 candidate: in evaluation (this branch)
 ```
+
+V3 RC1 is being evaluated on this branch. V2 remains the stable baseline until V3 RC1 is explicitly accepted and merged.
 
 ## One-line model
 
 ```text
-Drive handles daily work. GitHub handles stable results. Task Hall is the optional daily task/workbench extension.
+Drive handles daily work. GitHub handles stable results. Task Hall V3 provides the formal task/workbench layer.
 ```
 
 - ChatGPT: controller, task design, acceptance, release decision.
 - Codex: local execution, validation, integration, reports.
-- Claude Code: first-pass engineering review coordinated by Codex.
+- Claude Code: WSL/local engineering execution tool coordinated by Codex; editable by default unless the task says read-only.
 - Drive Task Hall: daily tasks, reports, board, acceptance queue, context pack.
 - GitHub main: stable docs, version anchors, reusable artifacts.
 
 ## Minimum read order for a new session
 
 ```text
-QUICK_START.md
-CHATGPT_START_HERE.md
-reports/latest.md
-reports/codex/latest.md
-lab/task-hall-mvp/README.md
-reports/codex/20260602/PLAYBOOK_TASK_HALL_OPTIONAL_STABLE_EXTENSION_CLOSEOUT.md
-standards/DRIVE_TASK_HALL_BOOTSTRAP_GATE_V1.md
+QUICK_START.md                          - you are here
+standards/TASK_HALL_V3.md               - canonical V3 standard
+checklists/V3_TASK_HALL_PROJECT_INTAKE_CHECKLIST.md  - project intake
+CHATGPT_START_HERE.md                   - ChatGPT operating notes
+reports/latest.md                       - latest status report
+reports/codex/latest.md                 - latest Codex report
+templates/task-hall-v3/                 - default template
 ```
 
 ## Critical bootstrap gate
@@ -55,24 +59,22 @@ Required minimum project workbench:
     db/
 ```
 
-If the project folder or `task-hall/` skeleton is missing, ChatGPT must not use Drive upload/import/create document to bootstrap the project. It must return a plain-text Codex instruction and let Codex create the workbench through local Drive sync.
+Verify with: `python3 -m taskhall check --path <project>/task-hall --mode workbench`
 
-Reference standard:
+If the workbench is missing, ChatGPT must **not** use Drive upload/import/create document to bootstrap. It must return a plain-text Codex instruction and let Codex create the workbench through local Drive sync.
 
-```text
-standards/DRIVE_TASK_HALL_BOOTSTRAP_GATE_V1.md
-```
+Reference standard: `standards/TASK_HALL_V3.md` (Section 9 Bootstrap Gate)
 
 ## Correct bootstrap fallback instruction
 
 When the Drive workbench is missing, ChatGPT should give the user this kind of short instruction for Codex:
 
 ```text
-请在本地 Google Drive 同步目录中，为当前项目创建最小 Drive Task Hall 工作台。
+Create the minimal Drive Task Hall workbench in the local Google Drive sync directory for the current project.
 
-只创建协作底座，不改业务代码。
+Create only the collaboration base. Do not change business code.
 
-目标结构：
+Target structure:
 <project-name>/
   00_HOME.md
   01_CURRENT.md
@@ -87,13 +89,13 @@ When the Drive workbench is missing, ChatGPT should give the user this kind of s
     indexes/
     db/
 
-完成后回报：
+Report back with:
 - PASS / PARTIAL PASS / FAIL / BLOCKED
-- Drive 本地路径
-- 是否创建 task-hall/
-- 是否创建 00_BOARD.md / 01_NOW.md / 02_ACCEPTANCE_QUEUE.md
-- 是否没有改业务代码
-- 下一步是否可以让 ChatGPT 写正式 Task Hall 任务
+- Drive local path
+- Whether task-hall/ was created
+- Whether 00_BOARD.md / 01_NOW.md / 02_ACCEPTANCE_QUEUE.md were created
+- Whether no business code was changed
+- Whether ChatGPT may now write the official Task Hall task
 ```
 
 ## Daily Task Hall flow after bootstrap
@@ -133,13 +135,26 @@ temporary acceptance notes
 decision drafts
 ```
 
-## Do not do this
+## Hard boundaries
 
 ```text
-Do not create root-level Google Docs as bootstrap task packages.
-Do not restore GitHub tasks/codex/latest.md as the default daily task queue.
-Do not create V3.
-Do not treat Task Hall as replacing V2.
-Do not copy the whole playbook into business projects.
-Do not change business code when the task only asks for collaboration bootstrap.
+Do not edit main branch directly.
+Do not touch business projects or production code.
+Do not deploy to production.
+Do not store or manage credentials/secrets.
+Do not delete branches, tags, or repositories.
+Do not force push.
+Do not restore GitHub daily dispatch registry as default.
 ```
+
+## Codex / Claude / ChatGPT minimal chain
+
+```text
+ChatGPT -> writes task package to Drive workbench
+Codex   -> reads task, executes locally, writes report
+Claude  -> engineering execution, patch drafting, tests, or review coordinated by Codex
+ChatGPT -> reads report from acceptance queue, renders verdict
+Codex   -> on PASS, syncs stable results to GitHub
+```
+
+V3 RC1 is under evaluation on the `release/playbook-v3-task-hall-rc1` branch. "Do not create V3" from the V2 baseline is superseded for this branch: V3 RC1 already exists and is being evaluated. The gate is acceptance, not creation.

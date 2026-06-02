@@ -36,7 +36,7 @@ GitHub：稳定成果、版本管理、release、rollback、final reusable docs�
 WSL/local Git：真实代码或文档编辑、测试、集成。
 ChatGPT：总控、任务设计、验收和 release decision。
 Codex：执行、集成、验证、GitHub 同步和报告。
-Claude Code：由 Codex 编排的 first-pass 工程支持。
+Claude Code：由 Codex 编排的 WSL/local 工程执行支持。
 ```
 
 贡献内容必须遵守：
@@ -97,3 +97,16 @@ reports/codex/latest.md：最新 Codex 执行报告入口
 ```
 
 `PLAYBOOK_OPERATIONAL_BASELINE_V2` 是当前稳定基线。后续若进入 V3，必须先经过候选、测试、验收，再提升为稳定基线。
+
+## 六、旧材料分类
+
+本仓库中以下材料明确归类为 **history / reference / lab**，不作为默认执行入口：
+
+- **V1 / V1.1 / V1.2 文档**（`standards/*_V1.md`, `standards/*_V2.md`）— 历史稳定基线，保留用于回滚证据和历史参考。
+- **GitHub task registry**（`tasks/codex/latest.md`, `tasks/claude/latest.md`）— 兼容层，非默认日常派工入口。
+- **whitepapers/** — 研究成果和白皮书草稿，不是执行指南。
+- **lab/** — 实验验证，未推广前不作为默认入口。
+- **archive/** — 迁移和抢救记录，仅作为证据和素材。
+- **旧模板**（`templates/` 根目录文件）— 保留为历史模板，V3 默认模板为 `templates/task-hall-v3/`。
+
+当前默认入口始终是 `QUICK_START.md` 和 `standards/TASK_HALL_V3.md`。

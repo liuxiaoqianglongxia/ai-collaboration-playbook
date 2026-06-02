@@ -30,7 +30,7 @@ V2 下，Codex 还负责把真实开发留在 WSL/local Git，完成最终集成
 
 ### Claude Code
 
-Claude Code 是本地工程增强工具，适合承担 first-pass 工程草案、深度代码分析、调用链梳理、测试失败定位、局部修复草案和复审。Claude Code 不替代 Codex 的最终集成责任，也不直接承担生产部署职责。
+Claude Code 是 WSL/local 本地工程执行工具，适合承担代码编辑、文档和规范修改、补测试、跑测试、深度代码分析、调用链梳理、测试失败定位、局部修复和复审。Claude Code 不替代 Codex 的最终集成责任，也不直接承担生产部署职责。
 
 Claude Code 不要求用户手动转发长任务。需要时，优先由 Codex 在当前 Drive task package 内编排；GitHub-backed `tasks/claude/latest.md` 仅作为兼容入口。
 
@@ -64,7 +64,7 @@ Drive daily fact source
 WSL/local Git real development
 GitHub stable code/docs
 GitHub release and rollback anchors
-Claude Code first-pass support
+Claude Code engineering execution support
 Codex final integration
 ```
 
@@ -76,7 +76,7 @@ Codex final integration
 ChatGPT 直接做：事实源读取、文档修正、任务设计、验收、轻量收口。
 Drive 承担：日常任务、报告、截图、材料、交接、临时验收、决策记录、daily log。
 Codex 执行：本地命令、代码修改、测试、集成、必要时 PR/tag/release sync、执行报告。
-Claude Code 辅助：first-pass 草案、深度分析、局部修复草案、复审，由 Codex 编排。
+Claude Code 辅助：工程执行、深度分析、局部修复、测试和复审，由 Codex 编排。
 ```
 
 ChatGPT 分配 Codex task 时，用户层应使用短公告，不默认粘贴完整长任务包。V2 默认指向 Drive task package；仅在项目明确启用 GitHub-backed registry 时使用兼容指令：
@@ -96,23 +96,25 @@ ChatGPT 分配 Codex task 时，用户层应使用短公告，不默认粘贴完
 
 ## 四、进入项目后的默认读取顺序
 
-新 Agent 进入具体项目时，优先读取项目仓库内的适配层文件：
+新 Agent 进入具体项目时，先读 `QUICK_START.md`（本仓库）和 `standards/TASK_HALL_V3.md`，然后读取项目仓库内的适配层文件：
 
-1. `CHATGPT_START_HERE.md`
-2. `AGENTS.md`
-3. `CLAUDE.md`
-4. `CURRENT.md`
-5. `TASKS.md`
-6. `DECISIONS.md`
-7. `reports/latest.md`
+1. `QUICK_START.md`（本仓库单一一页入口）
+2. `standards/TASK_HALL_V3.md`（本仓库 V3 标准）
+3. `CHATGPT_START_HERE.md`
+4. `AGENTS.md`
+5. `CLAUDE.md`
+6. `CURRENT.md`
+7. `TASKS.md`
+8. `DECISIONS.md`
+9. `reports/latest.md`
 
 如果项目已经接入 GitHub-backed registry 兼容层，可在基础事实源之后继续读取：
 
-8. `tasks/README.md`
-9. `tasks/codex/latest.md`
-10. `tasks/claude/latest.md`
-11. `reports/codex/latest.md`
-12. `reports/claude/latest.md`
+10. `tasks/README.md`
+11. `tasks/codex/latest.md`
+12. `tasks/claude/latest.md`
+13. `reports/codex/latest.md`
+14. `reports/claude/latest.md`
 
 Codex 和 Claude Code 不得从聊天历史推断当前任务。V2 默认以 Drive task package 为准；存在 registry 兼容入口时，任务包必须以项目声明的入口为准。
 

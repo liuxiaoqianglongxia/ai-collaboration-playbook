@@ -12,7 +12,7 @@
 |------|-----------|---------|
 | **总控 (Total Control)** | The orchestrator role — typically ChatGPT. Responsible for task decomposition, architecture judgment, acceptance criteria, and directing other agents. | Four-piece collaboration pattern |
 | **执行线 (Execution Line)** | A focused work stream with a specific goal, scope, and deliverable. Each execution line has its own branch, tasks, and acceptance criteria. | Task management |
-| **事实源 (Fact Source)** | The authoritative location for project truth. In our pattern, GitHub is the single fact source — not chat history, not memory, not local notes. | Project governance |
+| **事实源 (Fact Source)** | The authoritative location for project truth. Under V2 and V3 Task Hall, Drive (or the local filesystem) is the daily fact source/workbench for tasks, reports, and materials; GitHub is the stable result/version surface for finalized docs, releases, and reusable artifacts. They serve different layers — do not treat one as replacing the other. | Project governance |
 | **资产底账 (Asset Inventory)** | A comprehensive read-only inventory of all files, repositories, skills, standards, and reusable assets in a given environment. | Audit phase |
 | **资产价值审计 (Asset Value Audit)** | An assessment that scores inventoried assets on reuse value, completeness, integration difficulty, risk, and business relevance. Assigns A/B/C/D/X classification. | Post-inventory phase |
 | **入仓 (Enter Repository)** | The process of moving an asset from local/private/experimental state into a managed GitHub repository. Must pass safety checks (no secrets, no DBs, no logs). | Asset integration |
@@ -47,3 +47,23 @@
 | PARTIAL PASS | Core work done but some items need follow-up |
 | FAIL | Acceptance criteria not met or regressions introduced |
 | BLOCKED | Cannot proceed due to missing context or risks |
+
+## Task Hall Task Lifecycle States
+
+These states apply to individual Task Hall task packages, NOT to projects. They are enforced by the Task Hall CLI (`lab/task-hall-mvp/taskhall/cli.py`). They coexist with but do not replace the project-level status values above.
+
+| State | Meaning | Allowed Transitions |
+|-------|---------|---------------------|
+| DRAFT | Task package is being written; not yet ready for assignment | → READY, → ARCHIVED |
+| READY | Task package is complete and available for claiming | → CLAIMED, → BLOCKED, → ARCHIVED |
+| CLAIMED | An agent has claimed the task but not started work | → IN_PROGRESS, → BLOCKED, → ARCHIVED |
+| IN_PROGRESS | Agent is actively working on the task | → NEEDS_ACCEPTANCE, → BLOCKED, → ARCHIVED |
+| NEEDS_ACCEPTANCE | Work is done and submitted for review | → ACCEPTED, → NEEDS_REVISION, → BLOCKED, → ARCHIVED |
+| NEEDS_REVISION | Review found issues; task goes back for rework | → READY, → BLOCKED, → ARCHIVED |
+| ACCEPTED | Task passed acceptance review (final state) | → (terminal) |
+| BLOCKED | Task cannot proceed due to external constraints | → READY, → ARCHIVED |
+| ARCHIVED | Task is closed without completion (final state) | → (terminal) |
+
+Final states (terminal): ACCEPTED, ARCHIVED.
+
+Note: BLOCKED appears both here (task-level) and in project-level status. They share the same semantic meaning (cannot proceed due to external constraints) but apply to different scopes. A project being BLOCKED does not mean all its tasks are BLOCKED, and vice versa.

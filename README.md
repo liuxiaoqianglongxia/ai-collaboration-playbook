@@ -9,23 +9,22 @@
 ```text
 stable: PLAYBOOK_OPERATIONAL_BASELINE_V2
 reports/latest.md: PASS
+Task Hall V3 RC1: candidate (this branch)
 ```
 
 V1.1 已通过 PR #6、Claude Code 只读复审、ChatGPT 独立验收和 merge closeout。V1.2 在 V1.1 上新增并冻结 Drive-first 日常工作台、main+tag 版本锚点、Claude-first-pass / Codex-final 执行层。
 
 Drive-native V2 是当前稳定基线。它把日常任务、报告、材料、截图、交接、临时验收、决策记录和 daily log 放到 Drive 工作台；GitHub 收口为稳定成果、版本管理、release、rollback 和其他项目复用入口。V1.1/V1.2 继续作为历史稳定基线保留。
 
-当前入口以 `reports/latest.md` 为准。
+Task Hall V3 RC1 是本分支正在评估的候选版本。它把 V2 假设的 task-hall 工作台模式正式化为可执行的 CLI + 文件结构规范。V3 在 V2 基线之上，不替代 V2，除非经显式验收和 merge。
+
+当前入口以 `QUICK_START.md` 为单一日常一页入口，`standards/TASK_HALL_V3.md` 为 V3 标准。
 
 日常使用先读：
 
-- `QUICK_START.md`
-- `guides/USER_OPERATING_GUIDE_V1.md`
-- `CHATGPT_START_HERE.md`
-- `reports/latest.md`
-- `standards/DRIVE_NATIVE_WORKFLOW_V2.md`
-- `standards/GITHUB_RELEASE_AND_VERSION_POLICY_V2.md`
-- `guides/DRIVE_NATIVE_V2_USER_GUIDE.md`
+- `QUICK_START.md` — single one-page entry
+- `standards/TASK_HALL_V3.md` — canonical V3 standard
+- `reports/latest.md` — latest status report
 
 ## 稳定主链路
 
@@ -35,7 +34,26 @@ Drive-native V2 是当前稳定基线。它把日常任务、报告、材料、�
 - Drive：日常事实源、任务、报告、材料、截图、交接、临时验收和决策记录。
 - GitHub：稳定成果、版本管理、release、rollback、final reusable docs。
 - Codex：现场交付负责人、最终集成者、报告提交者。
-- Claude Code：本地工程增强工具、深度代码分析、局部修复、复审。
+- Claude Code：WSL/local 本地工程执行工具、深度代码分析、局部修复、测试和复审。
+
+## Task Hall V3 RC1（本分支候选）
+
+V3 RC1 在本分支 `release/playbook-v3-task-hall-rc1` 上评估中。它提供：
+
+- 文件原生任务包（`<project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md`）
+- 看板（`<project>/task-hall/00_BOARD.md`）
+- 验收队列（`<project>/task-hall/02_ACCEPTANCE_QUEUE.md`）
+- SQLite 本地 canary 状态（`lab/task-hall-mvp/`）
+- 状态机强制转换（DRAFT → READY → CLAIMED → IN_PROGRESS → NEEDS_ACCEPTANCE → ACCEPTED/NEEDS_REVISION）
+- 规范：`standards/TASK_HALL_V3.md`
+- 模板：`templates/task-hall-v3/`
+- 清单：`checklists/V3_TASK_HALL_PROJECT_INTAKE_CHECKLIST.md`
+- CLI：`taskhall check` 命令验证工作台骨架
+
+V3 RC1 的路径是 Drive 工作台相对路径：`<project>/task-hall/...`，本地同步时为 `G:/.../<project>/task-hall/...`。
+它不是 GitHub 仓库路径 `ai-collaboration-playbook/task-hall/...`。
+
+V3 RC1 不会替代 V2，除非经显式验收和 merge。在此之前，V2 是默认稳定基线。
 
 Hermes、Qwen、MCP、自动化、心跳、子代理等能力不是默认四件套成员。只有具体项目事实源或用户明确授权时，才作为项目特化工具进入。
 
@@ -59,7 +77,7 @@ Drive：日常任务、报告、截图、材料、交接、临时验收、决策
 WSL/local Git：真实代码编辑、测试、集成。
 GitHub main：稳定代码和稳定文档。
 GitHub tags：版本锚点、release、rollback。
-Claude Code：由 Codex 编排的 first-pass 工程支持。
+Claude Code：由 Codex 编排的 WSL/local 工程执行支持。
 Codex：最终集成、验证、提交、push、tag、必要时 PR、报告。
 ```
 
@@ -79,7 +97,7 @@ ChatGPT 应该完成背后判断：
 3. 能直接安全完成的文档、任务包、验收、轻量仓库操作，由 ChatGPT 直接完成。
 4. 日常任务、报告、材料、交接和临时验收默认落 Drive；稳定成果、release、rollback 和可复用规范同步回 GitHub。
 5. 需要本地环境、代码修改、测试、集成、PR、tag 或部署前验证的工作，交给 Codex。
-6. 需要深度代码分析、局部修复草案、first-pass patch 或复审时，由 Codex 编排 Claude Code。
+6. 需要深度代码分析、局部修复、测试补强、patch 或复审时，由 Codex 编排 Claude Code。
 7. Codex 完成后写回 Drive 报告；稳定同步时更新 GitHub 报告。
 8. ChatGPT 只读验收并输出 PASS / PARTIAL PASS / FAIL / BLOCKED。
 ```
@@ -122,7 +140,7 @@ reports/chatgpt/task-packages/
 
 它的作用是减少聊天复制，让 Codex 和 Claude Code 在需要 repository-backed task 时从稳定 GitHub 文件接任务。
 
-在 Drive-native V2 中，这套 registry 是兼容入口，不是默认日常派工入口。它不接入自动化，不改变四件套，不新增默认协作成员，也不替代 Drive 日常事实源或项目自己的 current state。
+在 Drive-native V2 和 Task Hall V3 RC1 中，这套 registry 是**兼容入口**，不是默认日常派工入口。它不接入自动化，不改变四件套，不新增默认协作成员，也不替代 Drive 日常事实源或项目自己的 current state。`tasks/codex/latest.md` 和 `tasks/claude/latest.md` 保持兼容性维护，不作为默认日常派工表面恢复。
 
 V1.1 追加两条稳定执行规则：
 

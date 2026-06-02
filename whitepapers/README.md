@@ -1,13 +1,15 @@
 # whitepapers
 
-`whitepapers/` 用于保存长版研究成果，不替代 README、onboarding、modules、templates、checklists。
+**Classification**: history / reference — research artifacts, not execution guides.
 
-## 候选白皮书
+`whitepapers/` 用于保存长版研究成果、白皮书草稿和可公开文章候选稿。它不替代 README、onboarding、modules、templates、checklists。
 
-- `AI_COLLABORATION_MODE_V4_FULL_WHITEPAPER.md`
-- `CODEX_AGENTIC_WORKBENCH_RESEARCH_DRAFT.md`
-- `GPT_SUBSCRIPTION_ENGINEERING_WORKFLOW_ARTICLE.md`
+## 研究文件
+
+- `AI_COLLABORATION_MODE_V4_FULL_WHITEPAPER.md` — V4 协作模式研究（历史）
+- `CODEX_AGENTEC_WORKBENCH_RESEARCH_DRAFT.md` — Codex 工作台研究草稿（历史）
+- `GPT_SUBSCRIPTION_ENGINEERING_WORKFLOW_ARTICLE.md` — GPT 订阅工程文章（历史）
 
 ## 边界
 
-本轮只建立承接目录，不生成完整长版白皮书，不把 archive 内容直接提升为最新规范，不改变 V4 主链路。
+这些是研究材料，不作为默认执行入口。当前默认执行入口是 `QUICK_START.md` 和 `standards/TASK_HALL_V3.md`。

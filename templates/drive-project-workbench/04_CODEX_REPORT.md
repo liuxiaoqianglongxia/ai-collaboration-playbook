@@ -29,4 +29,4 @@ rejected:
 
 ## Durable Report
 
-Write the final report to the project repository before acceptance.
+> **V3 Task Hall compatibility note**: Under V3 Task Hall, execution reports live at `<project>/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md`. Copy finalized reports to the GitHub project repository for stable versioning. GitHub `reports/codex/latest.md` is compatibility-only.

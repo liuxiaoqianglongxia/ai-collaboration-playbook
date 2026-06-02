@@ -6,9 +6,9 @@ Conclusion: PASS
 
 `PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS` remains the GitHub main stable baseline. This PR branch does not change main.
 
-## Task Hall Docs ????
+## Task Hall Docs 验证
 
-PASS. The five fixed `TASK_HALL__*` Docs are contained under `ai-collaboration-playbook/task-hall/docs/active/` and retain stable document IDs.
+PASS. The five fixed `TASK_HALL__*` Docs are contained under `<project>/task-hall/docs/active/` (Drive workbench) and retain stable document IDs. They are not at a GitHub repo path `ai-collaboration-playbook/task-hall/...`.
 
 ## PR #11 ??
 

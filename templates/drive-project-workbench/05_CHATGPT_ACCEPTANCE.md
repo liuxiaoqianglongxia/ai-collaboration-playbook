@@ -1,5 +1,7 @@
 # ChatGPT Acceptance Notes
 
+> **V3 Task Hall compatibility note**: Under V3 Task Hall, acceptance uses `<project>/task-hall/02_ACCEPTANCE_QUEUE.md` as the queue. Task packages are at `<project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md`. Evidence references should point to the actual file paths used.
+
 ## Verdict
 
 ```text

@@ -27,6 +27,8 @@ blocked_by:
 ## Source Of Truth
 
 ```text
-Drive is the daily workbench.
-GitHub or the project repository remains the durable fact source.
+Drive is the daily workbench (V2 and V3 Task Hall).
+GitHub remains the stable result/version surface.
+V3 Task Hall daily dispatch uses <project>/task-hall/00_BOARD.md
+and <project>/task-hall/tasks/..., not root-level TASKS.md.
 ```

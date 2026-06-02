@@ -4,6 +4,8 @@
 > **Applies to**: Any project where multiple agents or humans make architectural choices.
 > **Place at**: Project root as `DECISIONS.md` or in `decisions/` directory.
 
+> **V3 Task Hall compatibility note**: Decision records should live in the project Drive workbench during drafting (`<project>/task-hall/docs/active/` or `<project>/02_DECISIONS.md`). Only finalized, milestone-level decisions are copied to the GitHub project repository for stable versioning.
+
 > **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and customize the ADR format if needed. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
 
 ## How to use

@@ -36,4 +36,4 @@ final_integrator: Codex
 
 ## Handoff
 
-When execution starts, write the authoritative task to the project repository or GitHub task package.
+> **V3 Task Hall compatibility note**: Under V3 Task Hall, the authoritative task file is `<project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md`. Write execution reports to `<project>/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md`. GitHub `tasks/codex/latest.md` is compatibility-only and not the default daily dispatch surface.

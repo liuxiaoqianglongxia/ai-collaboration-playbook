@@ -4,6 +4,8 @@
 > **Applies to**: Any project using the four-piece collaboration pattern.
 > **Place at**: Project root as `TASKS.md`. Works with `CURRENT.md`.
 
+> **V3 Task Hall compatibility note**: This template represents the GitHub root-level `TASKS.md` style. Under V3 Task Hall, the default daily dispatch surface is `task-hall/00_BOARD.md` and `task-hall/tasks/YYYYMMDD/<TASK_ID>.md` in the project Drive workbench. `TASKS.md` remains as compatibility/history — it is not the default daily dispatch when V3 Task Hall is enabled.
+
 > **Template Authority**: This file is an upstream template from `ai-collaboration-playbook`. When copied into a project repository, remove the `_TEMPLATE` suffix and keep the priority structure. The project-local copy becomes the execution authority for that project, while this template remains the upstream baseline.
 
 ## How to use

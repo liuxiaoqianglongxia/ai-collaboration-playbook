@@ -57,11 +57,22 @@ reports/codex/20260602/PLAYBOOK_TASK_HALL_OPTIONAL_STABLE_EXTENSION_CLOSEOUT.md
 
 ## Daily task flow when Task Hall is enabled
 
+Drive workbench paths (default):
+
 ```text
-Board: ai-collaboration-playbook/task-hall/00_BOARD.md
-Task: ai-collaboration-playbook/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
-Report: ai-collaboration-playbook/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
-Acceptance: ai-collaboration-playbook/task-hall/02_ACCEPTANCE_QUEUE.md
+Board: <project>/task-hall/00_BOARD.md
+Task: <project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
+Report: <project>/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Acceptance: <project>/task-hall/02_ACCEPTANCE_QUEUE.md
+```
+
+When discussing local Drive sync explicitly, prepend the full local path:
+
+```text
+Board: G:/My Drive/<project>/task-hall/00_BOARD.md
+Task: G:/My Drive/<project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
+Report: G:/My Drive/<project>/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Acceptance: G:/My Drive/<project>/task-hall/02_ACCEPTANCE_QUEUE.md
 ```
 
 GitHub `tasks/codex/latest.md` remains compatibility-only and is not the default daily dispatch entry.
