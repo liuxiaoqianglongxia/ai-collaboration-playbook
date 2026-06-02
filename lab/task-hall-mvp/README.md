@@ -71,6 +71,8 @@ python -m taskhall claim --workbench PATH --task-id ID --agent codex-local-01
 python -m taskhall start --workbench PATH --task-id ID --agent codex-local-01
 python -m taskhall submit-report --workbench PATH --report FILE
 python -m taskhall accept --workbench PATH --task-id ID --verdict PASS
+python -m taskhall archive --workbench PATH --task-id ID
+python -m taskhall revive --workbench PATH --task-id ID
 python -m taskhall build-board --workbench PATH
 python -m taskhall build-context-pack --workbench PATH --project-root PATH
 python -m taskhall serve --workbench PATH --port 8765

@@ -993,6 +993,26 @@ def cmd_serve(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_archive(args: argparse.Namespace) -> int:
+    wb = workbench_path(args.workbench)
+    agent = getattr(args, "agent", None) or "taskhall-archive"
+    update_task_status(
+        wb, args.task_id, "ARCHIVED", agent, "ARCHIVED", {"reason": getattr(args, "reason", "")}
+    )
+    print(f"archived {args.task_id}")
+    return 0
+
+
+def cmd_revive(args: argparse.Namespace) -> int:
+    wb = workbench_path(args.workbench)
+    agent = getattr(args, "agent", None) or "taskhall-revive"
+    update_task_status(
+        wb, args.task_id, "READY", agent, "REVIVED", {"agent": agent}
+    )
+    print(f"revived {args.task_id}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="taskhall", description="Doc-first file-native Task Hall MVP canary"
@@ -1032,6 +1052,19 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--task-id", required=True)
     p.add_argument("--verdict", required=True)
     p.set_defaults(func=cmd_accept)
+
+    p = sub.add_parser("archive")
+    p.add_argument("--workbench", required=True)
+    p.add_argument("--task-id", required=True)
+    p.add_argument("--agent", default=None)
+    p.add_argument("--reason", default="")
+    p.set_defaults(func=cmd_archive)
+
+    p = sub.add_parser("revive")
+    p.add_argument("--workbench", required=True)
+    p.add_argument("--task-id", required=True)
+    p.add_argument("--agent", default=None)
+    p.set_defaults(func=cmd_revive)
 
     p = sub.add_parser("build-board")
     p.add_argument("--workbench", required=True)
