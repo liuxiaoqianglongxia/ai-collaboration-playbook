@@ -236,6 +236,20 @@ draft PR #12 opened
 
 Pre-final staged status still excludes the pre-existing untracked self-run report.
 
+Final branch status after push:
+
+```text
+branch: release/playbook-v3-task-hall-rc1
+remote: origin/release/playbook-v3-task-hall-rc1
+draft PR: #12 / OPEN / DRAFT
+PR URL: https://github.com/liuxiaoqianglongxia/ai-collaboration-playbook/pull/12
+commits:
+- a7b6a6b test: close task hall rc1 lifecycle gaps
+- 02b1ba0 docs: define task hall v3 rc1
+remaining untracked local file:
+- reports/codex/20260602/PLAYBOOK_TASK_HALL_SELF_RUN_V1_REPORT.md (pre-existing, not part of this task)
+```
+
 ## Tests
 
 ```text
