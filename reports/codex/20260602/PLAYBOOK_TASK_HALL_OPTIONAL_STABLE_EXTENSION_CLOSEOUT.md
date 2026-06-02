@@ -2,43 +2,49 @@
 
 Conclusion: PASS
 
-## main HEAD
+## Main HEAD
 
-Main HEAD immediately after PR #11 merge and before this closeout update: `7ab928f3df807a06af0f102b1e4a5ed576d2dd6f`.
+```text
+82b8b8790d570bf1230352124f3b8a76a860b020
+```
 
 ## PR #11 merge commit
 
-`7ab928f3df807a06af0f102b1e4a5ed576d2dd6f`
+```text
+7ab928f3df807a06af0f102b1e4a5ed576d2dd6f
+```
 
-## V2 ????????
+## Stable baseline
 
-yes. `PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS` remains the stable baseline.
+`PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS` remains the stable baseline.
 
-## Task Hall ??? optional stable extension
+## Task Hall status
 
-yes. Task Hall is now an optional stable extension RC1 on top of V2, not V3 and not a default replacement for Drive-native V2.
+Task Hall is now an optional stable extension RC1 on top of V2.
 
-## PR #10 ?????
+It is not V3 and it is not a default replacement for Drive-native V2.
 
-yes. PR #10 was not merged, edited, closed, or otherwise processed.
+## PR #10 status
 
-## ????????
+PR #10 was not merged, edited, closed, or otherwise processed.
 
-yes. No business project was modified.
+## Business project boundary
 
-## ?????
+No business project was modified.
 
-yes. No deploy was performed.
+## Deployment boundary
 
-## ???????/??
+No deployment was performed.
 
-yes. No production database or secret was changed.
+## Database and secret boundary
 
-## ?????/force push/tag/release/rollback
+No production database or secret was changed.
 
-yes. No deletion, force push, tag change, release, or rollback was performed.
+## Git safety boundary
 
-## ?????????????
+No deletion, force push, tag change, release, or rollback was performed.
+
+## Minimum new-session read order
 
 ```text
 QUICK_START.md
@@ -49,14 +55,13 @@ lab/task-hall-mvp/README.md
 reports/codex/20260602/PLAYBOOK_TASK_HALL_OPTIONAL_STABLE_EXTENSION_CLOSEOUT.md
 ```
 
-## ????????? Drive Task Hall
-
-yes, when Task Hall is enabled for the project. Daily tasks should use Drive Task Hall:
+## Daily task flow when Task Hall is enabled
 
 ```text
-ai-collaboration-playbook/task-hall/00_BOARD.md
-ai-collaboration-playbook/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
-ai-collaboration-playbook/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Board: ai-collaboration-playbook/task-hall/00_BOARD.md
+Task: ai-collaboration-playbook/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
+Report: ai-collaboration-playbook/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Acceptance: ai-collaboration-playbook/task-hall/02_ACCEPTANCE_QUEUE.md
 ```
 
 GitHub `tasks/codex/latest.md` remains compatibility-only and is not the default daily dispatch entry.
@@ -67,4 +72,5 @@ GitHub `tasks/codex/latest.md` remains compatibility-only and is not the default
 created_at: 2026-06-02T07:22:52+00:00
 source_pr: #11
 merge_subject: feat: add Task Hall optional stable extension RC1
+closeout_cleanup_commit: 04567df76c1c5ee8f7dd6a7d18398b0447a32396
 ```
