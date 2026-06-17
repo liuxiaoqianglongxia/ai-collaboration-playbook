@@ -1,6 +1,6 @@
 # 新项目接入手册
 
-新项目接入 V4 协作模式时，第一轮只做协作底座，不做业务开发。
+新项目接入 `PLAYBOOK_OPERATIONAL_BASELINE_V2` 时，第一轮只做协作底座，不做业务开发。
 
 ## 一、第一轮目标
 
@@ -14,10 +14,35 @@
 - 建立任务与决策记录。
 - 建立报告目录。
 - 建立禁止范围与安全边界。
+- 建立 Drive workbench 作为日常事实源。
+- 明确 GitHub stable sync 点。
 
-## 二、建议创建的项目适配层
+## 二、建议创建的 Drive workbench
 
-每个业务项目应根据自身情况创建以下文件：
+每个项目应先建立 Drive 日常工作台：
+
+```text
+00_HOME.md
+01_CURRENT.md
+02_INDEX.md
+03_ROUTING.md
+04_DECISIONS_LATEST.md
+05_RELEASE_POLICY.md
+tasks/
+reports/
+daily/
+decisions/
+acceptance/
+handoffs/
+materials/
+screenshots/
+```
+
+Drive workbench 管日常任务、报告、材料、截图、交接、临时验收、决策记录和 daily log。
+
+## 三、建议创建的 GitHub 稳定适配层
+
+每个项目应根据自身情况创建以下 GitHub 文件：
 
 ```text
 CHATGPT_START_HERE.md
@@ -40,7 +65,26 @@ reports/claude/latest.md
 orchestration/
 ```
 
-## 三、各文件职责
+GitHub-backed registry 兼容增强结构：
+
+```text
+tasks/README.md
+tasks/codex/_template.md
+tasks/codex/latest.md
+tasks/claude/_template.md
+tasks/claude/latest.md
+reports/chatgpt/task-packages/README.md
+```
+
+第一轮仍只建协作底座，不做业务开发。如果项目准备进入持续 Codex / Claude Code 协作，可以在第一轮作为兼容增强补齐 registry，也可以在 bootstrap PASS 后单独补齐。V2 默认日常派工仍使用 Drive task package。
+
+bootstrap PASS 后，可追加独立接入任务：
+
+```text
+PROJECT-TASK-PACKAGE-REGISTRY-ADOPTION-V1
+```
+
+## 四、各文件职责
 
 ### CHATGPT_START_HERE.md
 
@@ -70,7 +114,7 @@ orchestration/
 
 记录最近一次执行报告或验收报告，作为新会话快速接力入口。
 
-## 四、第一轮禁止事项
+## 五、第一轮禁止事项
 
 - 不做业务开发。
 - 不重构项目。
@@ -80,7 +124,7 @@ orchestration/
 - 不清理生产文件。
 - 不把其他项目模板未经适配直接复制进来。
 
-## 五、第一轮验收标准
+## 六、第一轮验收标准
 
 第一轮完成后，应满足：
 
@@ -88,6 +132,8 @@ orchestration/
 - Codex 能从 `AGENTS.md` 明确执行边界。
 - Claude Code 能从 `CLAUDE.md` 明确辅助角色。
 - `CURRENT.md`、`TASKS.md`、`DECISIONS.md`、`reports/latest.md` 能形成最小事实源闭环。
+- Drive workbench 能承载日常任务、报告、材料、交接、临时验收和决策记录。
+- GitHub 只承载稳定成果、版本、release、rollback 和可复用文档。
 - 没有触碰业务代码、生产配置、密钥、数据库或部署链路。
 
 只有协作底座通过验收后，才进入业务任务包阶段。
