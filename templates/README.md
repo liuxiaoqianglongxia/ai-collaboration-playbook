@@ -1,8 +1,10 @@
 # templates
 
-`templates/` 用于存放可复制到业务项目中的任务模板、报告模板、验收模板和项目接入模板。
+**Default V3 template**: `templates/task-hall-v3/` — use this for new projects.
 
-## V0.2 定位
+`templates/` 根目录下的旧模板保留为 **history / reference**，供历史项目回滚和适配参考。
+
+## V0.2 定位（历史）
 
 V0.2 只补可复制模板，不改变 V4 主链路，不接入自动化，不做 Claude Code 能力测试，不处理任何业务项目。
 
@@ -16,7 +18,7 @@ V0.2 只补可复制模板，不改变 V4 主链路，不接入自动化，不�
 - 不允许因为有模板就跳过读取 GitHub 事实源。
 - 模板应帮助减少重复沟通，而不是制造新的固定教条。
 
-## 当前模板
+## 历史模板（history / reference）
 
 ```text
 templates/PROJECT_BOOTSTRAP_TASK.md
@@ -24,12 +26,19 @@ templates/CODEX_TASK_PACKAGE.md
 templates/CODEX_EXECUTION_REPORT.md
 templates/CHATGPT_ACCEPTANCE_REPORT.md
 templates/CLAUDE_CODE_READONLY_ANALYSIS_TASK.md
+templates/TASK_PACKAGE_REGISTRY_BOOTSTRAP_TASK.md
+templates/tasks/
+templates/reports/chatgpt/task-packages/
 ```
 
-## 使用建议
+## V3 默认模板
 
-新项目第一轮优先使用 `PROJECT_BOOTSTRAP_TASK.md` 建协作底座。
+```text
+templates/task-hall-v3/README.md
+templates/task-hall-v3/00_HOME.md
+templates/task-hall-v3/01_CURRENT.md
+templates/task-hall-v3/02_INDEX.md
+templates/task-hall-v3/task-hall/  — complete workbench skeleton
+```
 
-进入工程执行时，ChatGPT 先用 `CODEX_TASK_PACKAGE.md` 生成任务包；Codex 执行后用 `CODEX_EXECUTION_REPORT.md` 写回报告；ChatGPT 再用 `CHATGPT_ACCEPTANCE_REPORT.md` 验收。
-
-涉及 Claude Code 时，只能把 `CLAUDE_CODE_READONLY_ANALYSIS_TASK.md` 作为只读分析任务模板，不把它当成能力测试或自动执行入口。
+新项目第一轮优先使用 `templates/task-hall-v3/` 建协作底座。

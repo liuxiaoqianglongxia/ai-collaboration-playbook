@@ -1,35 +1,105 @@
-# latest report
+# Latest Report | PLAYBOOK_OPERATIONAL_BASELINE_V2 + Task Hall V3 RC1 Candidate
 
-## 结论
+## Status
 
-INIT：`ai-collaboration-playbook` 已完成 A 线初始化。
+```text
+PLAYBOOK_OPERATIONAL_BASELINE_V2 / PASS
+Task Hall V3 RC1 candidate: in evaluation (this branch)
+```
 
-## 范围
+## Conclusion
 
-本次只初始化 AI 协作总规范库的基础文件结构，不做业务开发，不改任何业务项目代码，不做部署，不做 Claude Code 能力测试。
+PASS.
 
-## 已创建内容
+`PLAYBOOK_OPERATIONAL_BASELINE_V2` remains the stable baseline on GitHub main.
 
-- 总入口：`README.md`
-- Agent 入职手册：`AI_AGENT_ONBOARDING.md`
-- V4 稳定主规范：`AI_COLLABORATION_MODE_V4.md`
-- 新项目接入手册：`NEW_PROJECT_BOOTSTRAP.md`
-- 稳定模块目录：`modules/README.md`
-- 模板目录：`templates/README.md`
-- 检查清单目录：`checklists/README.md`
-- 实验室总纲：`lab/CODEX_AGENTIC_WORKBENCH_V0_1.md`
-- Hermes 到 Codex 翻译笔记：`lab/CODEX_HERMES_TRANSLATION_NOTES.md`
-- 五个只读实验：`lab/experiments/*.md`
+Task Hall V3 RC1 is a candidate extension on top of V2. It provides a file-native task/workbench layer that can be used on Drive or any local filesystem. V3 does not replace V2; it formalizes the task-hall workbench pattern that V2 already assumed.
 
-## 禁止范围确认
+## V3 RC1 surfaces
 
-- 未做业务开发。
-- 未写生产自动化。
-- 未做自动部署。
-- 未把 lab 实验升级为稳定模块。
-- 未修改 `sub2api-maijian`。
-- 未修改微信公众号仓库。
+```text
+standard:       standards/TASK_HALL_V3.md
+checklist:      checklists/V3_TASK_HALL_PROJECT_INTAKE_CHECKLIST.md
+template:       templates/task-hall-v3/
+entry:          QUICK_START.md
+CLI:            lab/task-hall-mvp/ (taskhall check added)
+```
 
-## 下一步建议
+## Current model
 
-下一步可做 B 线：清理 `sub2api-maijian` 中误写入的 AI 协作总规范库文件。但必须在单独任务中先做只读核验和误写文件清单确认，再执行删除或恢复。
+```text
+V2 baseline: stable collaboration baseline
+Task Hall V3 RC1: candidate daily task/workbench extension
+Drive Task Hall: daily tasks, reports, board, acceptance queue, context pack
+GitHub main: stable docs, version anchor, reusable artifacts
+Codex: local executor and final integrator
+Claude Code: WSL/local engineering execution tool coordinated by Codex; editable by default unless the task says read-only
+ChatGPT: controller, task design, acceptance, release decision
+```
+
+## Task Hall V3 RC1
+
+```text
+status: V3 RC1 candidate (branch: release/playbook-v3-task-hall-rc1)
+entry: QUICK_START.md
+standard: standards/TASK_HALL_V3.md
+workbench entry (Drive): <project>/task-hall/00_BOARD.md
+workbench entry (local sync): G:/.../<project>/task-hall/00_BOARD.md
+```
+
+Task Hall provides:
+
+```text
+fixed Google Docs sockets
+file-native task packages
+task board
+acceptance queue
+reports
+JSONL event log
+SQLite local canary state
+static local UI
+context pack index
+```
+
+## Minimum new-session read order
+
+```text
+QUICK_START.md                          - single one-page entry
+standards/TASK_HALL_V3.md               - canonical V3 standard
+checklists/V3_TASK_HALL_PROJECT_INTAKE_CHECKLIST.md  - project intake
+templates/task-hall-v3/                 - default template
+reports/latest.md                       - you are here
+reports/codex/latest.md                 - latest Codex report
+```
+
+## Daily task flow when Task Hall is enabled
+
+Drive workbench paths (default):
+
+```text
+Board: <project>/task-hall/00_BOARD.md
+Task: <project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
+Report: <project>/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Acceptance: <project>/task-hall/02_ACCEPTANCE_QUEUE.md
+```
+
+When discussing local Drive sync explicitly, prepend the full local path:
+
+```text
+Board: G:/My Drive/<project>/task-hall/00_BOARD.md
+Task: G:/My Drive/<project>/task-hall/tasks/YYYYMMDD/<TASK_ID>.md
+Report: G:/My Drive/<project>/task-hall/reports/YYYYMMDD/<TASK_ID>_REPORT.md
+Acceptance: G:/My Drive/<project>/task-hall/02_ACCEPTANCE_QUEUE.md
+```
+
+GitHub `tasks/codex/latest.md` remains compatibility-only. It is not the default daily dispatch entry.
+
+## Boundaries
+
+```text
+V2 remains the previous stable baseline until explicit acceptance/merge of V3 RC1.
+Do not treat Task Hall as replacing V2.
+Do not process PR #10 unless explicitly assigned.
+Do not mix business project state into this playbook repository.
+Do not use GitHub as the daily task queue when Task Hall is enabled.
+```
